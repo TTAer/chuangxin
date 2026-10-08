@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "pin_model": "models/pins/pin-heatmap.onnx",
+  "local_pin_ocr": false,
+  "text_constraints": true,
+  "selected_run": "output/benchmark-pin-consensus-55",
+  "comparison": "output/ablation/pin-consensus.json",
+  "official_equivalence": false,
+  "scores": {
+    "benchmark-baseline-56": 15.056264752351076,
+    "benchmark-pins-56": 15.187572232775503,
+    "benchmark-text-55": 15.662325278348353,
+    "benchmark-multisource-55": 15.689996864123902,
+    "benchmark-graph-topology-v2-55": 16.518430493981253,
+    "benchmark-pin-consensus-55": 16.519662284741063
+  },
+  "model_sha256": {
+    "models/detector/pcb-yolo11n.onnx": "4080535f934ef2b8ea635ccf55097785429b635c628e4e55714f8e1e5976da78",
+    "models/pins/pin-heatmap.onnx": "2fd41a4af1e4cf324f0eec3b9b01ad4598ee7dc519afdc17151da5190f569f86",
+    "models/topology/topology-perception.onnx": "0319af39f68275a5e952a46e38d6814933dcc3875f7e0d04c2e62e9cea66f07b",
+    "models/candidates/official-pins/pin-heatmap.onnx": "ee21f9643c59d640fe9de2b516a02a882ce05154e622842f87add97b2868435e"
+  },
+  "graph_mode": "full",
+  "pin_ensemble": "models/candidates/official-pins/pin-heatmap.onnx",
+  "selection_notes": "Original primary pin model plus topology-preserving consensus; 55-page replay: 1 improve/1 regress/53 same; updated GT10: 3 improve/0 regress/7 same. Public development selection, not official validation.",
+  "association_model": "none",
+  "association_experiment": "output/ablation/gea-architecture.json",
+  "field_model": "none",
+  "field_experiment": "output/ablation/directional-fields.json"
+}

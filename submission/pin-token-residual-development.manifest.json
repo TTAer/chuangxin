@@ -1,0 +1,140 @@
+{
+  "artifact": "residual and local OCR development evidence; requires existing project/data; not competition runtime",
+  "verified_frozen_records": {
+    "data/splits/rc0-evaluation.json": 53,
+    "data/splits/pin-token-v1-frozen.json": 89
+  },
+  "function_tests_passed": 115,
+  "rc0_runtime_modified": false,
+  "v1_modified": false,
+  "default_promoted": false,
+  "residual_runtime_enabled": false,
+  "freeze_a_ready": false,
+  "third_party_images_CAD_and_derivative_images_included": false,
+  "files": {
+    "data/processed/pin-token-residual/preparation.json": {
+      "sha256": "a293b39a377991f9d0950cc3398c823498c855456202194caff4f7ca3ac7b99e",
+      "bytes": 48328
+    },
+    "data/splits/freeze-a-pixel-audit.json": {
+      "sha256": "24ad40c3093f38825a799592259f41853ba9d765536a2b82d226f15df0da7497",
+      "bytes": 517
+    },
+    "data/splits/pin-token-v1-frozen.json": {
+      "sha256": "c7b8b0448d33ae347236868a0cba0c0662a948e9776246cfeb2ceb32425af622",
+      "bytes": 10699
+    },
+    "data/splits/rc0-evaluation.json": {
+      "sha256": "9ac38232be2f1f662a0f87f0df7bc37f7859c48bd734ddf494fa463b5027075f",
+      "bytes": 7613
+    },
+    "docs/FREEZE_A_PIXEL_PROGRESS.md": {
+      "sha256": "1ffa33f150571bf897c15a43cc5f62ee8394badfbf5f6d01769a876f4e8adf1d",
+      "bytes": 3934
+    },
+    "docs/LOCAL_PIN_OCR_RESULTS.md": {
+      "sha256": "646605cc5fddb13438e702dc09a459618091f63ba260eab2b30e05a684127c20",
+      "bytes": 5146
+    },
+    "docs/PIN_TOKEN_RESIDUAL_RESULTS.md": {
+      "sha256": "6e825fa0759b7dc31f0c5e8034b1fde6b2a5fd1d131021ebae5ef5acfd9be822",
+      "bytes": 6217
+    },
+    "experiments/pin_token_residual.py": {
+      "sha256": "923ef25b347bd89333d608523a468b8709adadcd5aa72ba4f20285ed56f29792",
+      "bytes": 1220
+    },
+    "experiments/pin_token_v1.py": {
+      "sha256": "a4339d732f82de0f9b3da165ebe744c2fc11c61c275ebd8a4f5c5016de89f3ec",
+      "bytes": 2756
+    },
+    "output/ablation/local-pin-ocr-bounded-protocol.json": {
+      "sha256": "82833866a8db29cf178a73cfcf3dfc94cdd60781ea9ea11f18aa3e1dbbace641",
+      "bytes": 28346
+    },
+    "output/ablation/local-pin-ocr-bounded.json": {
+      "sha256": "8fea6dfb2f1d2843503e98fdc10c3e42a71dd9a74a1050cbd42c050c5845835c",
+      "bytes": 65167
+    },
+    "output/ablation/local-pin-ocr-preprocess.json": {
+      "sha256": "cbd9d33b10221672fc7ac7122442918d1525f4d8ca0dd6e38f30e5bbe4991add",
+      "bytes": 1954
+    },
+    "output/ablation/local-pin-ocr-protocol.json": {
+      "sha256": "cdee855d6d045f82615c7665f768e4540971ddfcd8f804ecef2adb376351f35d",
+      "bytes": 28439
+    },
+    "output/ablation/local-pin-ocr.json": {
+      "sha256": "7511ebe0daf468c430956888f917d6f8b9a3d124bb10baf7c6fea515c2772c5f",
+      "bytes": 109275
+    },
+    "output/ablation/pin-token-hard-mining.json": {
+      "sha256": "083d767476deafaae5706dbf71752714f2e637156e0addf9cfbc238d89baedca",
+      "bytes": 157422
+    },
+    "output/ablation/pin-token-residual-audit.json": {
+      "sha256": "24e9625d1c8ecfcadb3c0925bddd2f5c3122b1ee35b93c1855fc8ad8a1f379fb",
+      "bytes": 12711
+    },
+    "output/ablation/pin-token-residual.json": {
+      "sha256": "d4fbf23f711ec653f91045fbc69398d5c920a56a5e6720f84dbc5a678f1d12b2",
+      "bytes": 7280
+    },
+    "output/training/pin-token-residual/extra-trees-validation.npz": {
+      "sha256": "018ecf3b72fe66ba512388c15a285297b9e5faca1e146d996af2671e5454d60c",
+      "bytes": 4993
+    },
+    "output/training/pin-token-residual/extra-trees.pkl": {
+      "sha256": "99e52679b8789445bae65cece7af7637a4b57e97611b1eeaaa189b728f11eb12",
+      "bytes": 4843479
+    },
+    "output/training/pin-token-residual/logistic-validation.npz": {
+      "sha256": "8f85cd4d4842a828ff628ce67fbd07523a33e16d7015adbb41cc3b98abeb4975",
+      "bytes": 5052
+    },
+    "output/training/pin-token-residual/logistic.pkl": {
+      "sha256": "aa600a86b0099167f7402637126ee1dd7081adebdd2c8456675b7ad798387632",
+      "bytes": 2801346
+    },
+    "scripts/audit_local_pin_ocr.py": {
+      "sha256": "83692ab928ebd4e5a6285059f19cd849584f9b4808b313eb3c5580141a5f4531",
+      "bytes": 10808
+    },
+    "scripts/audit_pin_token_residual.py": {
+      "sha256": "4606e81053727cde84506cf5df030463334bad6650f7181a24195a0315463cbd",
+      "bytes": 2408
+    },
+    "scripts/mine_pin_token_hard_cases.py": {
+      "sha256": "0eb38b1464c4b2b066b9d66849e717e5953f40ad5bcea6b867107b82f33569ef",
+      "bytes": 4692
+    },
+    "scripts/package_pin_token_residual.py": {
+      "sha256": "3c70c00137a88b616decdb084ec4f261b33dba6b3b7855dbb8e42b065a50a71e",
+      "bytes": 2888
+    },
+    "scripts/prepare_pin_token_residual.py": {
+      "sha256": "9b436fcb605e0b81a4212eaaaa4f37f4b2b6b9e87b78da77102ca29fe4dd22b9",
+      "bytes": 8359
+    },
+    "scripts/prepare_pin_token_v1.py": {
+      "sha256": "974b18aece8230417863ecca6ef7291d6a0cf6d583d387ee2f27eb60b7917d82",
+      "bytes": 8227
+    },
+    "scripts/render_freeze_a_source_sample.py": {
+      "sha256": "9ae27067db2d5823d38d2203e7b41794461d2279ae9c477310daf874b2102a7f",
+      "bytes": 8542
+    },
+    "scripts/train_pin_token_residual.py": {
+      "sha256": "507782bfc5af72be09d9f63f19ffa338fec0ac3bcb21f1d4539963aa632eeed1",
+      "bytes": 5932
+    },
+    "tests/test_local_pin_ocr.py": {
+      "sha256": "d9ca107c455760613b09d60074158a812d8e0a995ef5e331c38bdf3fcccbbef8",
+      "bytes": 767
+    },
+    "tests/test_pin_token_residual.py": {
+      "sha256": "1db3ce41f3aa07399b68b550a0db6509b5e417a0552944afd52495e2f9538e52",
+      "bytes": 861
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_1",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_2",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_3",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_4",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_5",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_6",
+      "type": "NOR"
+    },
+    {
+      "id": "gate_8",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_9",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_10",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_11",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_12",
+      "type": "NOR"
+    },
+    {
+      "id": "gate_13",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_14",
+      "type": "NOR"
+    },
+    {
+      "id": "gate_15",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_17",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_18",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_20",
+      "type": "NAND"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_6"
+    },
+    {
+      "source": "gate_6",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_4",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_1",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_3"
+    },
+    {
+      "source": "gate_9",
+      "target": "gate_12"
+    },
+    {
+      "source": "gate_3",
+      "target": "gate_12"
+    },
+    {
+      "source": "gate_12",
+      "target": "gate_5"
+    },
+    {
+      "source": "gate_13",
+      "target": "gate_8"
+    },
+    {
+      "source": "gate_5",
+      "target": "gate_8"
+    },
+    {
+      "source": "gate_8",
+      "target": "gate_11"
+    },
+    {
+      "source": "gate_15",
+      "target": "gate_14"
+    },
+    {
+      "source": "gate_11",
+      "target": "gate_14"
+    },
+    {
+      "source": "gate_14",
+      "target": "gate_10"
+    },
+    {
+      "source": "gate_18",
+      "target": "gate_17"
+    },
+    {
+      "source": "gate_10",
+      "target": "gate_17"
+    },
+    {
+      "source": "gate_17",
+      "target": "gate_20"
+    }
+  ],
+  "image_path": "images/lb1k_00884.jpg"
+}

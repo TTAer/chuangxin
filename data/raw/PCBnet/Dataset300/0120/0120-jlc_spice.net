@@ -1,0 +1,51 @@
+* SPICE netlist generated from 0120-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+R11 0 NET_E_1 1k
+R13 0 NET_E_6 200
+R12 0 NET_E_4 200
+R14 0 NET_E_9 1k
+C14 NET_E_3 NET_E_4 4.7p
+C21 NET_E_8 NET_E_9 4.7p
+C12 NET_E_1 NET_E_2 1p
+C19 NET_E_6 NET_E_7 1p
+C13 NET_E_2 NET_E_3 5.6p
+C20 NET_E_7 NET_E_8 5.6p
+C17 0 NET_E_3 22p
+L4 NET_E_2 NET_E_3 1u
+C24 0 NET_E_8 22p
+L5 NET_E_3 NET_E_4 1u
+L7 NET_E_7 NET_E_8 390nH
+L8 NET_E_8 NET_E_9 1u
+L3 NET_E_1 NET_E_2 1u
+C16 0 NET_E_2 33p
+C18 0 NET_E_4 22p
+C23 0 NET_E_7 33p
+L6 NET_E_6 NET_E_7 470nH
+C25 0 NET_E_9 22p
+C15 0 NET_E_1 22p
+C22 0 NET_E_6 22p
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅205" 为参数值形态或无效，已回退自动命名） : P_1(C_1) P_2(C_19) P_3(C_25) P_4(C_29) P_5(C_7)
+* E_2 = NET_E_2（原 netlabel "∅206" 为参数值形态或无效，已回退自动命名） : P_13(C_14) P_14(C_19) P_15(C_20) P_16(C_7) P_17(C_9)
+* E_3 = NET_E_3（原 netlabel "∅207" 为参数值形态或无效，已回退自动命名） : P_18(C_13) P_19(C_14) P_20(C_16) P_21(C_5) P_22(C_9)
+* E_4 = NET_E_4（原 netlabel "∅208" 为参数值形态或无效，已回退自动命名） : P_23(C_16) P_24(C_21) P_25(C_27) P_26(C_3) P_27(C_5)
+* E_5 = 0 : P_28(C_1) P_29(C_11) P_30(C_13) P_31(C_20) P_32(C_21) P_33(C_25) P_34(C_3)
+* E_6 = NET_E_6（原 netlabel "∅210" 为参数值形态或无效，已回退自动命名） : P_35(C_2) P_36(C_23) P_37(C_26) P_38(C_30) P_39(C_8)
+* E_7 = NET_E_7（原 netlabel "∅211" 为参数值形态或无效，已回退自动命名） : P_40(C_10) P_41(C_17) P_42(C_22) P_43(C_23) P_44(C_8)
+* E_8 = NET_E_8（原 netlabel "∅212" 为参数值形态或无效，已回退自动命名） : P_45(C_10) P_46(C_15) P_47(C_17) P_48(C_18) P_49(C_6)
+* E_9 = NET_E_9（原 netlabel "∅213" 为参数值形态或无效，已回退自动命名） : P_50(C_18) P_51(C_24) P_52(C_28) P_53(C_4) P_54(C_6)
+* E_10 = 0 : P_6(C_12) P_7(C_15) P_8(C_2) P_9(C_22) P_10(C_24) P_11(C_26) P_12(C_4)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="R11" value="∅55" type=R
+* 待人工确认: C_4 designator="R14" value="∅71" type=R
+* 待人工确认: C_14 designator="L4" value="∅120" type=L
+* 待人工确认: C_16 designator="L5" value="∅131" type=L
+* 待人工确认: C_18 designator="L8" value="∅142" type=L
+* 待人工确认: C_19 designator="L3" value="∅148" type=L
+
+.end

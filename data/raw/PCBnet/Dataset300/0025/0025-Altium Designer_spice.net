@@ -1,0 +1,31 @@
+* SPICE netlist generated from 0025-Altium Designer_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+R5 KEY2 NET_E_7 1k
+R6 KEY3 NET_E_9 4.3K
+R7 口 NET_E_10 4.3K
+R4 KEY1 NET_E_11 4.3K
+XSW1 0 口 SW1
+XSW2 KEY2 0 SW2
+
+* ---- 网络对照（edge -> 节点） ----
+* E_2 = KEY1 : P_2(C_26) P_3(C_6)
+* E_3 = KEY2 : P_4(C_1) P_5(C_25)
+* E_4 = KEY3 : P_6(C_24) P_7(C_4)
+* E_5 = 0 : P_8(C_12) P_10(C_16) P_11(C_24) P_12(C_25) P_13(C_26)
+* E_6 = 口 : P_14(C_12) P_15(C_5)
+* E_7 = NET_E_7（原 netlabel "∅97" 为参数值形态或无效，已回退自动命名） : P_16(C_1) P_1(C_6)
+* E_9 = NET_E_9（原 netlabel "∅98" 为参数值形态或无效，已回退自动命名） : P_17(C_4) P_1(C_6)
+* E_10 = NET_E_10（原 netlabel "∅99" 为参数值形态或无效，已回退自动命名） : P_18(C_5) P_19(C_23)
+* E_11 = NET_E_11（原 netlabel "∅100" 为参数值形态或无效，已回退自动命名） : P_1(C_6)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="R5" value="∅42" type=R
+* 未映射类型 Switch（C_12 SW1），按 X 子电路输出
+* 待人工确认: C_12 designator="SW1" value="∅63" type=Switch
+* 未映射类型 Switch（C_25 SW2），按 X 子电路输出
+* 待人工确认: C_25 designator="SW2" value="∅86" type=Switch
+
+.end

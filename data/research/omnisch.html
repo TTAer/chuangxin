@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OmniSch Benchmark</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #24292f;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── OMNIEDA BENCHMARK NAVIGATION ─────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 5%;
+  background: rgba(15, 12, 41, 0.96);
+  border-bottom: 1px solid rgba(165, 180, 252, 0.14);
+}
+.site-brand {
+  flex-shrink: 0;
+  color: #f3f4ff;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-brand span { color: #a5b4fc; }
+.site-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.site-tabs a {
+  padding: 7px 13px;
+  border-radius: 999px;
+  color: #c7c7e8;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s ease, color .15s ease;
+}
+.site-tabs a:hover,
+.site-tabs a[aria-current="page"] {
+  background: rgba(165, 180, 252, 0.18);
+  color: #fff;
+}
+.site-tabs a[aria-current="page"] {
+  box-shadow: inset 0 0 0 1px rgba(165, 180, 252, 0.22);
+}
+.site-nav a:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .site-nav { flex-direction: column; gap: 8px; padding: 12px 16px; }
+  .site-tabs { justify-content: center; }
+}
+
+/* ── CENTERED WRAPPER ─────────────────────────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── HERO / TITLE ─────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 48px 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.hero h1 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111827;
+  margin-bottom: 24px;
+}
+.hero-authors { font-size: 15px; color: #374151; line-height: 1.9; }
+.hero-affil { font-size: 13px; color: #6b7280; margin-top: 8px; margin-bottom: 24px; }
+.hero-note { font-size: 12.5px; color: #6b7280; margin-top: -14px; margin-bottom: 24px; }
+
+/* ── VENUE BADGE ──────────────────────────────────────── */
+.venue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 7px 20px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.40);
+  letter-spacing: 0.02em;
+}
+.venue-badge strong { font-weight: 700; }
+.venue-icon { font-size: 14px; line-height: 1; }
+
+/* ── LINK PILL BUTTONS (Paper / Code / Data / Leaderboard) */
+.link-pills {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+  transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease;
+  background-clip: padding-box;
+}
+.pill::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(-100%);
+  transition: transform .45s ease;
+}
+.pill:hover::before { transform: translateX(100%); }
+.pill:hover { transform: translateY(-2px) scale(1.04); }
+.pill:active { transform: translateY(0) scale(0.98); }
+
+.pill-paper { background: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fbbf24 100%); color: #fff; box-shadow: 0 3px 12px rgba(249,115,22,.35); }
+.pill-paper:hover { box-shadow: 0 6px 20px rgba(249,115,22,.50); }
+.pill-code { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #c084fc 100%); color: #fff; box-shadow: 0 3px 12px rgba(139,92,246,.35); }
+.pill-code:hover { box-shadow: 0 6px 20px rgba(139,92,246,.50); }
+.pill-data { background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #67e8f9 100%); color: #0e4e5a; box-shadow: 0 3px 12px rgba(6,182,212,.30); }
+.pill-data:hover { box-shadow: 0 6px 20px rgba(6,182,212,.48); }
+.pill-lb { background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%); color: #064e3b; box-shadow: 0 3px 12px rgba(16,185,129,.30); }
+.pill-lb:hover { box-shadow: 0 6px 20px rgba(16,185,129,.48); }
+.pill-disabled {
+  background: #e5e7eb;
+  color: #6b7280;
+  box-shadow: none;
+  cursor: pointer;
+}
+.pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* ── MAIN CONTENT ─────────────────────────────────────── */
+.main { padding: 40px 0 80px; }
+.section-h2 { text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 24px; color: #111827; }
+.section-h4 { text-align: center; font-size: 15px; font-weight: 600; color: #374151; margin: 28px 0 10px; }
+
+/* ── TABLES ───────────────────────────────────────────── */
+.table-block { margin-bottom: 40px; }
+.table-caption { font-size: 13.5px; color: #57606a; text-align: center; max-width: 900px; margin: 0 auto 10px; line-height: 1.6; }
+.table-caption strong { color: #111827; }
+.table-scroll { border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+table { border-collapse: collapse; width: 100%; background: #fff; font-size: 11px; border-spacing: 0; }
+th { background: #f6f8fa; font-weight: 600; padding: 4px 6px; text-align: center; white-space: normal; font-size: 10.5px; line-height: 1.3; color: #374151; vertical-align: middle; }
+th.th-left { text-align: left; }
+td { padding: 3px 6px; text-align: center; white-space: normal; font-variant-numeric: tabular-nums; font-size: 11px; }
+td.td-left { text-align: left; }
+td.td-model { text-align: left; font-weight: 600; font-size: 12px; }
+/* Model column: fixed width for All / Open / Closed so highlight column stays aligned */
+#tableT1 thead tr:first-child > th:first-child,
+#tableT1 td.td-model {
+  width: 10rem;
+  min-width: 10rem;
+  max-width: 10rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+#tableT2 thead tr:first-child > th:first-child,
+#tableT2 td.td-model {
+  width: calc(32rem / 3);
+  min-width: calc(32rem / 3);
+  max-width: calc(32rem / 3);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+tr.sec-row td { background: #f0f4f8; font-weight: 700; text-align: center; font-size: 11.5px; letter-spacing: 0.3px; color: #374151; padding: 5px 9px; }
+tr.gray-row td { background: #fafafa; color: #6b7280; }
+tr:hover:not(.sec-row) td { background: #f0f7ff !important; }
+#tableT1 th.gbr,
+#tableT1 td.gbr {
+  border-right: 1.5px solid rgba(107, 114, 128, 0.45);
+}
+#tableT2 th.gbr,
+#tableT2 td.gbr {
+  border-right: 1.5px solid rgba(107, 114, 128, 0.45);
+}
+.pos { color: #1a7a3a; font-weight: 600; }
+.neg { color: #b91c1c; font-weight: 600; }
+.dash { color: #c0c0c0; }
+
+/* ── HIGHLIGHTED COLUMN & GLOW EFFECT ─────────────────── */
+th.col-hl, th.col-hl-l, th.col-hl-r, td[class*="col-hl"] {
+  position: relative;
+  z-index: 10; /* Elevate to let shadows cast over adjacent cells */
+}
+
+/* Header Glow (Image Input highlight) */
+th.col-hl, th.col-hl-l, th.col-hl-r {
+  background: #fffbeb !important; /* Soft warm glow background */
+  color: #92400e !important;
+  font-weight: 700;
+}
+th.col-hl {
+  box-shadow: 0 0 12px 1px rgba(250,204,21,0.35), inset 0 0 10px rgba(250,204,21,0.2) !important;
+}
+th.col-hl-l {
+  box-shadow: -6px 0 10px -2px rgba(250,204,21,0.35), inset 6px 0 10px -3px rgba(250,204,21,0.2) !important;
+}
+th.col-hl-r {
+  box-shadow: 6px 0 10px -2px rgba(250,204,21,0.35), inset -6px 0 10px -3px rgba(250,204,21,0.2) !important;
+}
+
+#tableT1 table {
+  position: relative;
+}
+#tableT1 table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--iou-left, 0);
+  width: var(--iou-width, 0);
+  pointer-events: none;
+  background: rgba(226, 239, 255, 0.24);
+  box-shadow: 0 0 38px 16px rgba(59,130,246,0.28);
+  border-radius: 14px;
+  z-index: 0;
+}
+#tableT2 table {
+  position: relative;
+}
+#tableT2 table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--iou-left, 0);
+  width: var(--iou-width, 0);
+  pointer-events: none;
+  background: rgba(226, 239, 255, 0.24);
+  box-shadow: 0 0 38px 16px rgba(59,130,246,0.28);
+  border-radius: 14px;
+  z-index: 0;
+}
+.iou-hdr, .iou-cell {
+  position: relative;
+  z-index: 2;
+  background: rgba(236, 245, 255, 0.80) !important;
+  color: #1b365f !important;
+  font-weight: 700;
+}
+.iou-hdr {
+  background: linear-gradient(180deg, rgba(226, 239, 255, 0.95) 0%, rgba(234, 246, 255, 0.82) 100%) !important;
+  color: #1b3b6f !important;
+}
+.iou-cell {
+  background: rgba(236, 245, 255, 0.92) !important;
+  box-shadow: inset 6px 0 18px -12px rgba(59, 130, 246, 0.35);
+}
+.iou-cell span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+}
+.rank-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1.4;
+  border: 1px solid transparent;
+  vertical-align: middle;
+}
+.rank-first { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+.rank-second { background: #f3f4f6; color: #374151; border-color: #d1d5db; }
+.rank-third { background: #ffedd5; color: #9a3412; border-color: #fdba74; }
+
+/* Row 0 Glow (Yellow Base) */
+td.col-hl-0 { background: #fefce8 !important; color: #713f12; font-weight:600; }
+td.col-hl-0.col-l { box-shadow: -6px 0 10px -2px rgba(250,204,21,0.3), inset 6px 0 10px -3px rgba(250,204,21,0.25) !important; }
+td.col-hl-0.col-r { box-shadow: 6px 0 10px -2px rgba(250,204,21,0.3), inset -6px 0 10px -3px rgba(250,204,21,0.25) !important; }
+
+/* Row 1 Glow (Green Base) */
+td.col-hl-1 { background: #f0fdf4 !important; color: #14532d; font-weight:600; }
+td.col-hl-1.col-l { box-shadow: -6px 0 10px -2px rgba(74,222,128,0.3), inset 6px 0 10px -3px rgba(74,222,128,0.25) !important; }
+td.col-hl-1.col-r { box-shadow: 6px 0 10px -2px rgba(74,222,128,0.3), inset -6px 0 10px -3px rgba(74,222,128,0.25) !important; }
+
+/* Row 2 Glow (Blue Base) */
+td.col-hl-2 { background: #eff6ff !important; color: #1e3a8a; font-weight:600; }
+td.col-hl-2.col-l { box-shadow: -6px 0 10px -2px rgba(96,165,250,0.3), inset 6px 0 10px -3px rgba(96,165,250,0.25) !important; }
+td.col-hl-2.col-r { box-shadow: 6px 0 10px -2px rgba(96,165,250,0.3), inset -6px 0 10px -3px rgba(96,165,250,0.25) !important; }
+
+/* Row 3 Glow (Purple Base) */
+td.col-hl-3 { background: #fdf4ff !important; color: #581c87; font-weight:600; }
+td.col-hl-3.col-l { box-shadow: -6px 0 10px -2px rgba(192,132,252,0.3), inset 6px 0 10px -3px rgba(192,132,252,0.25) !important; }
+td.col-hl-3.col-r { box-shadow: 6px 0 10px -2px rgba(192,132,252,0.3), inset -6px 0 10px -3px rgba(192,132,252,0.25) !important; }
+
+/* Row 4 Glow (Orange Base) */
+td.col-hl-4 { background: #fff7ed !important; color: #7c2d12; font-weight:600; }
+td.col-hl-4.col-l { box-shadow: -6px 0 10px -2px rgba(251,146,60,0.3), inset 6px 0 10px -3px rgba(251,146,60,0.25) !important; }
+td.col-hl-4.col-r { box-shadow: 6px 0 10px -2px rgba(251,146,60,0.3), inset -6px 0 10px -3px rgba(251,146,60,0.25) !important; }
+
+/* Subtle outline highlight for selected metric cells */
+td.metric-highlight-cell {
+  position: relative;
+  font-weight: 700 !important;
+  box-shadow: inset 0 0 0 1px rgba(107, 114, 128, 0.55) !important;
+}
+
+/* Sec Row Glow */
+tr.sec-row td[class*="col-hl"] { background: #f3f4f6 !important; color: #374151; }
+tr.sec-row td.col-l { box-shadow: -6px 0 10px -2px rgba(156,163,175,0.25), inset 6px 0 10px -3px rgba(156,163,175,0.2) !important; }
+tr.sec-row td.col-r { box-shadow: 6px 0 10px -2px rgba(156,163,175,0.25), inset -6px 0 10px -3px rgba(156,163,175,0.2) !important; }
+
+/* ── TABLE FILTER PILLS ───────────────────────────────── */
+.table-filter {
+  margin-top: 6px;
+  display: inline-flex;
+  gap: 4px;
+  padding: 2px;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+.filter-btn {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #4b5563;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: all .15s ease;
+}
+.filter-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+}
+.filter-btn.active {
+  background: #ffffff;
+  color: #1f2937;
+  border-color: #d1d5db;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
+}
+
+/* ── PAPER SECTION ────────────────────────────────────── */
+.paper-section { border-top: 1px solid #e5e7eb; padding: 48px 24px 40px; text-align: center; }
+.paper-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 12px; color: #111827; max-width: 780px; margin-left: auto; margin-right: auto; }
+.paper-authors { font-size: 15px; color: #374151; margin-bottom: 4px; line-height: 1.9; }
+.paper-affil { font-size: 13px; color: #6b7280; margin-bottom: 36px; }
+
+/* ── FIGURE ───────────────────────────────────────────── */
+.figure-wrap { text-align: center; margin-bottom: 28px; width: min(1200px, calc(100vw - 48px)); margin-left: 50%; transform: translateX(-50%); }
+.figure-ph { max-width: 800px; width: 100%; height: 300px; margin: 0 auto 12px; background: #f6f8fa; border: 2px dashed #d0d7de; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9ca3af; }
+.figure-ph p { font-size: 13px; }
+.figure-img { max-width: 100%; width: 100%; margin: 0 auto 12px; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff; display: block; }
+.figure-caption { font-size: 13.5px; color: #57606a; max-width: 760px; margin: 0 auto; text-align: center; line-height: 1.65; }
+.abstract { font-size: 15px; color: #374151; max-width: 780px; margin: 0 auto 32px; text-align: justify; line-height: 1.8; }
+
+/* ── BIBTEX ───────────────────────────────────────────── */
+.bib-section { border-top: 1px solid #e5e7eb; padding: 40px 24px; }
+.bib-title { text-align: center; font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #111827; }
+.bib-wrap { max-width: 780px; margin: 0 auto; position: relative; }
+.bib-box { background: #1e2128; color: #abb2bf; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 13px; padding: 20px 24px; border-radius: 8px; overflow-x: auto; line-height: 1.75; text-align: left; white-space: pre; }
+.copy-btn { position: absolute; top: 10px; right: 10px; background: #2d3139; color: #9ca3af; border: 1px solid #3d4149; border-radius: 4px; padding: 3px 10px; font-size: 11px; cursor: pointer; font-family: inherit; transition: all .12s; }
+.copy-btn:hover { background: #3d4149; color: #e5e7eb; }
+.bib-key { color: #e06c75; }
+.bib-field { color: #61afef; }
+.bib-val { color: #98c379; }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer { background: #f6f8fa; border-top: 1px solid #e5e7eb; padding: 16px 24px; text-align: center; font-size: 12.5px; color: #6b7280; }
+footer a { color: #0969da; text-decoration: none; }
+
+/* ── DATA MODAL ───────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 40px 32px;
+  max-width: 520px;
+  width: calc(100% - 48px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  position: relative;
+  animation: modalIn .2s cubic-bezier(.34,1.4,.64,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.93) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-close {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none; cursor: pointer;
+  color: #9ca3af; font-size: 20px; line-height: 1;
+  padding: 4px 8px; border-radius: 6px;
+  transition: background .12s, color .12s;
+}
+.modal-close:hover { background: #f3f4f6; color: #374151; }
+.modal-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.modal-sub { font-size: 13px; color: #6b7280; margin-bottom: 28px; }
+.modal-section-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;
+}
+.modal-dataset-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: box-shadow .15s, border-color .15s;
+}
+.modal-dataset-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.07); border-color: #c9d1d9; }
+.modal-card-left { display: flex; align-items: center; gap: 14px; }
+.modal-card-icon {
+  width: 40px; height: 40px; border-radius: 9px; flex-shrink: 0;
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 60%, #67e8f9 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px rgba(6,182,212,.28);
+}
+.modal-card-icon svg { width: 20px; height: 20px; color: #0e4e5a; }
+.modal-card-name { font-size: 14.5px; font-weight: 650; color: #111827; margin-bottom: 2px; }
+.modal-card-desc { font-size: 12px; color: #6b7280; }
+.modal-dl-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px; border-radius: 999px; flex-shrink: 0;
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #67e8f9 100%);
+  color: #0e4e5a; font-size: 12.5px; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(6,182,212,.28);
+  transition: transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .15s;
+}
+.modal-dl-btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 16px rgba(6,182,212,.42); }
+.modal-dl-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Benchmark navigation">
+  <a class="site-brand" href="https://www.omnieda.com/">Omni<span>EDA</span></a>
+  <div class="site-tabs">
+    <a href="./" aria-current="page">OmniSch</a>
+    <a href="https://www.omnieda.com/">OmniLayout</a>
+    <a href="https://www.omnieda.com/routing/">OmniRouting</a>
+    <a href="https://www.omnieda.com/mech/">OmniMech</a>
+    <a href="https://www.omnieda.com/omnicad/">OmniCAD</a>
+  </div>
+</nav>
+<div id="app"></div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// ICONS
+// ─────────────────────────────────────────────────────────────────────────────
+const IC = {
+  arxiv: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  code:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  data:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+  lb:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+  img:   `<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d0d7de" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA — TABLE 1
+// ─────────────────────────────────────────────────────────────────────────────
+const T1 = [
+  { section: 'Commercial Chatbot Systems', models: [
+    { m:'Gemini 2.5 Flash', sz:'—', rows:[
+      {i:'Real',        g:0, v:[.6636,.0000,.2411,.3439,.3916,.7062,.0000,.3265,.3481,.2744,.2507,.1945,.1479,.0418,.6505]},
+      {i:'Real Low R.', g:1, v:[.5596,.0005,.0936,.1485,.2708,.5364,.0000,.2527,.2505,.1581,.1435,.1274,.1065,.0232,.5753]},
+      {i:'Synth.',      g:0, v:[.5622,.0000,.1740,.2909,.3155,.4705,.0000,.1045,.1620,.1766,.1612,.1262,.1321,.0219,.7151]},
+      {i:'w/o Txt.',    g:1, v:[.7241,.0000,null,null,.3623,.7764,.0000,.2506,.0014,.7044,.1380,.2085,.2539,.0622,.5806]},
+      {i:'FewShot.',    g:0, v:[.7469,.0000,.4956,.4953,.4128,.6910,.0000,.2341,.4517,.7481,.3231,.2071,.2452,-.0965,.3226]},
+    ]},
+    { m:'Gemini 3.1 Pro-Preview', sz:'—', rows:[
+      {i:'Real',        g:0, v:[.5900,.0003,.2659,.3365,.3523,.6928,.0002,.1710,.2614,.2706,.2490,.1771,.1062,.0432,.6774]},
+      {i:'Real Low R.', g:1, v:[.3992,.0004,.0918,.1434,.1994,.4077,.0001,.0715,.0904,.1101,.1014,.0844,.0721,.0138,.9516]},
+      {i:'Synth.',      g:0, v:[.4805,.0000,.2125,.2444,.2700,.5571,.0001,.1278,.1703,.2108,.1928,.1290,.0876,.0216,.7849]},
+      {i:'w/o Txt.',    g:1, v:[.5639,.0002,null,null,.3039,.5817,.0000,.1599,.2142,.4041,.1271,.0404,.1609,.1904,.7903]},
+      {i:'FewShot.',    g:0, v:[.6683,.0000,.3113,.2897,.4447,.6363,.0000,.2295,.3472,.4657,.2615,.1656,.1853,.1408,.9140]},
+    ]},
+    { m:'GPT-5.2', sz:'—', rows:[
+      {i:'Real',        g:0, v:[.5276,.0009,.1761,.2434,.2948,.5155,.0003,.1607,.1780,.1987,.1822,.1546,.0945,.0337,.7097]},
+      {i:'Real Low R.', g:1, v:[.3184,.0032,.0363,.0566,.0451,.1756,.0000,.0641,.0547,.0612,.0504,.0480,.0590,.0170,.9946]},
+      {i:'Synth.',      g:0, v:[.4732,.0007,.1460,.2196,.2600,.5217,.0003,.2160,.1738,.2588,.2445,.1722,.0944,.0501,1.0]},
+      {i:'w/o Txt.',    g:1, v:[.4508,.0011,null,null,.1229,.5369,.0005,.1802,.3896,.3924,.0538,.0116,.1413,.0097,1.0]},
+      {i:'FewShot.',    g:0, v:[.6196,.0000,.1890,.2999,.4185,.5469,.0000,.1058,.1724,.4199,.1716,.1450,.1806,.0019,1.0]},
+    ]},
+    { m:'Claude Sonnet 4.6', sz:'—', rows:[
+      {i:'Real',        g:0, v:[.5862,.0009,.1487,.2205,.3637,.5513,.0003,.1073,.2113,.1748,.1594,.1241,.1590,.0301,.9839]},
+      {i:'Real Low R.', g:1, v:[.5130,.0012,.0475,.1205,.2735,.4017,.0002,.0602,.1356,.1158,.1048,.0837,.1360,.0221,.9946]},
+      {i:'Synth.',      g:0, v:[.6247,.0024,.1780,.2762,.4037,.5703,.0006,.0831,.2131,.1939,.1761,.1381,.1607,.0361,.9194]},
+      {i:'w/o Txt.',    g:1, v:[.7235,.0020,null,null,.3516,.6728,.0009,.0302,.5306,.5532,.1546,.1747,.2218,.0605,.9194]},
+      {i:'FewShot.',    g:0, v:[.7185,.0010,.3296,.4023,.5293,.6605,.0000,.1652,.1618,.5575,.2124,.2621,.2913,.0631,.9194]},
+    ]},
+    { m:'GPT-5-mini', sz:'—', rows:[
+      {i:'Real',        g:0, v:[.2997,.0010,.1026,.1111,.1320,.3658,.0000,.1233,.0892,.1016,.0921,.0704,.0730,.0192,.9032]},
+      {i:'Real Low R.', g:1, v:[.1926,.0033,.0292,.0476,.0306,.1391,.0000,.0362,.0298,.0315,.0280,.0210,.0431,.0057,.9946]},
+      {i:'Synth.',      g:0, v:[.2918,.0010,.0945,.1086,.1287,.3346,.0000,.1125,.0881,.0994,.0905,.0651,.0659,.0180,1.0]},
+      {i:'w/o Txt.',    g:1, v:[.2312,.0009,null,null,.0474,.3131,.0000,.0565,.1924,.1926,.0297,.0045,.0732,.0207,1.0]},
+      {i:'FewShot.',    g:0, v:[.5310,.0007,.1713,.1212,.2284,.3812,.0001,.0817,.0000,.2428,.0802,.1062,.1199,.0162,1.0]},
+    ]},
+  ]},
+  { section: 'Open-Source MLLMs', models: [
+    { m:'Qwen3.5-122B-A10B', sz:'122B', rows:[
+      {i:'Real',        g:0, v:[.5584,.0008,.2442,.2826,.3464,.5164,.0000,.1957,.1321,.4237,.1230,.1179,.1452,.0067,.9140]},
+      {i:'Real Low R.', g:1, v:[.3190,.0003,.0715,.0920,.1706,.2631,.0000,.0693,.0460,.1831,.0339,.0871,.1018,.0361,.9301]},
+      {i:'Synth.',      g:0, v:[.5137,.0000,.2440,.2577,.3215,.5406,.0000,.1661,.1149,.4301,.1471,.2513,.2711,.0000,.7096]},
+      {i:'w/o Txt.',    g:1, v:[.3649,.0023,null,null,.1719,.3459,.0002,.0789,.0305,.2499,.0630,.1844,.1947,.0000,.6828]},
+      {i:'FewShot.',    g:0, v:[.6975,.0008,.3564,.4373,.5328,.6506,.0003,.3341,.3198,.5480,.2068,.2837,.3243,.0140,.9086]},
+    ]},
+    { m:'Ministral 14B', sz:'14B', rows:[
+      {i:'Real',        g:0, v:[.3826,.0020,.0867,.1288,.1787,.3794,.0000,.0976,.1219,.1151,.1053,.0825,.1223,.0236,.4409]},
+      {i:'Real Low R.', g:1, v:[.2628,.0003,.0223,.0452,.0875,.1696,.0000,.0440,.0529,.0425,.0392,.0314,.0505,.0088,.9785]},
+      {i:'Synth.',      g:0, v:[.4562,.0000,.0981,.1715,.2464,.3825,.0000,.1244,.1515,.1268,.1152,.0888,.0879,.0288,.5914]},
+      {i:'w/o Txt.',    g:1, v:[.4164,.0011,null,null,.0691,.4697,.0000,.2462,.0303,.3376,.0317,.0068,.1474,.0336,.4839]},
+      {i:'FewShot.',    g:0, v:[.5054,.0004,.1733,.2229,.3216,.4401,.0000,.1854,.0566,.3707,.0531,.1184,.1407,.0060,.3548]},
+    ]},
+    { m:'LLaMA 4 Maverick', sz:'400B', rows:[
+      {i:'Real',        g:0, v:[.2527,.0000,.0584,.0821,.1055,.2405,.0000,.0837,.0783,.0672,.0612,.0475,.0434,.0139,.8656]},
+      {i:'Real Low R.', g:1, v:[.1134,.0002,.0156,.0215,.0401,.0984,.0000,.0311,.0294,.0222,.0204,.0162,.0224,.0045,.9785]},
+      {i:'Synth.',      g:0, v:[.2911,.0000,.0667,.0941,.1265,.2868,.0000,.1088,.0962,.0827,.0757,.0575,.0474,.0168,.9301]},
+      {i:'w/o Txt.',    g:1, v:[.1956,.0000,null,null,.0350,.2095,.0000,.0123,.1171,.1198,.0185,.0020,.0470,.0052,.9516]},
+      {i:'FewShot.',    g:0, v:[.3057,.0006,.1102,.1108,.1679,.3063,.0000,.0557,.0149,.1864,.0380,.0770,.0919,.0163,.2849]},
+    ]},
+    { m:'Qwen3-VL 8B', sz:'8B', rows:[
+      {i:'Real',        g:0, v:[.0868,.0000,.0202,.0354,.0282,.0195,.0000,.0030,.0037,.0043,.0040,.0023,.0065,-.0022,.7473]},
+      {i:'Real Low R.', g:1, v:[.0544,.0000,.0072,.0102,.0109,.0085,.0000,.0024,.0015,.0019,.0017,.0013,.0045,-.0006,.7526]},
+      {i:'Synth.',      g:0, v:[.0756,.0000,.0166,.0258,.0221,.0020,.0000,.0001,.0002,.0005,.0004,.0002,.0053,-.0004,1.0]},
+      {i:'w/o Txt.',    g:1, v:[.0577,.0002,null,null,.0032,.0083,.0000,.0000,.0000,.0042,.0003,.0000,.0046,.0000,.8118]},
+      {i:'FewShot.',    g:0, v:[.0847,.0000,.0324,.0325,.0378,.0275,.0000,.0052,.0036,.0156,.0020,.0036,.0079,.0000,.3871]},
+    ]},
+    { m:'Classical Vision Pipeline', sz:'—', rows:[
+      {i:'Real',           g:0, v:[.4294,.8812,.5078,.2487,.7875,.1502,.9174,.6245,.4100,.5871,.6613,.1060,.0311,.0442,1.0]},
+      {i:'Real Low R.',    g:1, v:[.9051,.9433,.5055,.2983,.8235,.0000,.8503,.7258,.5288,.6156,.4951,null,null,null,1.0]},
+      {i:'Synth.',         g:0, v:[.4240,.9518,.6087,.5977,.8319,.1960,.9047,.8170,.7347,.7045,.7031,.2280,.0397,.1263,1.0]},
+      {i:'Synth. w/o Txt.',g:1, v:[null,.9199,null,null,.8317,null,.8554,.9812,.8536,.7081,.8065,null,null,null,1.0]},
+    ]},
+    { m:'Human Engineer', sz:'—', rows:[
+      {i:'Real',   g:0, v:[.9667,.9589,.9842,.9759,.9547,.9534,.8793,.9987,1.0,.9867,.9353,.8696,.9188,.8876,1.0]},
+      {i:'Synth.', g:1, v:[.9649,.9678,.9851,.9748,.9521,.9516,.9732,.9989,.9992,.9893,.9867,.8473,.9136,.8846,1.0]},
+    ]},
+  ]},
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA — TABLE 2
+// ─────────────────────────────────────────────────────────────────────────────
+const T2 = [
+  { section: 'Commercial Chatbot Systems', models: [
+    { m:'Gemini-2.5-Flash-Lite', sz:'—', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.2148,.3991,.2280,.2129,.2482], pin:[.1052,.1504,.0998,.0708], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.5123,.7467,.5181,.4776,.6156], pin:[.8473,.7870,.7184,.7220], net:.3873},
+      {i:'Δ',           g:0, sym:['+138.49%','+87.06%','+127.24%','+124.33%','+148.02%'], pin:['+705.42%','+423.01%','+619.64%','+920.34%'], net:null},
+    ]},
+    { m:'GPT-5 Mini', sz:'—', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.5539,.5835,.4983,.4797,.5292], pin:[.6285,.5545,.1311,.1138], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.8932,.8739,.8437,.8799,.8717], pin:[.8694,.7615,.7839,.8196], net:.6517},
+      {i:'Δ',           g:0, sym:['+61.26%','+45.36%','+69.31%','+72.01%','+64.72%'], pin:['+38.33%','+37.34%','+497.94%','+620.21%'], net:null},
+    ]},
+    { m:'GPT-5.2', sz:'—', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.6948,.6457,.6610,.6507,.6886], pin:[.7892,.7621,.2654,.1298], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.8565,.8482,.8088,.8252,.8458], pin:[.9056,.8567,.8426,.9473], net:.6926},
+      {i:'Δ',           g:0, sym:['+23.28%','+31.36%','+22.36%','+26.82%','+22.83%'], pin:['+14.76%','+12.41%','+217.57%','+629.43%'], net:null},
+    ]},
+    { m:'Claude-Sonnet-4.6', sz:'—', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.5070,.7414,.6710,.7368,.7452], pin:[.4982,.5944,.4022,.6210], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.7955,.7210,.7430,.7589,.7202], pin:[.8984,.8864,.6400,.9526], net:.6411},
+      {i:'Δ',           g:0, sym:['+56.91%','+0.71%','+10.73%','+3.00%','−3.36%'], pin:['+80.33%','+49.11%','+59.15%','+53.38%'], net:null},
+    ]},
+    { m:'Gemini-3.1-Pro-Preview', sz:'—', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.8093,.8726,.7833,.8151,.7870], pin:[.6943,.8211,.5824,.8927], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.8958,.8983,.8591,.9013,.8764], pin:[.8382,.8140,.7841,.8545], net:.8911},
+      {i:'Δ',           g:0, sym:['+10.69%','+2.95%','+9.68%','+10.58%','+11.36%'], pin:['+20.72%','−0.86%','+34.62%','−4.28%'], net:null},
+    ]},
+  ]},
+  { section: 'Open-Source MLLMs', models: [
+    { m:'Qwen3-8B-Instruct', sz:'8B', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.2337,.0368,.1126,.0280,.0361], pin:[.6653,.0106,.5544,.0013], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.5917,.7057,.5872,.5725,.6067], pin:[.7418,.5723,.6207,.4153], net:.3021},
+      {i:'Δ',           g:0, sym:['+153.20%','+2039.67%','+421.40%','+1948.21%','+1581.99%'], pin:['+11.50%','+5299.06%','+11.96%','+31792.31%'], net:null},
+    ]},
+    { m:'Qwen3-VL-235B-A22B', sz:'235B', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.1336,.2315,.1570,.1187,.2150], pin:[.2099,.1027,.0909,.0130], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.5753,.7871,.5792,.5809,.6566], pin:[.7282,.8283,.7233,.8380], net:.4532},
+      {i:'Δ',           g:0, sym:['+330.64%','+277.44%','+268.92%','+640.69%','+205.39%'], pin:['+246.88%','+706.40%','+695.99%','+6346.15%'], net:null},
+    ]},
+    { m:'Ministral-14B', sz:'14B', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.0990,.0784,.1324,.0421,.1031], pin:[.1725,.0380,.0524,.0051], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.4179,.7626,.3882,.3622,.4399], pin:[.3960,.2742,.3457,.1301], net:.1113},
+      {i:'Δ',           g:0, sym:['+322.12%','+872.70%','+193.25%','+760.57%','+326.61%'], pin:['+129.57%','+621.58%','+559.92%','+2450.98%'], net:null},
+    ]},
+    { m:'LLaMA-4-Maverick-400B', sz:'400B', rows:[
+      {i:'w/o GT BBox', g:0, sym:[.1270,.1699,.1389,.0876,.2034], pin:[.3346,.0455,.1780,.0273], net:null},
+      {i:'w/ GT BBox',  g:1, sym:[.7934,.7229,.7421,.7579,.7196], pin:[.7586,.4964,.5276,.5323], net:.3758},
+      {i:'Δ',           g:0, sym:['+524.72%','+325.37%','+434.41%','+765.41%','+253.77%'], pin:['+126.70%','+991.21%','+196.40%','+1849.45%'], net:null},
+    ]},
+  ]},
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VALUE FORMATTER
+// ─────────────────────────────────────────────────────────────────────────────
+function V(v) {
+  if (v === null || v === undefined) return `<span class="dash">—</span>`;
+  if (typeof v === 'string') {
+    if (!v || v === '---') return `<span class="dash">—</span>`;
+    const n = parseFloat(v.replace(/[+−-]/g,''));
+    if (v.endsWith('%')) {
+      const neg = v.startsWith('−') || v.startsWith('-');
+      return neg ? `<span class="neg">${v}</span>` : `<span class="pos">${v}</span>`;
+    }
+    if (v === '0.0%') return v;
+    return v;
+  }
+  if (typeof v === 'number') return v.toFixed(4);
+  return String(v);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BUILD TABLE 1
+// ─────────────────────────────────────────────────────────────────────────────
+const GBR1 = new Set([1,4,6,8,10,12]);
+const INPUT_COLOR_T1 = { 'Real':0, 'Real Low R.':1, 'Synth.':2, 'w/o Txt.':3, 'FewShot.':4, 'Synth. w/o Txt.':3, 'Δ':4 };
+
+function osBadge(name) {
+  const t = modelType(name);
+  return t === 'closed'
+    ? `<span style="display:inline-block;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700;background:#fff3e0;color:#c2410c;border:1px solid #fcd9ab">Closed</span>`
+    : `<span style="display:inline-block;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0">Open</span>`;
+}
+
+function buildT1() {
+  let body = '';
+  // Mapping: display columns -> index in row.v
+  // Keep website column order unchanged:
+  // IoU (Graph) -> Symbol -> Pin -> Net -> 1-GED -> Kendall's tau -> Pass
+  const indexMap = [11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14];
+  // right-edge markers for super-class boundaries:
+  // Graph(IoU) | Symbol | Pin | Net | Graph(1-GED, Kendall's τ) | Pass
+  const newGBR1 = new Set([0, 5, 9, 11, 13]);
+  let globalModelRank = 0;
+  
+  T1.forEach(sec => {
+    body += `<tr class="sec-row"><td colspan="19">${sec.section}</td></tr>`;
+    sec.models.forEach((m) => {
+      const mtype = modelType(m.m);
+      m.rows.forEach((row, ri) => {
+        const ci = INPUT_COLOR_T1[row.i] ?? (ri % 5);
+        body += `<tr class="${row.g ? 'gray-row' : ''}" data-type="${mtype}">`;
+        if (ri === 0) {
+          const rankTag = globalModelRank === 0
+            ? '<span class="rank-tag rank-first">🥇</span>'
+            : globalModelRank === 1
+              ? '<span class="rank-tag rank-second">🥈</span>'
+              : globalModelRank === 2
+                ? '<span class="rank-tag rank-third">🥉</span>'
+                : '';
+          body += `<td class="td-model" rowspan="${m.rows.length}">${m.m}${rankTag}</td>`;
+          body += `<td rowspan="${m.rows.length}" style="min-width:35px">${m.sz}</td>`;
+          body += `<td rowspan="${m.rows.length}" style="min-width:60px;text-align:center">${osBadge(m.m)}</td>`;
+          globalModelRank += 1;
+        }
+        body += `<td class="td-left col-hl-${ci}" style="min-width:80px;font-size:11.5px">${row.i}</td>`;
+        indexMap.forEach((origIdx, newIdx) => {
+          const val = row.v[origIdx];
+          let extraClass = '';
+          if (newGBR1.has(newIdx)) extraClass += ' gbr';
+          if (newIdx === 0) extraClass += ' iou-cell';
+          if (newIdx === 0 && row.i === 'Real') extraClass += ' metric-highlight-cell';
+          const cellContent = (newIdx === 0) ? `<span>${V(val)}</span>` : V(val);
+          body += `<td class="${extraClass.trim()}">${cellContent}</td>`;
+        });
+        body += '</tr>';
+      });
+    });
+  });
+  return `
+  <div class="table-scroll" id="tableT1"><table>
+    <thead>
+      <tr>
+        <th class="th-left" rowspan="3">Model</th>
+        <th rowspan="3">Size</th>
+        <th rowspan="3" class="col-hl" style="min-width: 100px;">
+          <div>Open Source</div>
+          <div class="table-filter">
+            <div class="filter-btn active" data-v="all" onclick="filterTable('T1','all',this)">All</div>
+            <div class="filter-btn" data-v="open" onclick="filterTable('T1','open',this)">Open</div>
+            <div class="filter-btn" data-v="closed" onclick="filterTable('T1','closed',this)">Closed</div>
+          </div>
+        </th>
+        <th rowspan="3">Image Input</th>
+        <th class="gbr">Graph</th>
+        <th colspan="5" class="gbr">Symbol</th>
+        <th colspan="4" class="gbr">Pin</th>
+        <th colspan="2" class="gbr">Net</th>
+        <th colspan="2" class="gbr">Graph</th>
+        <th rowspan="3">Pass</th>
+      </tr>
+      <tr>
+        <th rowspan="2" class="iou-hdr gbr">IoU</th>
+        <th colspan="2" class="gbr">Detection (F1)</th>
+        <th colspan="3" class="gbr">Attribute</th>
+        <th colspan="2" class="gbr">Detection (F1)</th>
+        <th colspan="2" class="gbr">Attribute</th>
+        <th rowspan="2">F1</th><th rowspan="2" class="gbr">NetName</th>
+        <th rowspan="2">1-GED</th>
+        <th rowspan="2" class="gbr">Kendall's&nbsp;τ</th>
+      </tr>
+      <tr>
+        <th>Eq.(1)</th><th class="gbr">IoU</th>
+        <th>Name</th><th>Value</th><th class="gbr">Type</th>
+        <th>Eq.(2)</th><th class="gbr">IoU</th>
+        <th>PinName</th><th class="gbr">PadName</th>
+      </tr>
+    </thead>
+    <tbody>${body}</tbody>
+  </table></div>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BUILD TABLE 2
+// ─────────────────────────────────────────────────────────────────────────────
+function parseT2Numeric(v) {
+  if (v === null || v === undefined || v === '') return null;
+  if (typeof v === 'number' && !Number.isNaN(v)) return v;
+  if (typeof v === 'string' && v.endsWith('%')) {
+    const n = parseFloat(v.replace(/[+−-]/g, ''));
+    if (Number.isNaN(n)) return null;
+    const neg = v.startsWith('−') || v.startsWith('-');
+    return neg ? -n : n;
+  }
+  return null;
+}
+
+function averageT2Row(row) {
+  const nums = [];
+  row.sym.forEach(v => { const n = parseT2Numeric(v); if (n !== null) nums.push(n); });
+  row.pin.forEach(v => { const n = parseT2Numeric(v); if (n !== null) nums.push(n); });
+  const netN = parseT2Numeric(row.net);
+  if (netN !== null) nums.push(netN);
+  if (!nums.length) return null;
+  return nums.reduce((a, b) => a + b, 0) / nums.length;
+}
+
+function buildT2() {
+  let body = '';
+  const t2RankByModel = new Map();
+  const t2ScoreByModel = new Map();
+  const t2RankedModels = [];
+
+  // Rank by the "Average" value under the "w/o GT BBox" setting.
+  T2.forEach(sec => {
+    sec.models.forEach(m => {
+      const woGtRow = m.rows.find(r => r.i === 'w/o GT BBox');
+      const score = woGtRow ? averageT2Row(woGtRow) : null;
+      t2ScoreByModel.set(m.m, score);
+      t2RankedModels.push({ name: m.m, score });
+    });
+  });
+
+  t2RankedModels
+    .filter(x => x.score !== null)
+    .sort((a, b) => b.score - a.score)
+    .forEach((x, idx) => t2RankByModel.set(x.name, idx));
+
+  T2.forEach(sec => {
+    body += `<tr class="sec-row"><td colspan="15">${sec.section}</td></tr>`;
+    const sortedModels = [...sec.models].sort((a, b) => {
+      const sa = t2ScoreByModel.get(a.m);
+      const sb = t2ScoreByModel.get(b.m);
+      if (sa === null && sb === null) return 0;
+      if (sa === null) return 1;
+      if (sb === null) return -1;
+      return sb - sa;
+    });
+    sortedModels.forEach(m => {
+      const mtype = modelType(m.m);
+      m.rows.forEach((row, ri) => {
+        body += `<tr class="${row.g ? 'gray-row' : ''}" data-type="${mtype}">`;
+        if (ri === 0) {
+          const modelRank = t2RankByModel.get(m.m);
+          const rankTag = modelRank === 0
+            ? '<span class="rank-tag rank-first">🥇</span>'
+            : modelRank === 1
+              ? '<span class="rank-tag rank-second">🥈</span>'
+              : modelRank === 2
+                ? '<span class="rank-tag rank-third">🥉</span>'
+                : '';
+          body += `<td class="td-model" rowspan="${m.rows.length}">${m.m}${rankTag}</td>`;
+          body += `<td rowspan="${m.rows.length}" style="min-width:35px">${m.sz}</td>`;
+          body += `<td rowspan="${m.rows.length}" style="min-width:60px;text-align:center">${osBadge(m.m)}</td>`;
+        }
+        body += `<td class="td-left" style="min-width:100px;font-size:11.5px">${row.i}</td>`;
+        const avgVal = row.i === 'Δ' ? null : averageT2Row(row);
+        const avgCls = row.i === 'w/o GT BBox' ? ' metric-highlight-cell' : '';
+        body += `<td class="iou-cell gbr${avgCls ? ` ${avgCls}` : ''}"><span>${V(avgVal)}</span></td>`;
+        row.sym.forEach((val, vi) => { body += `<td class="${vi===4?'gbr':''}">${V(val)}</td>`; });
+        row.pin.forEach((val, vi) => { body += `<td class="${vi===3?'gbr':''}">${V(val)}</td>`; });
+        body += `<td>${V(row.net)}</td></tr>`;
+      });
+    });
+  });
+  return `
+  <div class="table-scroll" id="tableT2"><table>
+    <thead>
+      <tr>
+        <th class="th-left" rowspan="2">Model</th>
+        <th rowspan="2">Size</th>
+        <th rowspan="2" style="min-width: 120px;">
+          <div>Open Source</div>
+          <div class="table-filter">
+            <div class="filter-btn active" data-v="all" onclick="filterTable('T2','all',this)">All</div>
+            <div class="filter-btn" data-v="open" onclick="filterTable('T2','open',this)">Open</div>
+            <div class="filter-btn" data-v="closed" onclick="filterTable('T2','closed',this)">Closed</div>
+          </div>
+        </th>
+        <th rowspan="2">Setting</th>
+        <th rowspan="2" class="iou-hdr gbr">Average</th>
+        <th colspan="5" class="gbr">Symbol</th>
+        <th colspan="4" class="gbr">Pin</th>
+        <th>Net</th>
+      </tr>
+      <tr>
+        <th>Name</th><th>Name*</th><th>Value</th><th>Value*</th><th class="gbr">Type</th>
+        <th>PinName</th><th>PinName*</th><th>PadName</th><th class="gbr">PadName*</th>
+        <th>NetName</th>
+      </tr>
+    </thead>
+    <tbody>${body}</tbody>
+  </table></div>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BIBTEX
+// ─────────────────────────────────────────────────────────────────────────────
+const BIB_RAW = `@inproceedings{lu2026omnisch,
+  title={OmniSch: A Multimodal PCB Schematic Benchmark For Structured Diagram Visual Reasoning},
+  author={Lu, Taiting and Lin, Kaiyuan and Tian, Yuxin and Wang, Yubo and Wang, Muchuan and Khatri, Sharique and Kartik, Akshit and Wang, Yixi and Rane, Amey Santosh and Wang, Yida and others},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}`;
+
+const BIB_HTML = `<span class="bib-key">@inproceedings</span>{lu2026omnisch,
+  <span class="bib-field">title</span>={<span class="bib-val">OmniSch: A Multimodal PCB Schematic Benchmark For Structured Diagram Visual Reasoning</span>},
+  <span class="bib-field">author</span>={<span class="bib-val">Lu, Taiting and Lin, Kaiyuan and Tian, Yuxin and Wang, Yubo and Wang, Muchuan and Khatri, Sharique and Kartik, Akshit and Wang, Yixi and Rane, Amey Santosh and Wang, Yida and others</span>},
+  <span class="bib-field">booktitle</span>={<span class="bib-val">European Conference on Computer Vision (ECCV)</span>},
+  <span class="bib-field">year</span>={<span class="bib-val">2026</span>}
+}`;
+
+// Open/Closed model sets
+const CLOSED_MODELS = new Set([
+  'GPT-5.2','GPT-5-mini','Claude Sonnet 4.6','Gemini 2.5 Flash','Gemini 3.1 Pro-Preview',
+  'GPT-5 Mini','Claude-Sonnet-4.6','Gemini-2.5-Flash-Lite','Gemini-3.1-Pro-Preview'
+]);
+const OPEN_MODELS   = new Set(['LLaMA 4 Maverick','Ministral 14B','Qwen3-VL 8B','Qwen3-VL-8B (D.S.)','Qwen3-VL-235B-A22B',
+                                'LLaMA-4-Maverick-400B','Ministral-14B','Qwen3-8B-Instruct','Qwen3-VL-8B (D.S)','Classical Vision Pipeline','Human Engineer']);
+function modelType(name) {
+  if (CLOSED_MODELS.has(name)) return 'closed';
+  if (OPEN_MODELS.has(name))   return 'open';
+  return 'open';
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────────────────────────────────
+document.getElementById('app').innerHTML = `
+
+<div class="hero">
+  <h1>OmniSch: A Multimodal PCB Schematic Benchmark<br>For Structured Diagram Visual Reasoning</h1>
+  <div class="hero-authors">
+    Taiting Lu<sup>*1</sup>, Kaiyuan Lin<sup>*1</sup>, Yuxin Tian<sup>2</sup>, Mingjia Wang<sup>4</sup>, Yubo Wang<sup>1</sup>, Muchuan Wang<sup>1</sup>, Sharique Khatri<sup>1</sup>,<br>
+    Akshit Kartik<sup>1</sup>, Amey Santosh Rane<sup>3</sup>, Yixi Wang<sup>1</sup>, Yida Wang<sup>4</sup>, Yifan Yang<sup>†5</sup>, Yi-Chao Chen<sup>4</sup>,<br>
+    Yincheng Jin<sup>3</sup>, Mahanth Gowda<sup>†1</sup>
+  </div>
+  <div class="hero-affil">
+    <sup>1</sup> The Pennsylvania State University &nbsp;|&nbsp;
+    <sup>2</sup> Independent Researcher &nbsp;|&nbsp;
+    <sup>3</sup> Binghamton University &nbsp;|&nbsp;
+    <sup>4</sup> Shanghai Jiao Tong University &nbsp;|&nbsp;
+    <sup>5</sup> Microsoft Asian Research
+  </div>
+  <div class="hero-note"><sup>*</sup> First authors (equal contribution). &nbsp; <sup>†</sup> Corresponding authors.</div>
+  <div class="venue-badge">
+    Accepted at <strong>ECCV 2026</strong>
+  </div>
+  <div class="link-pills">
+    <a class="pill pill-paper" href="https://arxiv.org/abs/2604.00270" target="_blank">${IC.arxiv} arXiv</a>
+    <!-- <a class="pill pill-code"  href="https://github.com/TaitingLu/IMG2SCH" target="_blank">${IC.code} Code</a> -->
+    <!-- <a class="pill pill-data"  href="https://arxiv.org/abs/2604.00270" target="_blank">${IC.data} Data</a> -->
+    <!-- <a class="pill pill-lb"    href="https://arxiv.org/abs/2604.00270" target="_blank">${IC.lb} Huggingface</a> -->
+    <a class="pill pill-disabled" href="#" onclick="showComingSoon(event)">${IC.code} Code</a>
+    <a class="pill pill-data" href="#" onclick="showDataModal(event)">${IC.data} Data</a>
+    <a class="pill pill-disabled" href="#" onclick="showComingSoon(event)">${IC.lb} Huggingface</a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container-wide">
+
+    <h2 class="section-h2" id="leaderboard">Leaderboard on Private data</h2>
+
+    <p class="notice">
+      We aim to update this benchmark regularly and welcome community contributions. If you have open-source models or
+      accessible APIs and would like to share evaluation results, please contact us.
+    </p>
+
+    <h4 class="section-h4">Zero-shot &amp; Ablation Study — Schematic-to-Netlist Generation</h4>
+    <div class="table-block">
+      <p class="table-caption">
+        <strong>Table 1.</strong>
+        <em>Real</em> = original EDA export (DPI 150); <em>Synth.</em> = generated schematic without symbol text;
+        <em>Real Low R.</em> = low-resolution; <em>w/o Txt.</em> = text removed; <em>FewShot.</em> = 5 examples of few-shot prompting.
+        Symbol attributes are evaluated on matched detections only.
+      </p>
+      ${buildT1()}
+    </div>
+
+    <h4 class="section-h4">Agentic Evaluation — Tool-Augmented Visual Search</h4>
+    <div class="table-block">
+      <p class="table-caption">
+        <strong>Table 2.</strong>
+        <em>w/o GT BBox</em> = full-image search (LMM must localize target first);
+        <em>w/ GT BBox</em> = detector-assisted (bounding box provided).
+        Both use generated schematics without symbol text.
+        Δ = relative improvement (%) of w/ GT BBox vs. w/o GT BBox. * = visible-text instances only.
+      </p>
+      ${buildT2()}
+    </div>
+
+  </div>
+</div>
+
+<div class="paper-section" id="paper">
+  <div class="container">
+
+    <div class="paper-title">
+      OmniSch: A Multimodal PCB Schematic Benchmark<br>For Structured Diagram Visual Reasoning
+    </div>
+
+    <div class="figure-wrap">
+      <img class="figure-img" src="imgs/dataset_overview_page1_trimmed.png" alt="Dataset overview first page">
+      <p class="figure-caption">
+        <strong>Figure 1:</strong>
+        Large multimodal models fail to reliably perform core visual understanding tasks on structured schematic diagrams.
+        Errors in component detection, topological connectivity reasoning, and spatial layout interpretation highlight
+        persistent limitations in handling the compositional and relational complexity inherent in schematic diagrams.
+      </p>
+    </div>
+
+    <p class="abstract">
+      Recent large multimodal models (LMMs) have made rapid progress in visual grounding, document understanding,
+      and diagram reasoning tasks. However, their ability to convert Printed Circuit Board (PCB) schematic diagrams
+      into machine-readable spatially weighted netlist graphs—jointly capturing component attributes, connectivity,
+      and geometry—remains largely underexplored, despite such representations being the backbone of practical
+      electronic design automation (EDA) workflows. To bridge this gap, we introduce <strong>OmniSch</strong>,
+      the first comprehensive benchmark designed to assess LMMs on schematic understanding and spatial netlist graph
+      construction. OmniSch contains 11,124 schematic diagrams and includes four tasks: (1) visual grounding for
+      schematic entities; (2) diagram-to-graph reasoning; (3) geometric reasoning; and (4) tool-augmented agentic
+      reasoning for visual search. Our results reveal substantial gaps in current LMMs.
+    </p>
+
+  </div>
+</div>
+
+<div class="bib-section" id="bibtex">
+  <div class="container">
+    <div class="bib-title">BibTeX</div>
+    <div class="bib-wrap">
+      <div class="bib-box"><button class="copy-btn" id="copyBtn" onclick="copyBib()">Copy</button>${BIB_HTML}</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  OmniSch Benchmark &nbsp;·&nbsp; 2026 &nbsp;·&nbsp;
+  Website template inspired by <a href="https://99franklin.github.io/ocrbench_v2/" target="_blank">OCRBench v2</a><br>
+  Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>
+</footer>
+`;
+
+// Update IoU highlight after table is rendered
+updateIouHighlight();
+
+// ─────────────────────────────────────────────────────────────────────────────
+// INTERACTIONS
+// ─────────────────────────────────────────────────────────────────────────────
+function setPeriod(btn, period) {
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function filterTable(tableId, value, btn) {
+  const wrap = btn.closest('.table-filter');
+  wrap.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const tbody = document.querySelector(`#table${tableId} tbody`);
+  tbody.querySelectorAll('tr[data-type]').forEach(tr => {
+    if (value === 'all' || tr.dataset.type === value) {
+      tr.style.display = '';
+    } else {
+      tr.style.display = 'none';
+    }
+  });
+  updateIouHighlight();
+}
+
+function copyBib() {
+  navigator.clipboard.writeText(BIB_RAW).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  }).catch(() => {
+    const el = document.createElement('textarea');
+    el.value = BIB_RAW;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+function showComingSoon(event) {
+  event.preventDefault();
+  window.alert('To be announced.');
+}
+
+function updateIouHighlight() {
+  // Use setTimeout to ensure layout is complete
+  setTimeout(() => {
+    ['T1', 'T2'].forEach(suffix => {
+      const table = document.querySelector(`#table${suffix} table`);
+      if (!table) return;
+      const firstRow = [...table.querySelectorAll('tbody tr[data-type]')].find(tr => tr.offsetParent !== null);
+      if (!firstRow) {
+        table.style.setProperty('--iou-width', '0px');
+        return;
+      }
+      const iouCell = firstRow.querySelector('td.iou-cell');
+      if (!iouCell) return;
+      const tableRect = table.getBoundingClientRect();
+      const cellRect = iouCell.getBoundingClientRect();
+      const left = cellRect.left - tableRect.left;
+      const width = cellRect.width;
+      table.style.setProperty('--iou-left', `${left}px`);
+      table.style.setProperty('--iou-width', `${width}px`);
+    });
+  }, 100);
+}
+
+function showDataModal(event) {
+  event.preventDefault();
+  document.getElementById('dataModal').classList.add('open');
+}
+function closeDataModal() {
+  document.getElementById('dataModal').classList.remove('open');
+}
+
+// Close modal on overlay click
+document.addEventListener('click', function(e) {
+  const overlay = document.getElementById('dataModal');
+  if (e.target === overlay) closeDataModal();
+});
+
+window.addEventListener('resize', updateIouHighlight);
+document.addEventListener('DOMContentLoaded', updateIouHighlight);
+</script>
+<!-- DATA MODAL -->
+<div class="modal-overlay" id="dataModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeDataModal()">✕</button>
+    <div class="modal-title">OmniSch Dataset</div>
+    <div class="modal-sub">Download links for the OmniSch benchmark datasets.</div>
+    <div class="modal-section-label">Available Downloads</div>
+    <div class="modal-dataset-card">
+      <div class="modal-card-left">
+        <div class="modal-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="modal-card-name">OmniSch Dataset</div>
+          <div class="modal-card-desc">PCB schematic benchmark — Google Drive</div>
+        </div>
+      </div>
+      <a class="modal-dl-btn" href="https://drive.google.com/file/d/1GRPNowJNRixrFIWvS7YSkhp_k7erUV6y/view" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

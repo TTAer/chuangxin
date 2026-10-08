@@ -1,0 +1,17 @@
+{
+  "scope": "new synthetic programs; no independent real accuracy",
+  "model": "RadialEvidenceNet, eight sectors x eight radial bands, shared MLP mean/max angular pooling",
+  "paired": "same model/training, raw source-frame vs nonuniform rectified patches",
+  "train": "4096 pages half uniform half jitter +/-4, scale.55:1 width1:7 blur.2:.8 noise2:5",
+  "dev": "256 disjoint pages same style",
+  "tiny": "4 separate pages, final active crossing accuracy100% required",
+  "pressure": "256 disjoint jitter +/-4 scale.55:.85 blur.9:1.2 noise5; not selection",
+  "rotation": "128 unsupported +/-8:15 degrees; no training",
+  "selection": "dev crossing accuracy only, first best epoch, each8 epochs batch512 lr.001",
+  "composition": "frozen ContrastOnlyReader prefix+interval, learned crossing overwrite only observed slots already active in neural prefix",
+  "gate": "pressure coverage>=.90 exact-net>=.95 F1>=.98; net-exact gain>=.01 over same-page frozen baseline; unsupported acceptance<=.05",
+  "tiny_steps": 400,
+  "seed": 20261021,
+  "real_labels": false,
+  "RC0_changed": false
+}

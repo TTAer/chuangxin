@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "XOR"
+    },
+    {
+      "id": "gate_1",
+      "type": "XOR"
+    },
+    {
+      "id": "gate_2",
+      "type": "NOT"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_0",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_1"
+    }
+  ],
+  "image_path": "images/lb1k_00684.jpg"
+}

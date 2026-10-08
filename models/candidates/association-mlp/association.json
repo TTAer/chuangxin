@@ -1,0 +1,40 @@
+{
+  "architecture": "GEA-Net: relation-specific pin/component and pin/observed-wire-group message passing + edge decoder",
+  "layers": 0,
+  "hidden": 48,
+  "negative_threshold": -0.01,
+  "negative_selection": {},
+  "metrics": {
+    "f1": 0.9695533534396094,
+    "precision": 0.9426137950293214,
+    "recall": 0.9980780603193377,
+    "tp": 6751,
+    "fp": 411,
+    "fn": 13
+  },
+  "training": {
+    "graphs": 888,
+    "pages": {
+      "train": 241,
+      "validation": 55
+    },
+    "counts": {
+      "train": {
+        "positive": 29734,
+        "negative": 2272
+      },
+      "validation": {
+        "positive": 6764,
+        "negative": 434
+      }
+    },
+    "excluded": [
+      "0237"
+    ],
+    "skipped": {},
+    "supervision": "source net membership with synthetic 2.5-7 pixel endpoint displacement; oracle symbols and wires; not end-to-end performance",
+    "official_gt10_used": false
+  },
+  "evaluation": "page-held-out oracle/jitter validation used for checkpoint and threshold selection; not independent end-to-end test",
+  "policy": "negative veto only; uncertain predictions abstain; all image/topology/circuit gates retained"
+}

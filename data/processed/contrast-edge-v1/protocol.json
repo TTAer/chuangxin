@@ -1,0 +1,13 @@
+{
+  "scope": "finite grid, image-only geometry guard and registration, real accuracy unverified",
+  "training": "scale .55:1, widths1..7, blur.2:.8, brightness.5:1, noise2:5",
+  "development": "same style, disjoint programs",
+  "pressure": "scale .55:.85, widths1..7, unseen blur.9:1.2, noise5",
+  "unsupported": "256 new shear .12:.2 pages, not training",
+  "models": "fresh contrast-only and contrast+signed Sobel heads; same budget and bank",
+  "gate": "pressure full F1>=.95 and exact net partition>=.90; geometry shear acceptance<=.05",
+  "training_budget": "each tiny400 final gate then8epochs4096 images batch16",
+  "selection": "each model dev F1 then exact-program, no pressure selection",
+  "GT_used_for_geometry": false,
+  "RC0_changed": false
+}

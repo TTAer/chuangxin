@@ -1,0 +1,86 @@
+* SPICE netlist generated from 0097-other_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_11 U1
+XU1 NET_E_23 NET_E_15 0 NET_E_5 NET_E_7 NET_E_9 NET_E_11 NET_E_1 U1
+XU2 NET_E_22 NET_E_10 0 NET_E_12 NET_E_2 NET_E_3 NET_E_6 NET_E_8 U2
+XC2 NET_E_12 NET_E_6 C2
+R1 0 0 1k
+D1 NET_E_17 NET_E_12 DMOD
+C4 0 NET_E_5 1n
+R2 NET_E_3 NET_E_25 1k
+D2 NET_E_6 NET_E_8 DMOD
+R3 NET_E_26 NET_E_1 1k
+C3 NET_E_11 NET_E_27 1n
+D3 NET_E_27 NET_E_5 DMOD
+C1 0 NET_E_8 1n
+MQ1 NET_E_25 0 NET_E_12 MMOD
+D4 NET_E_12 0 DMOD
+R4 NET_E_28 NET_E_7 1k
+D5 NET_E_11 0 DMOD
+D6 NET_E_18 NET_E_11 DMOD
+R5 NET_E_2 NET_E_14 1k
+MQ2 NET_E_12 NET_E_18 MMOD
+MQ3 NET_E_11 0 MMOD
+XC5 0 NET_E_30 C5
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅294" 为参数值形态或无效，已回退自动命名） : P_1(C_11) P_2(C_2)
+* E_2 = NET_E_2（原 netlabel "∅295" 为参数值形态或无效，已回退自动命名） : P_33(C_3) P_34(C_38)
+* E_3 = NET_E_3（原 netlabel "∅296" 为参数值形态或无效，已回退自动命名） : P_45(C_3) P_46(C_9)
+* E_4 = 0 : P_47(C_22) P_48(C_7)
+* E_5 = NET_E_5（原 netlabel "∅298" 为参数值形态或无效，已回退自动命名） : P_49(C_13) P_50(C_2) P_51(C_40) P_52(C_7)
+* E_6 = NET_E_6（原 netlabel "∅299" 为参数值形态或无效，已回退自动命名） : P_53(C_10) P_54(C_3) P_55(C_4)
+* E_7 = NET_E_7（原 netlabel "∅300" 为参数值形态或无效，已回退自动命名） : P_56(C_2) P_57(C_31)
+* E_8 = NET_E_8（原 netlabel "∅301" 为参数值形态或无效，已回退自动命名） : P_58(C_10) P_59(C_14) P_60(C_3) P_61(C_43)
+* E_9 = NET_E_9（原 netlabel "∅302" 为参数值形态或无效，已回退自动命名） : P_62(C_12) P_63(C_2)
+* E_10 = NET_E_10（原 netlabel "∅303" 为参数值形态或无效，已回退自动命名） : P_3(C_3) P_4(C_48)
+* E_11 = NET_E_11（原 netlabel "∅304" 为参数值形态或无效，已回退自动命名） : P_5(C_1) P_6(C_12) P_7(C_2) P_8(C_32) P_9(C_34) P_10(C_49)
+* E_12 = NET_E_12（原 netlabel "∅305" 为参数值形态或无效，已回退自动命名） : P_11(C_17) P_12(C_28) P_13(C_3) P_14(C_4) P_15(C_47) P_16(C_6)
+* E_13 = 0 : P_17(C_17) P_18(C_28) P_19(C_32) P_20(C_45) P_21(C_49)
+* E_14 = NET_E_14（原 netlabel "∅307" 为参数值形态或无效，已回退自动命名） : P_22(C_38)
+* E_15 = NET_E_15（原 netlabel "∅308" 为参数值形态或无效，已回退自动命名） : P_23(C_2) P_24(C_44)
+* E_16 = 0 : P_25(C_19) P_26(C_3)
+* E_17 = NET_E_17（原 netlabel "∅310" 为参数值形态或无效，已回退自动命名） : P_27(C_6)
+* E_18 = NET_E_18（原 netlabel "∅311" 为参数值形态或无效，已回退自动命名） : P_28(C_34) P_29(C_41) P_30(C_47)
+* E_19 = 0 : P_31(C_27) P_32(C_5)
+* E_20 = 0 : P_35(C_2) P_36(C_25)
+* E_21 = 0 : P_37(C_46) P_38(C_5)
+* E_22 = NET_E_22（原 netlabel "∅315" 为参数值形态或无效，已回退自动命名） : P_39(C_16) P_40(C_3)
+* E_23 = NET_E_23（原 netlabel "∅316" 为参数值形态或无效，已回退自动命名） : P_41(C_18) P_42(C_2)
+* E_24 = 0 : P_43(C_14) P_44(C_20)
+* E_25 = NET_E_25（原 netlabel "∅318" 为参数值形态或无效，已回退自动命名） : P_64(C_9) P_65(C_17)
+* E_26 = NET_E_26（原 netlabel "∅319" 为参数值形态或无效，已回退自动命名） : P_68(C_11)
+* E_27 = NET_E_27（原 netlabel "∅320" 为参数值形态或无效，已回退自动命名） : P_69(C_13) P_62(C_12)
+* E_28 = NET_E_28（原 netlabel "∅321" 为参数值形态或无效，已回退自动命名） : P_71(C_31)
+* E_29 = 0 : P_72(C_37) P_73(C_50)
+* E_30 = NET_E_30（原 netlabel "∅323" 为参数值形态或无效，已回退自动命名） : P_74(C_50) P_75(C_36)
+
+* ---- 待确认项 ----
+* 未映射类型 CIRCLE_HEADER（C_1 U1），按 X 子电路输出
+* 待人工确认: C_1 designator="∅80" value="∅79" type=CIRCLE_HEADER
+* 待人工确认: C_2 designator="U1" value="∅83" type=Box
+* 待人工确认: C_3 designator="U2" value="∅87" type=Box
+* 待人工确认: C_4 designator="C2" value="∅93" type=Crystal_2Pin
+* 待人工确认: C_5 designator="R1" value="∅99" type=R
+* 待人工确认: C_6 designator="D1" value="∅106" type=D
+* 待人工确认: C_7 designator="C4" value="∅113" type=C
+* 待人工确认: C_9 designator="R2" value="∅119" type=R
+* 待人工确认: C_10 designator="D2" value="∅126" type=D
+* 待人工确认: C_11 designator="R3" value="∅133" type=R
+* 待人工确认: C_12 designator="C3" value="∅140" type=C
+* 待人工确认: C_13 designator="D3" value="∅146" type=D
+* 待人工确认: C_14 designator="C1" value="∅153" type=C
+* 待人工确认: C_17 designator="Q1" value="∅166" type=MOSFET_NPN
+* 待人工确认: C_28 designator="D4" value="∅203" type=D
+* 待人工确认: C_31 designator="R4" value="∅210" type=R
+* 待人工确认: C_32 designator="D5" value="∅217" type=D
+* 待人工确认: C_34 designator="D6" value="∅224" type=D
+* 待人工确认: C_38 designator="R5" value="∅241" type=R
+* 待人工确认: C_47 designator="Q2" value="∅274" type=MOSFET_PNP
+* 待人工确认: C_49 designator="Q3" value="∅285" type=MOSFET_NPN
+* 待人工确认: C_50 designator="C5" value="∅292" type=Crystal_2Pin
+
+.end

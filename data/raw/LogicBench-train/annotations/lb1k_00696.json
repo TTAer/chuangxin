@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "XNOR"
+    },
+    {
+      "id": "gate_1",
+      "type": "XNOR"
+    },
+    {
+      "id": "gate_2",
+      "type": "XNOR"
+    },
+    {
+      "id": "gate_3",
+      "type": "OR"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_3",
+      "target": "gate_0"
+    },
+    {
+      "source": "gate_3",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_3",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_0",
+      "target": "gate_3"
+    }
+  ],
+  "image_path": "images/lb1k_00696.jpg"
+}

@@ -1,0 +1,92 @@
+* SPICE netlist generated from 0160-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU19 EN NET_E_8 NET_E_4 0 NET_E_2 NET_E_5 U19
+R39 联网模组供电 NET_E_23 1k
+R48 0 NET_E_8 200k
+XU9 0 NET_E_26 U9
+R50 NET_E_3 NET_E_1 10k
+R46 0 EN 1M
+MQ8 NET_E_3 NET_E_7 NET_E_1 MMOD
+XU15 0 NET_E_32 NET_E_31 U15
+C45 联网模组供电 100n
+R47 NET_E_8 NET_E_2 450k
+MQ1 NET_E_18 NET_E_20 NET_E_17 MMOD
+C52 0 NET_E_4 1u
+R42 NET_E_24 NET_E_21 1M
+C46 联网模组供电 联网模组供电 10p
+C44 0 联网模组供电 1n
+C16 0 联网模组供电 33p
+R49 M_GVC NET_E_3 1k
+R43 NET_E_27 NET_E_24 1M
+R44 0 NET_E_27 1M
+C50 0 NET_E_4 100u
+R2 NET_E_18 NET_E_17 10k
+D4 NET_E_2 0 DMOD
+D3 联网模组供电 0 DMOD
+C48 0 NET_E_27 100n
+L2 NET_E_4 NET_E_5 3.3uH
+R8 M_VCC NET_E_18 1k
+C42 0 NET_E_32 100n
+C41 0 NET_E_31 1n
+C1 0 NET_E_2 47u
+XU54 NET_E_2 U54
+XSW1 NET_E_1 NET_E_7 SW1
+XSW2 NET_E_17 NET_E_20 SW2
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅400" 为参数值形态或无效，已回退自动命名） : P_12(C_10) P_13(C_29) P_14(C_55) P_15(C_7)
+* E_2 = NET_E_2（原 netlabel "∅401" 为参数值形态或无效，已回退自动命名） : P_32(C_13) P_33(C_2) P_34(C_33) P_35(C_36) P_36(C_50) P_37(C_54)
+* E_3 = NET_E_3（原 netlabel "∅402" 为参数值形态或无效，已回退自动命名） : P_68(C_10) P_69(C_26) P_70(C_7)
+* E_4 = NET_E_4（原 netlabel "∅403" 为参数值形态或无效，已回退自动命名） : P_81(C_18) P_82(C_2) P_83(C_31) P_84(C_35) P_85(C_41)
+* E_5 = NET_E_5（原 netlabel "∅404" 为参数值形态或无效，已回退自动命名） : P_86(C_2) P_87(C_41)
+* E_6 = M_GVC : P_88(C_26)
+* E_7 = NET_E_7（原 netlabel "∅405" 为参数值形态或无效，已回退自动命名） : P_89(C_10) P_90(C_46) P_91(C_55)
+* E_8 = NET_E_8（原 netlabel "∅406" 为参数值形态或无效，已回退自动命名） : P_92(C_13) P_93(C_2) P_94(C_4)
+* E_11 = EN : P_16(C_2) P_17(C_8)
+* E_12 = 0 : P_18(C_25) P_19(C_31)
+* E_13 = 0 : P_20(C_17) P_21(C_2)
+* E_14 = 0 : P_22(C_18) P_23(C_22)
+* E_17 = NET_E_17（原 netlabel "∅410" 为参数值形态或无效，已回退自动命名） : P_24(C_16) P_25(C_32) P_26(C_43) P_27(C_56)
+* E_18 = NET_E_18（原 netlabel "∅411" 为参数值形态或无效，已回退自动命名） : P_28(C_16) P_29(C_32) P_30(C_47)
+* E_19 = M_VCC : P_31(C_47)
+* E_20 = NET_E_20（原 netlabel "∅412" 为参数值形态或无效，已回退自动命名） : P_38(C_16) P_39(C_53) P_40(C_56)
+* E_21 = NET_E_21（原 netlabel "∅413" 为参数值形态或无效，已回退自动命名） : P_41(C_19) P_42(C_37)
+* E_22 = 联网模组供电 : P_43(C_20) P_44(C_21) P_45(C_21) P_46(C_23) P_47(C_24) P_48(C_3) P_49(C_39) P_104(C_12)
+* E_23 = NET_E_23（原 netlabel "∅414" 为参数值形态或无效，已回退自动命名） : P_50(C_3) P_51(C_44)
+* E_24 = NET_E_24（原 netlabel "∅415" 为参数值形态或无效，已回退自动命名） : P_52(C_19) P_53(C_28)
+* E_25 = 0 : P_54(C_14) P_56(C_23) P_57(C_24) P_58(C_39)
+* E_26 = NET_E_26（原 netlabel "∅417" 为参数值形态或无效，已回退自动命名） : P_59(C_5) P_60(C_52)
+* E_27 = NET_E_27（原 netlabel "∅418" 为参数值形态或无效，已回退自动命名） : P_61(C_28) P_62(C_30) P_63(C_38) P_64(C_40)
+* E_28 = 0 : P_65(C_5)
+* E_29 = 0 : P_66(C_27) P_67(C_40)
+* E_30 = 0 : P_71(C_30) P_72(C_34)
+* E_31 = NET_E_31（原 netlabel "∅421" 为参数值形态或无效，已回退自动命名） : P_73(C_11) P_74(C_42) P_106(C_49)
+* E_32 = NET_E_32（原 netlabel "∅422" 为参数值形态或无效，已回退自动命名） : P_75(C_11) P_76(C_45) P_105(C_48)
+* E_33 = 0 : P_77(C_11) P_78(C_48) P_79(C_49) P_80(C_51)
+* E_34 = 0 : P_95(C_1) P_96(C_50)
+* E_36 = 0 : P_98(C_4) P_99(C_6)
+* E_37 = 0 : P_100(C_8) P_101(C_15)
+* E_38 = 0 : P_102(C_9) P_103(C_36)
+
+* ---- 待确认项 ----
+* 待人工确认: C_2 designator="U19" value="∅140" type=Box
+* 待人工确认: C_3 designator="R39" value="∅145" type=R
+* 待人工确认: C_5 designator="U9" value="∅153" type=Box
+* 待人工确认: C_10 designator="Q8" value="∅178" type=MOSFET_NPN
+* 待人工确认: C_11 designator="U15" value="∅182" type=Box
+* 待人工确认: C_16 designator="Q1" value="∅205" type=MOSFET_NPN
+* 待人工确认: C_23 designator="C44" value="∅239" type=C
+* 待人工确认: C_36 designator="D4" value="∅300" type=D
+* 待人工确认: C_39 designator="D3" value="∅315" type=D
+* 待人工确认: C_49 designator="C41" value="∅361" type=C
+* 未映射类型 Block（C_54 U54），按 X 子电路输出
+* 待人工确认: C_54 designator="∅384" value="∅383" type=Block
+* 未映射类型 Switch（C_55 SW1），按 X 子电路输出
+* 待人工确认: C_55 designator="SW1" value="∅390" type=Switch
+* 未映射类型 Switch（C_56 SW2），按 X 子电路输出
+* 待人工确认: C_56 designator="SW2" value="∅397" type=Switch
+
+.end

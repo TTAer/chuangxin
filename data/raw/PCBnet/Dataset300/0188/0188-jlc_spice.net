@@ -1,0 +1,57 @@
+* SPICE netlist generated from 0188-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU4 MOSI NET_E_34 0 NET_E_13 NET_E_31 MISO NET_E_29 NRESET NET_E_50 NSS SCK 0 MOTION U4
+XSW3 0 ENC_1 ENC_2 SW3
+C15 0 NET_E_31 4.7u
+C12 0 NET_E_13 100n
+C18 0 NET_E_12 100n
+C13 0 NET_E_13 10u
+R14 NRESET NET_E_42 1k
+R13 MISO NET_E_43 10K
+C17 0 NET_E_40 10u
+C19 0 NET_E_12 10u
+C16 0 NET_E_34 100n
+C14 0 NET_E_32 100n
+R21 ENC_2 NET_E_2 1k
+R20 ENC_1 NET_E_2 10K
+
+* ---- 网络对照（edge -> 节点） ----
+* E_2 = NET_E_2（原 netlabel "∅171" 为参数值形态或无效，已回退自动命名） : P_11(C_16) P_12(C_19) P_56(C_26)
+* E_5 = ENC_2 : P_42(C_2) P_24(C_16)
+* E_10 = 0 : P_1(C_18) P_2(C_2)
+* E_11 = ENC_1 : P_3(C_2) P_38(C_19)
+* E_12 = NET_E_12（原 netlabel "∅173" 为参数值形态或无效，已回退自动命名） : P_4(C_23) P_45(C_10) P_10(C_5)
+* E_13 = NET_E_13（原 netlabel "∅174" 为参数值形态或无效，已回退自动命名） : P_5(C_1) P_6(C_24) P_7(C_6) P_9(C_4)
+* E_21 = 0 : P_13(C_4) P_14(C_6) P_48(C_15)
+* E_22 = NET_E_22（原 netlabel "∅176" 为参数值形态或无效，已回退自动命名） : P_15(C_7)
+* E_23 = 0 : P_16(C_10) P_17(C_5) P_46(C_13)
+* E_24 = MISO : P_18(C_1) P_19(C_8)
+* E_25 = NRESET : P_20(C_1) P_15(C_7)
+* E_28 = 0 : P_21(C_1) P_22(C_21)
+* E_29 = NET_E_29（原 netlabel "5.6" 为参数值形态或无效，已回退自动命名） : P_23(C_1)
+* E_30 = NSS : P_25(C_1)
+* E_31 = NET_E_31（原 netlabel "∅179" 为参数值形态或无效，已回退自动命名） : P_26(C_1) P_27(C_3)
+* E_32 = NET_E_32（原 netlabel "∅180" 为参数值形态或无效，已回退自动命名） : P_28(C_12)
+* E_33 = SCK : P_29(C_1)
+* E_34 = NET_E_34（原 netlabel "∅181" 为参数值形态或无效，已回退自动命名） : P_30(C_1) P_31(C_11)
+* E_35 = MOSI : P_32(C_1)
+* E_36 = 0 : P_33(C_12) P_34(C_3) P_49(C_17)
+* E_37 = 0 : P_35(C_1) P_36(C_20)
+* E_38 = MOTION : P_37(C_1)
+* E_40 = NET_E_40（原 netlabel "∅184" 为参数值形态或无效，已回退自动命名） : P_39(C_9) P_55(C_25)
+* E_41 = 0 : P_40(C_11) P_41(C_9) P_47(C_14)
+* E_42 = NET_E_42（原 netlabel "∅186" 为参数值形态或无效，已回退自动命名） : P_43(C_7)
+* E_43 = NET_E_43（原 netlabel "∅187" 为参数值形态或无效，已回退自动命名） : P_44(C_8) P_8(C_22)
+* E_50 = NET_E_50（原 netlabel "∅188" 为参数值形态或无效，已回退自动命名） : P_57(C_1)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U4" value="∅44" type=Box
+* 未映射类型 Switch（C_2 SW3），按 X 子电路输出
+* 待人工确认: C_2 designator="SW3" value="∅51" type=Switch
+* 待人工确认: C_7 designator="R14" value="∅77" type=R
+* 待人工确认: C_16 designator="R21" value="∅123" type=R
+
+.end

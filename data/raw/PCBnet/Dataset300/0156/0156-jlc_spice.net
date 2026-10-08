@@ -1,0 +1,42 @@
+* SPICE netlist generated from 0156-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+R31 ADC_TEST BAT_ 100k
+C13 BAT_ BAT_ 1n
+R30 VCC_IN VCC_SYS 1k
+R32 BAT_ ADC_TEST 350k
+C11 0 VCC_SYS 10u
+XUSB1 0 B5 B9 0 0 USB1
+C12 BAT_ BAT_ 10u
+XU1 BAT_ REST NET_E_19 MT1 MT2 0 0 BAT_ U1
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = 0 : P_1(C_13) P_2(C_14)
+* E_2 = 0 : P_27(C_13) P_28(C_16)
+* E_3 = 0 : P_29(C_10) P_30(C_10) P_31(C_10) P_32(C_15)
+* E_4 = BAT_ : P_33(C_13)
+* E_5 = BAT_ : P_34(C_13)
+* E_6 = REST : P_35(C_13)
+* E_7 = MT1 : P_36(C_13)
+* E_8 = MT2 : P_37(C_13)
+* E_9 = VCC_IN : P_38(C_3)
+* E_10 = VCC_SYS : P_3(C_11) P_4(C_3) P_5(C_8)
+* E_11 = B5 : P_6(C_10) P_7(C_17)
+* E_12 = 0 : P_8(C_6) P_9(C_8)
+* E_13 = B9 : P_10(C_10) P_11(C_18)
+* E_14 = BAT_ : P_12(C_1) P_13(C_11) P_14(C_12) P_15(C_2) P_16(C_9)
+* E_15 = VCC_BAT : P_17(C_9)
+* E_16 = ADC_TEST : P_18(C_1) P_19(C_4)
+* E_17 = BAT_ : P_20(C_12) P_21(C_2) P_22(C_4) P_23(C_5) P_24(C_5)
+* E_18 = 0 : P_25(C_5) P_26(C_7)
+* E_19 = NET_E_19（原 netlabel "∅173" 为参数值形态或无效，已回退自动命名） : P_39(C_13)
+
+* ---- 待确认项 ----
+* 待人工确认: C_2 designator="C13" value="∅74" type=C
+* 待人工确认: C_3 designator="R30" value="∅80" type=R
+* 待人工确认: C_10 designator="USB1" value="∅122" type=Box
+* 待人工确认: C_13 designator="U1" value="∅143" type=Box
+
+.end

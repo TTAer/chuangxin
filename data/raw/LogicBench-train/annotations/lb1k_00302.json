@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_1",
+      "type": "AND"
+    },
+    {
+      "id": "gate_2",
+      "type": "OR"
+    },
+    {
+      "id": "gate_3",
+      "type": "OR"
+    },
+    {
+      "id": "gate_4",
+      "type": "NOT"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_4"
+    },
+    {
+      "source": "gate_4",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_1",
+      "target": "gate_3"
+    }
+  ],
+  "image_path": "images/lb1k_00302.jpg"
+}

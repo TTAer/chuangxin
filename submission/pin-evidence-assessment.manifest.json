@@ -1,0 +1,626 @@
+{
+  "artifact": "evidence-gated local OCR assessment, not competition runtime; requires existing project data",
+  "frozen_verified": {
+    "data/splits/rc0-evaluation.json": 53,
+    "data/splits/pin-token-v1-frozen.json": 89,
+    "data/splits/pin-token-residual-frozen.json": 215
+  },
+  "function_tests_passed": 118,
+  "new_training": false,
+  "local_ocr_commit_runtime_enabled": false,
+  "residual_runtime_enabled": false,
+  "default_promoted": false,
+  "freeze_a_ready": false,
+  "reviewed_correctable_HRR": null,
+  "third_party_images_included": false,
+  "files": {
+    "data/processed/FreezeA-A1-candidates/audit.json": {
+      "sha256": "69ac08e2cdb52d6be985046c6d86ce0f9fb607720d9b1a6227da8943ef650065",
+      "bytes": 70910
+    },
+    "data/splits/pin-token-residual-frozen.json": {
+      "sha256": "781fe015afca4ec5cffb12231accf48c6fb65614788d3598696827bb2e11017e",
+      "bytes": 26694
+    },
+    "data/splits/pin-token-v1-frozen.json": {
+      "sha256": "c7b8b0448d33ae347236868a0cba0c0662a948e9776246cfeb2ceb32425af622",
+      "bytes": 10699
+    },
+    "data/splits/rc0-evaluation.json": {
+      "sha256": "9ac38232be2f1f662a0f87f0df7bc37f7859c48bd734ddf494fa463b5027075f",
+      "bytes": 7613
+    },
+    "docs/FREEZE_A1_PROGRESS.md": {
+      "sha256": "1f0c003caf6746dac716509fdf80b0aa92b159fa5f683d12ccbe7285438a53ac",
+      "bytes": 4423
+    },
+    "docs/HARD56_REVIEW_DRAFT.md": {
+      "sha256": "52f83cf14782a7e0a4200bdba798788928d002f35056e421395c9edc5f1bade1",
+      "bytes": 2096
+    },
+    "docs/PIN_EVIDENCE_IMPROVEMENT_PLAN.md": {
+      "sha256": "7ff6cfba36ba3183d47bc0736e90e0bbea031cae9df520689e83409290e68b99",
+      "bytes": 6658
+    },
+    "experiments/local_pin_evidence.py": {
+      "sha256": "dd648dfa3979bbec4d46080ec818bfafa28c46b368de21b38a6a10fe354c753a",
+      "bytes": 7386
+    },
+    "output/ablation/hard56-review-draft.json": {
+      "sha256": "d6b792ec258bd8bb0c01d9e6291c240fc548f4d516f47e0e6112a474cb715a2f",
+      "bytes": 98015
+    },
+    "output/ablation/hard56-review.html": {
+      "sha256": "1b3afe154d75d3c8de35b6897bd4942ba5fb3e23a1ea7521f64e869185be44aa",
+      "bytes": 60850
+    },
+    "output/local-pin-evidence/gt10/1/prediction.json": {
+      "sha256": "2ee0d6f84b7f9275184f91f749c15adb25405a4649bcc77ac704796743c0b768",
+      "bytes": 33437
+    },
+    "output/local-pin-evidence/gt10/1/report.json": {
+      "sha256": "34ea2e08e1fe0c1dc6866b11dcf268d6961c49c167620e47ab9b2e66651f9d6c",
+      "bytes": 802
+    },
+    "output/local-pin-evidence/gt10/10/prediction.json": {
+      "sha256": "849cbcd684a62b7cf63b8a0aec7e2379427bfaf00bc5547a8b70c062e6a577cd",
+      "bytes": 32363
+    },
+    "output/local-pin-evidence/gt10/10/report.json": {
+      "sha256": "7e91777014386689c40812269eea64d1e1c753f52b0678772e9ff13f7ceea2e3",
+      "bytes": 3294
+    },
+    "output/local-pin-evidence/gt10/2/prediction.json": {
+      "sha256": "ef3382b0186ef2b5ad8dcb38915d308c258d91a09d3702fa0fe8cb4964b97916",
+      "bytes": 26544
+    },
+    "output/local-pin-evidence/gt10/2/report.json": {
+      "sha256": "ef6696ee35005c23fca3703ca8459e9c1e5d798b9ea8d651b1c99eb589d2626a",
+      "bytes": 999
+    },
+    "output/local-pin-evidence/gt10/3/prediction.json": {
+      "sha256": "b34714f5ff7e7eb0c7370932dd72ac143837c7bbac112f26168e29d30856cbd6",
+      "bytes": 20568
+    },
+    "output/local-pin-evidence/gt10/3/report.json": {
+      "sha256": "f8083751fccdc67266c60a60bb08e3896f66d0a877cbacc5737c7f36019dab43",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/gt10/4/prediction.json": {
+      "sha256": "6cc2a74f66e107739824b49f2a39d9b81a5939b49f033703bf1891e4265eba81",
+      "bytes": 18812
+    },
+    "output/local-pin-evidence/gt10/4/report.json": {
+      "sha256": "1fe8142f77dc01843201e269ce4b28be3d1be66e825c1a5a3165bf52aa72656f",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/gt10/5/prediction.json": {
+      "sha256": "214637bb7e3a124f5bf1d64b93d0fccb2e8309b84d32d9da8d34261e6c516bb0",
+      "bytes": 22847
+    },
+    "output/local-pin-evidence/gt10/5/report.json": {
+      "sha256": "5c6218aa7e15ebe2421b795ff4be61be54dc6e020afc9e1eed46dd6f47e29255",
+      "bytes": 1426
+    },
+    "output/local-pin-evidence/gt10/6/prediction.json": {
+      "sha256": "54637f8a980b1220c53a422fd76dbbeebeed97752dc045241bd3a596fdc7c4a9",
+      "bytes": 34454
+    },
+    "output/local-pin-evidence/gt10/6/report.json": {
+      "sha256": "6f9b1ecbf73d2c54a254689c3a53da1ca2131af2d85aabb3c7846a451135bef2",
+      "bytes": 967
+    },
+    "output/local-pin-evidence/gt10/7/prediction.json": {
+      "sha256": "4c795f884bebbfa8683b5ff1f68bf2f41942ff0c79efc177f754a69aa433308c",
+      "bytes": 26101
+    },
+    "output/local-pin-evidence/gt10/7/report.json": {
+      "sha256": "ea863e9bf3ca42fd4ddca2c1c5d2d59087cf1f4013baf41677300a5209f8642e",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/gt10/8/prediction.json": {
+      "sha256": "5abb9970fd3ba1023c169c5b8e98fdb32883a42d511a23ce845c8a348b17abd7",
+      "bytes": 22121
+    },
+    "output/local-pin-evidence/gt10/8/report.json": {
+      "sha256": "ee8f444c0b67bf178587ccd5bde61283d58a2d604f128d5e9e8360910f4c6b41",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/gt10/9/prediction.json": {
+      "sha256": "d3d61a027da5a94f67dd5e5bd4c9c5e2ff57170bf3819f6f28c8d14feb4cb5a9",
+      "bytes": 16730
+    },
+    "output/local-pin-evidence/gt10/9/report.json": {
+      "sha256": "7f1e4720acde964205a7583c94889903b1771f7b876559d822fd950cd6d62cf5",
+      "bytes": 1185
+    },
+    "output/local-pin-evidence/gt10/progress.json": {
+      "sha256": "3328f6663abea56541373fa8b7b381ed68a82eab7cfd3f4e03fa8cf580793114",
+      "bytes": 13940
+    },
+    "output/local-pin-evidence/gt10/summary.json": {
+      "sha256": "04c88b246d2f6b121b5826c65b0ed91fb3ad9408c1a1ed176b6496ae7eb42e1e",
+      "bytes": 15080
+    },
+    "output/local-pin-evidence/pcb55/0005/prediction.json": {
+      "sha256": "27dfbfee0e5595d6c1872f49c9e6ee59c1647401537889c5fd731966313a0f42",
+      "bytes": 8995
+    },
+    "output/local-pin-evidence/pcb55/0005/report.json": {
+      "sha256": "7287383a2610cfd75c809f282818242848a335b7b6b6a5f5e032e6e11122bac0",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0006/prediction.json": {
+      "sha256": "83401e5d9b40d07e9f50de22e0703cab5cf2facb7770019daf4a312b5f0c5476",
+      "bytes": 58026
+    },
+    "output/local-pin-evidence/pcb55/0006/report.json": {
+      "sha256": "d97e05b2eb651c924f0304f2a75d086f1848a8e572db75e26f13c71449719ccb",
+      "bytes": 6563
+    },
+    "output/local-pin-evidence/pcb55/0007/prediction.json": {
+      "sha256": "21aa3faede1848ac911a216dd51c5eab737625f1e187da459b25de4d7dc06cf9",
+      "bytes": 14081
+    },
+    "output/local-pin-evidence/pcb55/0007/report.json": {
+      "sha256": "a0abc2f9ea4b23488dc3a363b18da28d64df9ae4363382f54eb1783b7096154c",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0021/prediction.json": {
+      "sha256": "bdae375258c9efcaf2c819b726b48684fe5a9ded3c77efd4eff1e7e25c91dd35",
+      "bytes": 7008
+    },
+    "output/local-pin-evidence/pcb55/0021/report.json": {
+      "sha256": "d627ed76e0afe92f2ab5493a24711782492528ecccfc09da7a0b232cb895d396",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0032/prediction.json": {
+      "sha256": "f28a1f01c73ed33284aac6e6a5c268013150fe9d16f268bf4fdfddf3b4f4a41c",
+      "bytes": 3593
+    },
+    "output/local-pin-evidence/pcb55/0032/report.json": {
+      "sha256": "b841f68ac2d1eed13b9d467d8eef8a0c26f390ea5d96e2bd59f0da24fc71120b",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0040/prediction.json": {
+      "sha256": "82112489376e0b97b36de848c43faaf018e2b81d65d6be8fec88daa6347a03af",
+      "bytes": 18510
+    },
+    "output/local-pin-evidence/pcb55/0040/report.json": {
+      "sha256": "3e8f7730f36782dd69825a72970cd6aafff4ce00836df89035ea21507ed44429",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0043/prediction.json": {
+      "sha256": "b07079fba0d41e5030d03e1a9e9ceff2a59d1532a7c71c875d0df4caa83c26c9",
+      "bytes": 19360
+    },
+    "output/local-pin-evidence/pcb55/0043/report.json": {
+      "sha256": "f0f4b04730494854b6b08d063faefd455955200db05e8beacd265c595fb76889",
+      "bytes": 1447
+    },
+    "output/local-pin-evidence/pcb55/0046/prediction.json": {
+      "sha256": "e1ae487b621d9004d6cdd30f3c4ca5894bec09ba2fca1827cbd7d43aff187a50",
+      "bytes": 72464
+    },
+    "output/local-pin-evidence/pcb55/0046/report.json": {
+      "sha256": "38b3834abf6fdde25db530ac1beff110e1e2d540f7c557f8fa893515a7699939",
+      "bytes": 1128
+    },
+    "output/local-pin-evidence/pcb55/0047/prediction.json": {
+      "sha256": "7f3c78ad69302888bbfa2e04893153f04c781376fcdab25ae1a3e99800e82b00",
+      "bytes": 5923
+    },
+    "output/local-pin-evidence/pcb55/0047/report.json": {
+      "sha256": "1488abc71bff6a9060561ce0ff642aa07335971b3a8f53332cfb176e99983b0d",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0049/prediction.json": {
+      "sha256": "104c54aa40954d4e7cc0a6afbc8a4289bf13a32f310b0060b2d980cdddd0a794",
+      "bytes": 21983
+    },
+    "output/local-pin-evidence/pcb55/0049/report.json": {
+      "sha256": "aa953d54e9704fdfb0132157eb4e0a9c912ff06ec9f3f6e89b7b45460ffa3fff",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0050/prediction.json": {
+      "sha256": "c3235c6d801a33d010552be5c6a21752112132ce529a318da34b3577e2c018c7",
+      "bytes": 40981
+    },
+    "output/local-pin-evidence/pcb55/0050/report.json": {
+      "sha256": "dc7af43ba3d5dd0be6744eda8535df4ed925ce87ec4d2adf97cde9d60b7ef86c",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0053/prediction.json": {
+      "sha256": "c0339d75beed501da2e19c59f804e30f37591b4a431eb60de7046796f6b96168",
+      "bytes": 12475
+    },
+    "output/local-pin-evidence/pcb55/0053/report.json": {
+      "sha256": "a8d7a2a741185f3e88f5ba7e0a528ffa364e073214cf017a78d9a3cb52db0818",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0057/prediction.json": {
+      "sha256": "f4972dcfee8b509d43eea4fb3f6f945195dded5bab639ba9c59a5340566784e1",
+      "bytes": 1368
+    },
+    "output/local-pin-evidence/pcb55/0057/report.json": {
+      "sha256": "2b0ffc5bcc7cff3eb6fc64b3df40c5b782e404c1254f1991388591e8c70ef210",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0064/prediction.json": {
+      "sha256": "f40f17be4a8fb08dc806895099e4ee68dadba9586e8736b711271e872e48cc0a",
+      "bytes": 14074
+    },
+    "output/local-pin-evidence/pcb55/0064/report.json": {
+      "sha256": "9123fcb20565fa98aa230d904d755df8377525503537d48a33184e5ea48d5f6d",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0067/prediction.json": {
+      "sha256": "cf8bf863cb2a96e82409ebd53e70bdbb4d1fb5fb47411a5237035e78f020ffb9",
+      "bytes": 9552
+    },
+    "output/local-pin-evidence/pcb55/0067/report.json": {
+      "sha256": "eb4af7860cf2fdfca76ba12a1c176825b07f7ca2b943fe08e4e97e8583bbdb66",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0068/prediction.json": {
+      "sha256": "c7d4f672a693d67044dfb3bf01ccfacbaffc9bc10223d6efeccc1790dbefbe7e",
+      "bytes": 3328
+    },
+    "output/local-pin-evidence/pcb55/0068/report.json": {
+      "sha256": "2347ba52dcef55ddcd2ee620af8f7140ba399dc62c4a47e689a083b9be132f2a",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0074/prediction.json": {
+      "sha256": "7f5e860144007b6ff905cc94ec1e50bae75e7c78ca7ccd8f7a7357e07fc7a1b0",
+      "bytes": 7822
+    },
+    "output/local-pin-evidence/pcb55/0074/report.json": {
+      "sha256": "1e6760db7ebf3755d917391dc58f5a1aadf2ec5b14450043db7c2d485c6a26c4",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0076/prediction.json": {
+      "sha256": "5c68b2d9b95f9f0e385280ce026ce40a217971279927ee5e2140a924c04fb4f8",
+      "bytes": 77769
+    },
+    "output/local-pin-evidence/pcb55/0076/report.json": {
+      "sha256": "8e175206111644b18739d8d109ce8c839735a47dfda1c3245a76796197c03d51",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0081/prediction.json": {
+      "sha256": "0232572f18d3151d49822411755e15b8271244606b5013b6386274f6118c17ef",
+      "bytes": 16897
+    },
+    "output/local-pin-evidence/pcb55/0081/report.json": {
+      "sha256": "2425db3fea3740233fcb2d02dbf408e0cdd4f69458e4626ab1b45ed114d01119",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0090/prediction.json": {
+      "sha256": "366d30d1799fd1eea5095e11b3efa01c0edefc397d80c6770f05f649478de966",
+      "bytes": 2155
+    },
+    "output/local-pin-evidence/pcb55/0090/report.json": {
+      "sha256": "cb8c0cdff3c70f3b16c7a9dfde6383a8bfc229531240f0b905064c6c09245554",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0095/prediction.json": {
+      "sha256": "f9a783c34c38dbe7d8b3d720353966d885aa1bd37466498e4004d5aea284a2e0",
+      "bytes": 45343
+    },
+    "output/local-pin-evidence/pcb55/0095/report.json": {
+      "sha256": "a707ec5d20715942e3c2c27b812d80933a26bc4714e306b07689909c8d52aaad",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0101/prediction.json": {
+      "sha256": "263501c74405c81476b35822cbacee0162ed5d6f38192733681e01eb15cefca0",
+      "bytes": 40329
+    },
+    "output/local-pin-evidence/pcb55/0101/report.json": {
+      "sha256": "3a24b2b95d0857ad230899b0f9c0236b49182da6a12b81c0f14d7f7a298aeb20",
+      "bytes": 1385
+    },
+    "output/local-pin-evidence/pcb55/0107/prediction.json": {
+      "sha256": "aea27131eff2af7cb315ae81dddd071a9ca2de922b0c79cb0b30183b55144267",
+      "bytes": 84971
+    },
+    "output/local-pin-evidence/pcb55/0107/report.json": {
+      "sha256": "7ecce4badebf1cdc12fa0fb2deaf9bbe938bf9b2b0feb0b5af0066552013d7eb",
+      "bytes": 1507
+    },
+    "output/local-pin-evidence/pcb55/0108/prediction.json": {
+      "sha256": "1a5bc8dfe63f15549aa3385a37e55f16778594a9c8a2e375a3d6aae2c7b735a6",
+      "bytes": 53761
+    },
+    "output/local-pin-evidence/pcb55/0108/report.json": {
+      "sha256": "bcf1d9e3733ae196fbdadafabbd338a4df73f997bc702980c25516dbdd24fc62",
+      "bytes": 4778
+    },
+    "output/local-pin-evidence/pcb55/0128/prediction.json": {
+      "sha256": "2e179981c13dc8f5751a2b01583128c381659ecdb52a2c40d069ea79eeeea8dd",
+      "bytes": 20377
+    },
+    "output/local-pin-evidence/pcb55/0128/report.json": {
+      "sha256": "9c020041524945eb1d285dbcf77019f721ad56d9880494121ba4313b4564c211",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0132/prediction.json": {
+      "sha256": "c8e98f0ff1cae573aff96ba51cdf35c1c6858def158bb9ceb0afa3241d688fa1",
+      "bytes": 12252
+    },
+    "output/local-pin-evidence/pcb55/0132/report.json": {
+      "sha256": "cb5e5734cd0531deb66bdaf449eca0f796d18ffa98f2e4d84cc72a4c190fd3e7",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0134/prediction.json": {
+      "sha256": "6a9c8e32a624917f7a29e6f285d00b6f8d94219239fb0044efd1202cbb79990b",
+      "bytes": 33737
+    },
+    "output/local-pin-evidence/pcb55/0134/report.json": {
+      "sha256": "53fb3b2d9d28a4e25c45bdd0089e8af602024b7ef33aa473f861351b6a389bc1",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0135/prediction.json": {
+      "sha256": "6ff51aca7d10e7fe7088d132c5d7a7744952ad81026444738d20601a15c0a0f6",
+      "bytes": 26583
+    },
+    "output/local-pin-evidence/pcb55/0135/report.json": {
+      "sha256": "ab9dc8aa2e8215516ea2370604bef5fd166b3c1f4d98eee6b813d9771a1591c2",
+      "bytes": 12733
+    },
+    "output/local-pin-evidence/pcb55/0140/prediction.json": {
+      "sha256": "d1ecfe7b1cd421757a33666f27c26a13b5a0de5dbcee7843812aa6bb9927de39",
+      "bytes": 72014
+    },
+    "output/local-pin-evidence/pcb55/0140/report.json": {
+      "sha256": "166698c473e321227263ff565a749c7f1f95e577d5be4a02d81201068268e0de",
+      "bytes": 3659
+    },
+    "output/local-pin-evidence/pcb55/0150/prediction.json": {
+      "sha256": "53844a501e326753cd5b8c6732c3b7f0a7ba0e4abfa1875b35e2f6943a2d1b64",
+      "bytes": 39226
+    },
+    "output/local-pin-evidence/pcb55/0150/report.json": {
+      "sha256": "338a9b46d677d3619a4a1706e2d10697a3c4a386fbac24637309b7ce1dcdb286",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0153/prediction.json": {
+      "sha256": "c47debcd0e47fb3acfa700a8b7cc425d4e7c29dc86ac2db8923703e267e1a505",
+      "bytes": 24332
+    },
+    "output/local-pin-evidence/pcb55/0153/report.json": {
+      "sha256": "e2ef2ca6fb9365148d57ce3110f347cdbfb84b3826f8b39d0d7d2d1cfdab6a1c",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0157/prediction.json": {
+      "sha256": "cc6f6ffff69fc15de775ba0322fb28062f60f3603f23bfdad038e2f320c37bcb",
+      "bytes": 20595
+    },
+    "output/local-pin-evidence/pcb55/0157/report.json": {
+      "sha256": "2a3c38376bfc1f63f9821f47923a0f4e188af57501e98e947d2bc865ee9057da",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0159/prediction.json": {
+      "sha256": "aa167ac8b8613a93a5e449a74ade5a687f416d48156af71c92e8112d41bf50eb",
+      "bytes": 41232
+    },
+    "output/local-pin-evidence/pcb55/0159/report.json": {
+      "sha256": "e1e71d950d0378e43616d7dfa174558a5fcaf1b971e057da8a9062c992fac108",
+      "bytes": 2393
+    },
+    "output/local-pin-evidence/pcb55/0167/prediction.json": {
+      "sha256": "a2d2f634aee75e49d17021f66bbd6cb454476c637b9d43303a23a88013135093",
+      "bytes": 18512
+    },
+    "output/local-pin-evidence/pcb55/0167/report.json": {
+      "sha256": "d55db9be3d54fd70cbabf92501e279828bb15e8d38b1c11306c1f314da40b44f",
+      "bytes": 606
+    },
+    "output/local-pin-evidence/pcb55/0174/prediction.json": {
+      "sha256": "3cc2f6115639e9f32ff85fb59eba2c1bf1c547edc16fde30aa444654141beb73",
+      "bytes": 102302
+    },
+    "output/local-pin-evidence/pcb55/0174/report.json": {
+      "sha256": "5041d0f2480515a03c57e6035dc04de3205f0d72fbf5ba91e16eefa1177a9021",
+      "bytes": 21116
+    },
+    "output/local-pin-evidence/pcb55/0179/prediction.json": {
+      "sha256": "8f45ab0912fb59cacc5c824cde13f365d4e42d2bb5600bb2daa8258a0dac3400",
+      "bytes": 40363
+    },
+    "output/local-pin-evidence/pcb55/0179/report.json": {
+      "sha256": "3efc8aee43e0d34e72aefe666cd978075ced1f44c9accde633b482614cc033fa",
+      "bytes": 484
+    },
+    "output/local-pin-evidence/pcb55/0184/prediction.json": {
+      "sha256": "07187f1c093819a024423189b2c150b02766fe10120b553239730b44c9c6e56b",
+      "bytes": 38129
+    },
+    "output/local-pin-evidence/pcb55/0184/report.json": {
+      "sha256": "3f5fa6c4dcb6bbb34c98dfef5364f4158e95851492f326869733fe976c55aeab",
+      "bytes": 2785
+    },
+    "output/local-pin-evidence/pcb55/0196/prediction.json": {
+      "sha256": "1ae0715978eb71f97f2d09462c8719b8801a62b843d9f4c03049f84aa84391f5",
+      "bytes": 9417
+    },
+    "output/local-pin-evidence/pcb55/0196/report.json": {
+      "sha256": "ed4c54285e0401733f2f0da40cb713efde7f669f0adc0ec5cef8a9bfd27bd7ca",
+      "bytes": 1547
+    },
+    "output/local-pin-evidence/pcb55/0197/prediction.json": {
+      "sha256": "a40fa06f1199890650a1844a579af0c9c0deac71c098c7facfe97153470ed741",
+      "bytes": 92814
+    },
+    "output/local-pin-evidence/pcb55/0197/report.json": {
+      "sha256": "240fd1b692d838540345746216e82be5f7990627830f9d8d2bb7f4da8d4e9140",
+      "bytes": 7082
+    },
+    "output/local-pin-evidence/pcb55/0207/prediction.json": {
+      "sha256": "9662b01ea2541eb684df6754b74f8e842e8315b1e132edb60e9f7ef9091019a2",
+      "bytes": 38526
+    },
+    "output/local-pin-evidence/pcb55/0207/report.json": {
+      "sha256": "b18dab5023fbc2a4503eefebd75ada97d229e88fca9749495a00387b4fa679ca",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0208/prediction.json": {
+      "sha256": "5e30ab3643df69bc3a0bc1fdca69c42329772174f26f4f31320d62d59f119671",
+      "bytes": 26142
+    },
+    "output/local-pin-evidence/pcb55/0208/report.json": {
+      "sha256": "b994e5785378751c27598fd360b3787779a7a951fa4b186a24685389aa2ed406",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0211/prediction.json": {
+      "sha256": "8a2282dc72c42bdf82629386bbb2777911b8d3b51ace48b2ceaa91b67b3cce5a",
+      "bytes": 724
+    },
+    "output/local-pin-evidence/pcb55/0211/report.json": {
+      "sha256": "08dbc221581c9c6cd2626805f6c8e2c2c9726d8f82673142fce2a0a41076653b",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0217/prediction.json": {
+      "sha256": "199c7d3c6cb7ce4987748287df047b1ca97b4175d025a63b2112ed49d94835ba",
+      "bytes": 9531
+    },
+    "output/local-pin-evidence/pcb55/0217/report.json": {
+      "sha256": "de89b717754660b014f01ac1ddf18edd65ee4da81a66ee1fbfe5f821fe11f962",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0224/prediction.json": {
+      "sha256": "7770f2cb3ce9c5705cc3b8d472fadce21f15268013109979fd44fcdbd5bf5dff",
+      "bytes": 10631
+    },
+    "output/local-pin-evidence/pcb55/0224/report.json": {
+      "sha256": "7a2649f1722ca67f48fd279f2d73579e9135e008c13c2287c5354374ecfdeaca",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0227/prediction.json": {
+      "sha256": "6d80b3fa87d2db9e067886b9730ba6d50825075a5532b1c306b4da70e80a9bbb",
+      "bytes": 3888
+    },
+    "output/local-pin-evidence/pcb55/0227/report.json": {
+      "sha256": "740cf7748fef7717f69586bb1915b60b42d5481066ed0b2d6967352648b64f40",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0230/prediction.json": {
+      "sha256": "b6d79c12e3e19a879a1ca694191673f2722d50fe487f11d69bd07466ab3a4430",
+      "bytes": 3068
+    },
+    "output/local-pin-evidence/pcb55/0230/report.json": {
+      "sha256": "1c7e73f64396ab898b8f35286e9e21dcd40db4e5c2e5a8bc5352867f414e5c22",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0231/prediction.json": {
+      "sha256": "8d8f9545e6d04ec1c19f5af68b4f9cafe439a9066334fbca57d190e3bdbfdf3d",
+      "bytes": 25168
+    },
+    "output/local-pin-evidence/pcb55/0231/report.json": {
+      "sha256": "44357e5c955832bef1cc4e7fe911c77814b2b61a390c874c7829e82a7414d441",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0236/prediction.json": {
+      "sha256": "331f25e5fd42e88ed0b8ac4a0da86d4a93315c1aff859ae5b12dce5c65637589",
+      "bytes": 1913
+    },
+    "output/local-pin-evidence/pcb55/0236/report.json": {
+      "sha256": "29fb1029a37900ef7e8e6b2167da220902439a64d4d54980d0da1af6d7586120",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0238/prediction.json": {
+      "sha256": "693f6822de8e7b0cc3e1e8ac06ee1f9f5f665c05f7d0a8136888984fad481065",
+      "bytes": 24679
+    },
+    "output/local-pin-evidence/pcb55/0238/report.json": {
+      "sha256": "4ee829540e8589c250485d3213cb070207cded22f041495887e74c71db319943",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0239/prediction.json": {
+      "sha256": "ad1d2efa1f0563ac720ce37dedc7047014c7b0cb4d2e835e7993b93e5c70698a",
+      "bytes": 12843
+    },
+    "output/local-pin-evidence/pcb55/0239/report.json": {
+      "sha256": "db9c38a9a21b73af9e944ee0a443eb1d7ba3f3d99657211219b49dd588b3a304",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0249/prediction.json": {
+      "sha256": "cd6b6e29d16e9e6c70f6c5de24227fcf0d433b4100cc250d4a87fb955527603f",
+      "bytes": 16804
+    },
+    "output/local-pin-evidence/pcb55/0249/report.json": {
+      "sha256": "9a35789ea5666e11c484a7707e5ec2b04f38d0a852853fa077b798d4589d1eea",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0255/prediction.json": {
+      "sha256": "3fd7eaa0bae298bf765e3fed17c6d148daa1376ed70e751bbe506056ac5b5c07",
+      "bytes": 2319
+    },
+    "output/local-pin-evidence/pcb55/0255/report.json": {
+      "sha256": "9bf6ad1ebea8b8ab281a6e956c527453839600399d77eae79de51e6be9daf985",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0258/prediction.json": {
+      "sha256": "7ba94fc48799ddf28579356d0d82c563f06af7e103597d74c9b825c5f86ff18f",
+      "bytes": 2124
+    },
+    "output/local-pin-evidence/pcb55/0258/report.json": {
+      "sha256": "628e2db77d680afbf122559cd0c429b20f2582fe8567129cd81a5bc96679579b",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0260/prediction.json": {
+      "sha256": "e2f3539d1984372899ee4284e43992870488b7a3a2957243abc0150aee15c672",
+      "bytes": 5191
+    },
+    "output/local-pin-evidence/pcb55/0260/report.json": {
+      "sha256": "54ec11af0b09a013a412690cae881873153a84046f95fdf780188eb6e665e99e",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/0272/prediction.json": {
+      "sha256": "a20c2785ef493f81eba06d5df29d637318379c49a4d2dab62acf75c84420d804",
+      "bytes": 8579
+    },
+    "output/local-pin-evidence/pcb55/0272/report.json": {
+      "sha256": "4422cbd9ba0817e701930370d2c369c8f2e13b09f200a36cd3f40a7c66bf442a",
+      "bytes": 483
+    },
+    "output/local-pin-evidence/pcb55/progress.json": {
+      "sha256": "bd83576ef2457cf07a0434a19dd48e131bc6bf26dfc73a9ad55fb3195f67434d",
+      "bytes": 56941
+    },
+    "output/local-pin-evidence/pcb55/summary.json": {
+      "sha256": "5c70988bf68a95d8a05f488573e07f7f4cf162853e166be5169b2191c9ba7af9",
+      "bytes": 58103
+    },
+    "output/local-pin-evidence/protocol.json": {
+      "sha256": "7fe94a5b8a834eba6f72231da7158179a5ca7751895448e1ee3df81f3303ff9f",
+      "bytes": 635
+    },
+    "scripts/evaluate_local_pin_evidence.py": {
+      "sha256": "e665004f4dc0f99af0695d89bebcebe25c35f3ea0859d48003b9d4816062ec29",
+      "bytes": 4315
+    },
+    "scripts/finalize_hard56_agent_review.py": {
+      "sha256": "57e6dde1c1676f895174280bfcd18f6ae35a25e202fc52288ea043822aa3d55c",
+      "bytes": 10417
+    },
+    "scripts/package_pin_evidence_assessment.py": {
+      "sha256": "acd7a784b2aa2f80627b64880f12265836ac4e59a377d4eb9e32bcec892eceb6",
+      "bytes": 2561
+    },
+    "scripts/prepare_freeze_a1_candidates.py": {
+      "sha256": "040a705717e01151ad866d52fa2d51be8acb23b927ca040843f4a12257ed3f79",
+      "bytes": 11526
+    },
+    "scripts/render_freeze_a_source_sample.py": {
+      "sha256": "9ae27067db2d5823d38d2203e7b41794461d2279ae9c477310daf874b2102a7f",
+      "bytes": 8542
+    },
+    "scripts/review_hard56_draft.py": {
+      "sha256": "c718412d799a072855f0b9154d06e14a6fa098847722cec840312e6f296fd15e",
+      "bytes": 3415
+    },
+    "tests/test_local_pin_evidence.py": {
+      "sha256": "ed1f959ef26c7adfe5bc9438f7537f16b2728a21717029fa1e95ba25b504ce87",
+      "bytes": 1469
+    }
+  }
+}

@@ -1,0 +1,21 @@
+FROM edarace-agent-base:ubuntu24
+WORKDIR /submission
+RUN apt-get update && apt-get install -y --no-install-recommends libglib2.0-0 libgl1 && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/graphschematic --system-site-packages
+COPY requirements-inference.txt /submission/
+RUN /opt/graphschematic/bin/pip install --no-cache-dir -r requirements-inference.txt
+ENV PATH="/opt/graphschematic/bin:${PATH}"
+COPY pcbparse /submission/pcbparse
+COPY models/detector/pcb-yolo11n.onnx models/detector/pcb-yolo11n.json /submission/models/detector/
+COPY models/pins/pin-heatmap.onnx models/pins/pin-heatmap.json /submission/models/pins/
+COPY models/topology/topology-perception.onnx models/topology/topology-perception.json /submission/models/topology/
+COPY models/semantics/component-library.json /submission/models/semantics/
+COPY models/candidates/official-pins/pin-heatmap.onnx models/candidates/official-pins/pin-heatmap.json /submission/models/candidates/official-pins/
+COPY models/candidates/association-balanced /submission/models/candidates/association-balanced
+COPY models/candidates/association-mlp-balanced /submission/models/candidates/association-mlp-balanced
+COPY models/symbols/templates.json models/symbols/templates.npz /submission/models/symbols/
+COPY models/pipeline.json /submission/models/pipeline.json
+COPY agent_system /submission/agent_system
+COPY scripts/request_graph_corrections.py /submission/scripts/request_graph_corrections.py
+RUN chmod +x /submission/agent_system
+ENTRYPOINT ["/submission/agent_system"]

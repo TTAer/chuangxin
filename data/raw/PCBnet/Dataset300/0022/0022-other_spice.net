@@ -1,0 +1,62 @@
+* SPICE netlist generated from 0022-other_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 P44_RD NET_E_2 0 U1
+XS14 P31_RXD P35 S14
+XS12 P33 P35 S12
+XS15 P30_TXD P35 S15
+XS16 P33 P34 S16
+XS19 P34 P30_TXD S19
+XS6 NET_E_2 P31_RXD S6
+XS7 NET_E_2 P30_TXD S7
+XS4 NET_E_2 P33 S4
+XS10 P42_WR P31_RXD S10
+XS5 P32 NET_E_2 S5
+XS8 P42_WR P33 S8
+XS11 P42_WR P30_TXD S11
+XS9 P32 P42_WR S9
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = P44_RD : P_1(C_1)
+* E_2 = NET_E_2（原 netlabel "∅145" 为参数值形态或无效，已回退自动命名） : P_6(C_1) P_7(C_10) P_8(C_11) P_9(C_20) P_10(C_29)
+* E_3 = P42_WR : P_11(C_23) P_12(C_30) P_13(C_31) P_14(C_34)
+* E_4 = P33 : P_15(C_20) P_16(C_30) P_17(C_6) P_18(C_8)
+* E_5 = P34 : P_19(C_4) P_20(C_5) P_21(C_8) P_22(C_9)
+* E_6 = P30_TXD : P_23(C_11) P_24(C_31) P_25(C_7) P_26(C_9)
+* E_7 = 0 : P_27(C_1)
+* E_8 = P31_RXD : P_28(C_10) P_29(C_23) P_30(C_3) P_31(C_5)
+* E_9 = P35 : P_32(C_2) P_33(C_3) P_34(C_6) P_35(C_7)
+* E_10 = P32 : P_2(C_2) P_3(C_29) P_4(C_34) P_5(C_4)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅44" type=Box
+* 未映射类型 Switch（C_3 S14），按 X 子电路输出
+* 待人工确认: C_3 designator="S14" value="∅57" type=Switch
+* 未映射类型 Switch（C_6 S12），按 X 子电路输出
+* 待人工确认: C_6 designator="S12" value="∅77" type=Switch
+* 未映射类型 Switch（C_7 S15），按 X 子电路输出
+* 待人工确认: C_7 designator="S15" value="∅83" type=Switch
+* 未映射类型 Switch（C_8 S16），按 X 子电路输出
+* 待人工确认: C_8 designator="S16" value="∅89" type=Switch
+* 未映射类型 Switch（C_9 S19），按 X 子电路输出
+* 待人工确认: C_9 designator="S19" value="∅95" type=Switch
+* 未映射类型 Switch（C_10 S6），按 X 子电路输出
+* 待人工确认: C_10 designator="S6" value="∅101" type=Switch
+* 未映射类型 Switch（C_11 S7），按 X 子电路输出
+* 待人工确认: C_11 designator="S7" value="∅107" type=Switch
+* 未映射类型 Switch（C_20 S4），按 X 子电路输出
+* 待人工确认: C_20 designator="S4" value="∅113" type=Switch
+* 未映射类型 Switch（C_23 S10），按 X 子电路输出
+* 待人工确认: C_23 designator="S10" value="∅119" type=Switch
+* 未映射类型 Switch（C_29 S5），按 X 子电路输出
+* 待人工确认: C_29 designator="S5" value="∅125" type=Switch
+* 未映射类型 Switch（C_30 S8），按 X 子电路输出
+* 待人工确认: C_30 designator="S8" value="∅131" type=Switch
+* 未映射类型 Switch（C_31 S11），按 X 子电路输出
+* 待人工确认: C_31 designator="S11" value="∅137" type=Switch
+* 未映射类型 Switch（C_34 S9），按 X 子电路输出
+* 待人工确认: C_34 designator="S9" value="∅143" type=Switch
+
+.end

@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_1",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_2",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_3",
+      "type": "OR"
+    },
+    {
+      "id": "gate_4",
+      "type": "OR"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_1",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_4",
+      "target": "gate_2"
+    }
+  ],
+  "image_path": "images/lb1k_00314.jpg"
+}

@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_1",
+      "type": "XNOR"
+    },
+    {
+      "id": "gate_2",
+      "type": "NOR"
+    },
+    {
+      "id": "gate_3",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_4",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_5",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_6",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_7",
+      "type": "XOR"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_0",
+      "target": "gate_7"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_3"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_4"
+    },
+    {
+      "source": "gate_7",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_7",
+      "target": "gate_5"
+    },
+    {
+      "source": "gate_7",
+      "target": "gate_6"
+    },
+    {
+      "source": "gate_7",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_4",
+      "target": "gate_3"
+    },
+    {
+      "source": "gate_4",
+      "target": "gate_5"
+    },
+    {
+      "source": "gate_5",
+      "target": "gate_4"
+    },
+    {
+      "source": "gate_5",
+      "target": "gate_6"
+    },
+    {
+      "source": "gate_6",
+      "target": "gate_1"
+    }
+  ],
+  "image_path": "images/lb1k_00757.jpg"
+}

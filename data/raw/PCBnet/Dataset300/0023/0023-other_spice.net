@@ -1,0 +1,28 @@
+* SPICE netlist generated from 0023-other_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+MQ1 NET_E_1 VOUT VIN MMOD
+Q2 NET_E_2 NET_E_1 0 QMOD
+R4 0 NET_E_2 330K
+C1 0 NET_E_3 100n
+R3 NET_E_1 NET_E_3 1k
+R2 NET_E_2 VOUT 1M
+R1 NET_E_1 VIN 100K
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅85" 为参数值形态或无效，已回退自动命名） : P_1(C_1) P_2(C_16) P_3(C_4) P_4(C_8)
+* E_2 = NET_E_2（原 netlabel "∅86" 为参数值形态或无效，已回退自动命名） : P_5(C_10) P_6(C_4) P_7(C_5)
+* E_3 = NET_E_3（原 netlabel "∅87" 为参数值形态或无效，已回退自动命名） : P_8(C_6) P_9(C_8)
+* E_4 = VOUT : P_10(C_1) P_11(C_10) P_12(C_2)
+* E_5 = VIN : P_13(C_1) P_14(C_16) P_15(C_3)
+* E_6 = 0 : P_16(C_4) P_17(C_5) P_18(C_7)
+* E_7 = 0 : P_19(C_6) P_20(C_9)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="Q1" value="∅28" type=MOSFET_NPN
+* 待人工确认: C_4 designator="Q2" value="∅46" type=BJT_NPN
+* 待人工确认: C_8 designator="R3" value="∅66" type=R
+
+.end

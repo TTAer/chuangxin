@@ -1,0 +1,90 @@
+* SPICE netlist generated from 0008-Altium Designer_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_8 0 RXD_B_L KEYI PWM NET_E_23 TXD_R_L FAN_EN U1
+XU2 RO RO 0 0 NET_E_6 NET_E_7 U2
+X1 0 NET_E_23 X1
+Q2 0 NET_E_17 NET_E_26 NET_E_28 QMOD
+R1 NET_E_20 NET_E_30 1k
+XU3 NET_E_16 NET_E_24 U3
+R2 NET_E_12 NET_E_21 1k
+D5 NET_E_17 0 DMOD
+C1 0 NET_E_24 1n
+D2 NET_E_23 RO DMOD
+R3 0 NET_E_25 1k
+R4 NET_E_5 NET_E_26 10k
+C2 0 NET_E_24 1n
+R5 0 NET_E_31 1k
+C4 0 NET_E_23 1n
+C5 0 NET_E_23 10u
+R6 NET_E_2 NET_E_3 1k
+C3 NET_E_8 0 1n
+C6 0 NET_E_16 1n
+XU47 NET_E_16 NET_E_17 NET_E_24 U47
+D1 0 NET_E_21 DMOD
+D3 0 NET_E_3 DMOD
+XU57 NET_E_20 NET_E_33 U57
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = KEYI : P_1(C_1)
+* E_2 = NET_E_2（原 netlabel "∅311" 为参数值形态或无效，已回退自动命名） : P_32(C_37)
+* E_3 = NET_E_3（原 netlabel "∅312" 为参数值形态或无效，已回退自动命名） : P_57(C_37) P_58(C_54)
+* E_4 = TXD_R_L : P_64(C_1)
+* E_5 = NET_E_5（原 netlabel "∅313" 为参数值形态或无效，已回退自动命名） : P_65(C_24)
+* E_6 = NET_E_6（原 netlabel "∅314" 为参数值形态或无效，已回退自动命名） : P_66(C_2)
+* E_7 = NET_E_7（原 netlabel "∅315" 为参数值形态或无效，已回退自动命名） : P_67(C_2)
+* E_8 = NET_E_8（原 netlabel "∅316" 为参数值形态或无效，已回退自动命名） : P_68(C_1) P_69(C_38)
+* E_9 = FAN_EN : P_70(C_1)
+* E_10 = 0 : P_2(C_17) P_3(C_29) P_4(C_40) P_5(C_5) P_6(C_8)
+* E_11 = 0 : P_7(C_13) P_8(C_18) P_9(C_25)
+* E_12 = NET_E_12（原 netlabel "∅319" 为参数值形态或无效，已回退自动命名） : P_10(C_14)
+* E_13 = 0 : P_11(C_50) P_12(C_54) P_13(C_6)
+* E_14 = RO : P_14(C_2) P_15(C_2) P_16(C_21) P_17(C_53)
+* E_15 = 0 : P_18(C_3)
+* E_16 = NET_E_16（原 netlabel "∅322" 为参数值形态或无效，已回退自动命名） : P_19(C_10) P_20(C_40) P_21(C_47)
+* E_17 = NET_E_17（原 netlabel "∅323" 为参数值形态或无效，已回退自动命名） : P_22(C_17) P_23(C_47) P_24(C_8)
+* E_18 = 0 : P_25(C_12) P_26(C_2) P_27(C_2) P_28(C_35) P_29(C_36) P_30(C_7)
+* E_19 = PWM : P_31(C_1)
+* E_20 = NET_E_20（原 netlabel "∅325" 为参数值形态或无效，已回退自动命名） : P_33(C_57) P_34(C_9)
+* E_21 = NET_E_21（原 netlabel "∅326" 为参数值形态或无效，已回退自动命名） : P_35(C_14) P_36(C_50)
+* E_22 = 0 : P_37(C_1) P_38(C_26)
+* E_23 = NET_E_23（原 netlabel "∅328" 为参数值形态或无效，已回退自动命名） : P_39(C_1) P_40(C_21) P_41(C_35) P_42(C_36) P_43(C_51) P_44(C_7)
+* E_24 = NET_E_24（原 netlabel "∅329" 为参数值形态或无效，已回退自动命名） : P_45(C_10) P_46(C_18) P_47(C_25) P_48(C_47) P_49(C_48)
+* E_25 = NET_E_25（原 netlabel "∅330" 为参数值形态或无效，已回退自动命名） : P_50(C_22) P_51(C_45)
+* E_26 = NET_E_26（原 netlabel "∅331" 为参数值形态或无效，已回退自动命名） : P_52(C_24) P_53(C_8)
+* E_27 = 0 : P_54(C_22) P_55(C_4)
+* E_28 = NET_E_28（原 netlabel "∅332" 为参数值形态或无效，已回退自动命名） : P_56(C_8)
+* E_30 = NET_E_30（原 netlabel "∅333" 为参数值形态或无效，已回退自动命名） : P_59(C_43) P_60(C_9)
+* E_31 = NET_E_31（原 netlabel "∅334" 为参数值形态或无效，已回退自动命名） : P_61(C_29)
+* E_33 = NET_E_33（原 netlabel "∅335" 为参数值形态或无效，已回退自动命名） : P_62(C_57)
+* E_34 = RXD_B_L : P_63(C_1)
+* E_36 = 0 : P_74(C_38) P_75(C_11)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅102" type=Box
+* 待人工确认: C_2 designator="U2" value="∅108" type=Box
+* 待人工确认: C_7 designator="X1" value="∅133" type=Crystal_2Pin
+* 待人工确认: C_8 designator="Q2" value="∅144" type=BJT_NPN
+* 待人工确认: C_9 designator="R1" value="∅150" type=R
+* 待人工确认: C_10 designator="U3" value="∅155" type=Box
+* 待人工确认: C_14 designator="R2" value="∅176" type=R
+* 待人工确认: C_17 designator="D5" value="∅182" type=D
+* 待人工确认: C_18 designator="C1" value="∅188" type=C
+* 待人工确认: C_21 designator="D2" value="∅195" type=D
+* 待人工确认: C_22 designator="R3" value="∅201" type=R
+* 待人工确认: C_25 designator="C2" value="∅214" type=C
+* 待人工确认: C_29 designator="R5" value="∅225" type=R
+* 待人工确认: C_35 designator="C4" value="∅231" type=C
+* 待人工确认: C_37 designator="R6" value="∅244" type=R
+* 待人工确认: C_38 designator="C3" value="∅251" type=C
+* 待人工确认: C_40 designator="C6" value="∅257" type=C
+* 未映射类型 Transfomer（C_47 U47），按 X 子电路输出
+* 待人工确认: C_47 designator="∅274" value="∅273" type=Transfomer
+* 待人工确认: C_50 designator="D1" value="∅285" type=D
+* 待人工确认: C_54 designator="D3" value="∅301" type=D
+* 未映射类型 Jumper（C_57 U57），按 X 子电路输出
+* 待人工确认: C_57 designator="∅309" value="∅308" type=Jumper
+
+.end

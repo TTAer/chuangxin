@@ -1,0 +1,51 @@
+{
+  "protocol": {
+    "scope": "new synthetic programs; no independent real accuracy",
+    "model": "RadialEvidenceNet, eight sectors x eight radial bands, shared MLP mean/max angular pooling",
+    "paired": "same model/training, raw source-frame vs nonuniform rectified patches",
+    "train": "4096 pages half uniform half jitter +/-4, scale.55:1 width1:7 blur.2:.8 noise2:5",
+    "dev": "256 disjoint pages same style",
+    "tiny": "4 separate pages, final active crossing accuracy100% required",
+    "pressure": "256 disjoint jitter +/-4 scale.55:.85 blur.9:1.2 noise5; not selection",
+    "rotation": "128 unsupported +/-8:15 degrees; no training",
+    "selection": "dev crossing accuracy only, first best epoch, each8 epochs batch512 lr.001",
+    "composition": "frozen ContrastOnlyReader prefix+interval, learned crossing overwrite only observed slots already active in neural prefix",
+    "gate": "pressure coverage>=.90 exact-net>=.95 F1>=.98; net-exact gain>=.01 over same-page frozen baseline; unsupported acceptance<=.05",
+    "tiny_steps": 400,
+    "seed": 20261021,
+    "real_labels": false,
+    "RC0_changed": false
+  },
+  "cohorts": {
+    "tiny": {
+      "pages": 4,
+      "ready": 4,
+      "labelled_patches": 96,
+      "sha256": "31ad7a9049282e929443ba777720f7a097fd98385c909dbbd1f53946a274ad9d"
+    },
+    "train": {
+      "pages": 4096,
+      "ready": 4085,
+      "labelled_patches": 83139,
+      "sha256": "cb385968538aa41a761aca5ece57a99c02f23b270fd3f9403bfab9e245b53af3"
+    },
+    "validation": {
+      "pages": 256,
+      "ready": 255,
+      "labelled_patches": 5233,
+      "sha256": "91230bf8d728310b2461fbca43faade3fd3064056aed4a367f4578f24241b8f2"
+    },
+    "stress": {
+      "pages": 256,
+      "ready": 250,
+      "labelled_patches": 0,
+      "sha256": "7fa72a3098fb214fc245c3d6b10d3b70ca6e21bb25e287b45dc88391aa29b650"
+    },
+    "rotation": {
+      "pages": 128,
+      "ready": 0,
+      "labelled_patches": 0,
+      "sha256": "10e895e2c2442fb4b190596eb941841302dd1aca343f7526cbd36c69ea2cd8a6"
+    }
+  }
+}

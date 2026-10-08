@@ -1,0 +1,12 @@
+*SPICE Netlist for circuit 196
+I1 1 0 DC 1mA
+M1 3 0 1 1 NMOS W=1u L=1u
+V1 6 0 5V
+M2 2 6 1 1 NMOS W=1u L=1u
+R1 2 VDD 1k
+R2 3 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

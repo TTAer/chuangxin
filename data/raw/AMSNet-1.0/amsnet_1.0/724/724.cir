@@ -1,0 +1,14 @@
+*SPICE Netlist for circuit 724
+C1 0 3 1nF
+C2 1 VDD 1nF
+C3 5 3 1nF
+R3 1 5 1k
+V1 6 0 5V
+R1 0 3 1k
+R2 6 1 1k
+M1 3 1 VDD VDD PMOS W=1u L=1u
+.MODEL PMOS PMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

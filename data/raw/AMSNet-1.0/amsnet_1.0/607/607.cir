@@ -1,0 +1,13 @@
+*SPICE Netlist for circuit 607
+M2 4 1 0 0 NMOS W=1u L=1u
+R3 0 2 1k
+R5 6 1 1k
+R4 1 2 1k
+M1 3 4 2 2 NMOS W=1u L=1u
+R1 3 VDD 1k
+R2 4 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

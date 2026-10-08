@@ -1,0 +1,10 @@
+*SPICE Netlist for circuit 523
+I1 3 0 DC 1mA
+M2 2 1 3 3 NMOS W=1u L=1u
+M1 VDD 2 3 3 NMOS W=1u L=1u
+R1 2 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

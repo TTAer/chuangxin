@@ -1,0 +1,19 @@
+{
+  "status": "template_only_not_a_dataset",
+  "required_independent_designs": 25,
+  "entries": [],
+  "entry_schema": {
+    "design_family_id": "source project and revision family; not image filename",
+    "source_url": "original source",
+    "license": "verified license and attribution",
+    "image_path": "original rendered PCB schematic",
+    "image_sha256": "SHA256 of scored image bytes",
+    "annotation_path": "manual component bbox, visible designator and model name",
+    "annotation_sha256": "SHA256 of frozen manual labels",
+    "reviewer": "human reviewer",
+    "exclusion_evidence": "design-family exclusion against training, validation and prior development",
+    "unknown_fields": "remain unknown; no pseudo GT"
+  },
+  "freeze_before_inference": true,
+  "not_for_parameter_selection": true
+}

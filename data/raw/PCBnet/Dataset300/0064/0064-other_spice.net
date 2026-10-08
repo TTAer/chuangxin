@@ -1,0 +1,43 @@
+* SPICE netlist generated from 0064-other_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 0 0 A9 A9 VBUS VBUS DM B6 TEST1 TEST2 B5 DP B4 U1
+XU2 VBUS DM DP CC1 0 NET_E_15 NET_E_11 U2
+R03 NET_E_3 VBRIDGE 2R
+R01 B4 VBRIDGE 0.01R
+R02 NET_E_2 B4 2R
+C10 NET_E_2 NET_E_3 47n
+R05 NET_E_1 VBRIDGE 1k
+C1 0 B4 10u
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅131" 为参数值形态或无效，已回退自动命名） : P_1(C_7) P_2(C_9)
+* E_2 = NET_E_2（原 netlabel "∅132" 为参数值形态或无效，已回退自动命名） : P_19(C_25) P_20(C_5) P_21(C_6)
+* E_3 = NET_E_3（原 netlabel "∅133" 为参数值形态或无效，已回退自动命名） : P_26(C_22) P_27(C_3) P_28(C_6)
+* E_4 = B4 : P_30(C_1) P_31(C_12) P_32(C_4) P_33(C_5)
+* E_5 = CC1 : P_34(C_2)
+* E_6 = DP : P_35(C_2)
+* E_7 = VBUS : P_36(C_2)
+* E_8 = DM : P_37(C_2)
+* E_9 = VBRIDGE : P_38(C_3) P_39(C_4) P_41(C_7)
+* E_10 = 0 : P_3(C_1) P_4(C_1) P_5(C_12) P_6(C_14)
+* E_11 = NET_E_11（原 netlabel "∅134" 为参数值形态或无效，已回退自动命名） : P_7(C_2)
+* E_12 = 0 : P_8(C_2) P_43(C_11)
+* E_13 = A9 : P_9(C_1) P_10(C_1)
+* E_14 = VBUS : P_11(C_1) P_12(C_1) P_13(C_10)
+* E_15 = NET_E_15（原 netlabel "∅136" 为参数值形态或无效，已回退自动命名） : P_14(C_2)
+* E_16 = DM : P_15(C_1)
+* E_17 = B6 : P_16(C_1)
+* E_18 = TEST1 : P_17(C_1)
+* E_19 = TEST2 : P_18(C_1)
+* E_20 = B5 : P_22(C_1) P_23(C_8)
+* E_21 = DP : P_24(C_1) P_25(C_13)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅52" type=Box
+* 待人工确认: C_2 designator="U2" value="∅57" type=Box
+* 待人工确认: C_7 designator="R05" value="∅85" type=R
+
+.end

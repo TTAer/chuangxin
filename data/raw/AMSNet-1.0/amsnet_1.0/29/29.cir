@@ -1,0 +1,10 @@
+*SPICE Netlist for circuit 29
+M1 1 2 VDD VDD PMOS W=1u L=1u
+V1 1 0 5V
+R1 1 2 1k
+R2 2 VDD 1k
+.MODEL PMOS PMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

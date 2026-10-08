@@ -1,0 +1,32 @@
+* SPICE netlist generated from 0098-Datasheet_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 nSLEEP NET_E_4 0 NET_E_6 NET_E_6 NET_E_4 nFAULT NC_P_40 NET_E_10 NET_E_2 0 IN2 IN2 IN1 IN1 0 0 NC_P_31 NC_P_32 NC_P_33 NC_P_34 NC_P_35 NC_P_36 NC_P_37 NC_P_38 NET_E_15 NC_P_41 NC_P_42 NET_E_16 NET_E_17 NC_P_45 NC_P_46 NC_P_47 U1
+C1 0 NET_E_2 10μ
+C2 0 NET_E_10 2.2_μ
+XU2 NET_E_2 U2
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = nFAULT : P_1(C_1)
+* E_2 = NET_E_2（原 netlabel "∅99" 为参数值形态或无效，已回退自动命名） : P_4(C_1) P_5(C_18) P_6(C_2)
+* E_3 = 0 : P_7(C_1) P_8(C_1) P_9(C_5)
+* E_4 = NET_E_4（原 netlabel "∅101" 为参数值形态或无效，已回退自动命名） : P_10(C_1) P_11(C_1) P_12(C_16)
+* E_5 = IN2 : P_13(C_1) P_14(C_1)
+* E_6 = NET_E_6（原 netlabel "∅102" 为参数值形态或无效，已回退自动命名） : P_15(C_1) P_16(C_1) P_17(C_16)
+* E_7 = nSLEEP : P_18(C_1)
+* E_8 = IN1 : P_19(C_1) P_20(C_1)
+* E_9 = 0 : P_21(C_1) P_22(C_1) P_23(C_17)
+* E_10 = NET_E_10（原 netlabel "∅104" 为参数值形态或无效，已回退自动命名） : P_2(C_1) P_3(C_3)
+* E_11 = 0 : P_24(C_2) P_25(C_4)
+* E_12 = 0 : P_26(C_3) P_27(C_7)
+* E_15 = NET_E_15（原 netlabel "∅107" 为参数值形态或无效，已回退自动命名） : P_39(C_1)
+* E_16 = NET_E_16（原 netlabel "∅108" 为参数值形态或无效，已回退自动命名） : P_43(C_1)
+* E_17 = NET_E_17（原 netlabel "∅109" 为参数值形态或无效，已回退自动命名） : P_44(C_1)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅53" type=Box
+* 待人工确认: C_18 designator="U2" value="∅97" type=Box
+
+.end

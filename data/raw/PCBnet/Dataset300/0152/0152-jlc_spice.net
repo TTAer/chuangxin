@@ -1,0 +1,97 @@
+* SPICE netlist generated from 0152-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_10 NET_E_12 NET_E_5 NET_E_6 NET_E_9 NET_E_11 NET_E_7 NET_E_1 0 U1
+R2 NET_E_10 NET_E_8 0.5
+R1 NET_E_13 NET_E_5 1k
+C3 0 NET_E_1 22u
+C4 0 NET_E_1 22u
+C5 0 NET_E_1 22u
+C2 0 NET_E_1 22u
+C6 0 NET_E_10 1n
+C7 0 NET_E_8 22u
+XU3 NET_E_19 0 U3
+XU9 NET_E_15 0 U9
+XU2 NET_E_17 0 U2
+C8 0 NET_E_5 1n
+C1 0 NET_E_13 10u
+D1 NET_E_36 NET_E_35 DMOD
+XU22 0 U22
+XU23 0 U23
+D2 NET_E_11 NET_E_9 DMOD
+XU25 0 U25
+D3 NET_E_11 NET_E_6 10u
+XSW3 NET_E_12 0 SW3
+D4 NET_E_6 NET_E_11 DMOD
+XU29 0 U29
+L3 NET_E_1 NET_E_2 1u
+L1 NET_E_7 NET_E_8 1uH
+R3 I010 NET_E_30 10k
+R4 IO11_BOOT NET_E_33 10k
+XSW1 I010 0 SW1
+XSW2 IO11_BOOT 0 SW2
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅355" 为参数值形态或无效，已回退自动命名） : P_1(C_1) P_2(C_32) P_3(C_4) P_4(C_5) P_5(C_6) P_6(C_9)
+* E_2 = NET_E_2（原 netlabel "∅356" 为参数值形态或无效，已回退自动命名） : P_29(C_31) P_30(C_32)
+* E_3 = 0 : P_43(C_1) P_44(C_19)
+* E_4 = 0 : P_45(C_10) P_46(C_11) P_47(C_16) P_48(C_27) P_49(C_4) P_50(C_5) P_51(C_6) P_52(C_9)
+* E_5 = NET_E_5（原 netlabel "∅359" 为参数值形态或无效，已回退自动命名） : P_53(C_1) P_54(C_15) P_55(C_3) P_56(C_30)
+* E_6 = NET_E_6（原 netlabel "∅360" 为参数值形态或无效，已回退自动命名） : P_57(C_1) P_11(C_26) P_69(C_28)
+* E_7 = NET_E_7（原 netlabel "∅361" 为参数值形态或无效，已回退自动命名） : P_60(C_1) P_61(C_33)
+* E_8 = NET_E_8（原 netlabel "∅362" 为参数值形态或无效，已回退自动命名） : P_62(C_11) P_63(C_21) P_64(C_33) P_67(C_2)
+* E_9 = NET_E_9（原 netlabel "∅363" 为参数值形态或无效，已回退自动命名） : P_65(C_1) P_68(C_24)
+* E_10 = NET_E_10（原 netlabel "∅364" 为参数值形态或无效，已回退自动命名） : P_7(C_1) P_8(C_10) P_9(C_2)
+* E_11 = NET_E_11（原 netlabel "∅365" 为参数值形态或无效，已回退自动命名） : P_10(C_1) P_58(C_26) P_66(C_24) P_59(C_28)
+* E_12 = NET_E_12（原 netlabel "∅366" 为参数值形态或无效，已回退自动命名） : P_12(C_1) P_13(C_27)
+* E_13 = NET_E_13（原 netlabel "∅367" 为参数值形态或无效，已回退自动命名） : P_14(C_17) P_15(C_3)
+* E_14 = 0 : P_16(C_15) P_17(C_17) P_18(C_18)
+* E_15 = NET_E_15（原 netlabel "∅369" 为参数值形态或无效，已回退自动命名） : P_19(C_13) P_20(C_8)
+* E_16 = 0 : P_21(C_13) P_22(C_47)
+* E_17 = NET_E_17（原 netlabel "∅371" 为参数值形态或无效，已回退自动命名） : P_23(C_14) P_24(C_7)
+* E_18 = 0 : P_25(C_14) P_26(C_46)
+* E_19 = NET_E_19（原 netlabel "∅373" 为参数值形态或无效，已回退自动命名） : P_27(C_12) P_28(C_34)
+* E_20 = 0 : P_31(C_12) P_32(C_45)
+* E_23 = 0 : P_33(C_23) P_34(C_42)
+* E_26 = I010 : P_35(C_35) P_36(C_43)
+* E_27 = IO11_BOOT : P_37(C_38) P_38(C_44)
+* E_28 = 0 : P_39(C_43) P_40(C_48)
+* E_29 = 0 : P_41(C_44) P_42(C_49)
+* E_30 = NET_E_30（原 netlabel "∅378" 为参数值形态或无效，已回退自动命名） : P_70(C_35) P_71(C_39)
+* E_31 = 0 : P_72(C_36) P_73(C_22)
+* E_32 = 0 : P_74(C_37) P_75(C_29)
+* E_33 = NET_E_33（原 netlabel "∅381" 为参数值形态或无效，已回退自动命名） : P_76(C_38) P_77(C_40)
+* E_34 = 0 : P_78(C_41) P_79(C_25)
+* E_35 = NET_E_35（原 netlabel "∅383" 为参数值形态或无效，已回退自动命名） : P_81(C_20)
+* E_36 = NET_E_36（原 netlabel "∅384" 为参数值形态或无效，已回退自动命名） : P_80(C_20)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅107" type=Box
+* 待人工确认: C_3 designator="R1" value="∅118" type=R
+* 待人工确认: C_10 designator="C6" value="∅154" type=C
+* 待人工确认: C_12 designator="U3" value="∅163" type=Box
+* 待人工确认: C_13 designator="U9" value="∅166" type=Box
+* 待人工确认: C_14 designator="U2" value="∅169" type=Box
+* 待人工确认: C_15 designator="C8" value="∅176" type=C
+* 待人工确认: C_20 designator="D1" value="∅202" type=LED
+* 未映射类型 M3螺丝（C_22 U22），按 X 子电路输出
+* 待人工确认: C_22 designator="∅213" value="∅212" type=M3螺丝
+* 未映射类型 M3螺丝（C_23 U23），按 X 子电路输出
+* 待人工确认: C_23 designator="∅218" value="∅217" type=M3螺丝
+* 待人工确认: C_24 designator="D2" value="∅224" type=LED
+* 未映射类型 M3螺丝（C_25 U25），按 X 子电路输出
+* 待人工确认: C_25 designator="∅230" value="∅229" type=M3螺丝
+* 未映射类型 Switch（C_27 SW3），按 X 子电路输出
+* 待人工确认: C_27 designator="SW3" value="∅242" type=Switch
+* 待人工确认: C_28 designator="D4" value="∅248" type=LED
+* 未映射类型 M3螺丝（C_29 U29），按 X 子电路输出
+* 待人工确认: C_29 designator="∅254" value="∅253" type=M3螺丝
+* 待人工确认: C_32 designator="L3" value="∅270" type=L
+* 未映射类型 Switch（C_43 SW1），按 X 子电路输出
+* 待人工确认: C_43 designator="SW1" value="∅324" type=Switch
+* 未映射类型 Switch（C_44 SW2），按 X 子电路输出
+* 待人工确认: C_44 designator="SW2" value="∅330" type=Switch
+
+.end

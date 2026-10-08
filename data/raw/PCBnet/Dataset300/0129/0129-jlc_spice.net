@@ -1,0 +1,55 @@
+* SPICE netlist generated from 0129-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_7 NET_E_34 U1
+XU1 NET_E_1 MLT_7525 NET_E_66 0 U1
+XU3 BUZZER1 NET_E_18 U3
+Q1 NET_E_39 0 NET_E_18 QMOD
+Q2 NET_E_36 0 NET_E_67 QMOD
+R3 MLT_7525 NET_E_36 1K
+R1 MLT_5020 NET_E_39 1K
+D2 NET_E_10 NET_E_23 DMOD
+R2 NET_E_51 NET_E_35 10K
+R4 NET_E_70 NET_E_69 10K
+D1 NET_E_13 NET_E_18 DMOD
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅182" 为参数值形态或无效，已回退自动命名） : P_1(C_10) P_2(C_2)
+* E_2 = MLT_5020 : P_11(C_2)
+* E_3 = MLT_7525 : P_11(C_2)
+* E_6 = 0 : P_30(C_2) P_31(C_8)
+* E_7 = NET_E_7（原 netlabel "∅184" 为参数值形态或无效，已回退自动命名） : P_5(C_1) P_6(C_14)
+* E_10 = NET_E_10（原 netlabel "∅185" 为参数值形态或无效，已回退自动命名） : P_3(C_11)
+* E_13 = NET_E_13（原 netlabel "∅186" 为参数值形态或无效，已回退自动命名） : P_4(C_17)
+* E_17 = BUZZER1 : P_7(C_13) P_8(C_3)
+* E_18 = NET_E_18（原 netlabel "∅188" 为参数值形态或无效，已回退自动命名） : P_9(C_3) P_10(C_4) P_13(C_17)
+* E_23 = NET_E_23（原 netlabel "∅189" 为参数值形态或无效，已回退自动命名） : P_14(C_11)
+* E_34 = NET_E_34（原 netlabel "∅190" 为参数值形态或无效，已回退自动命名） : P_15(C_1) P_12(C_5)
+* E_35 = NET_E_35（原 netlabel "∅191" 为参数值形态或无效，已回退自动命名） : P_16(C_15) P_17(C_4) P_18(C_7)
+* E_36 = NET_E_36（原 netlabel "∅192" 为参数值形态或无效，已回退自动命名） : P_19(C_5) P_20(C_6)
+* E_37 = MLT_5020 : P_21(C_7)
+* E_39 = NET_E_39（原 netlabel "∅193" 为参数值形态或无效，已回退自动命名） : P_17(C_4) P_18(C_7)
+* E_41 = MLT_7525 : P_23(C_6)
+* E_43 = NET_E_43（原 netlabel "∅196" 为参数值形态或无效，已回退自动命名） : P_25(C_16)
+* E_45 = 0 : P_26(C_12) P_27(C_4)
+* E_51 = NET_E_51（原 netlabel "∅198" 为参数值形态或无效，已回退自动命名） : P_28(C_15)
+* E_63 = 0 : P_32(C_5) P_33(C_9)
+* E_66 = NET_E_66（原 netlabel "∅200" 为参数值形态或无效，已回退自动命名） : P_22(C_2)
+* E_67 = NET_E_67（原 netlabel "∅201" 为参数值形态或无效，已回退自动命名） : P_12(C_5)
+* E_69 = NET_E_69（原 netlabel "∅202" 为参数值形态或无效，已回退自动命名） : P_25(C_16)
+* E_70 = NET_E_70（原 netlabel "∅203" 为参数值形态或无效，已回退自动命名） : P_29(C_16)
+
+* ---- 待确认项 ----
+* 未映射类型 Buzzer（C_1 U1），按 X 子电路输出
+* 待人工确认: C_1 designator="∅90" value="∅89" type=Buzzer
+* 待人工确认: C_2 designator="U1" value="∅96" type=Box
+* 未映射类型 Buzzer（C_3 U3），按 X 子电路输出
+* 待人工确认: C_3 designator="∅102" value="∅101" type=Buzzer
+* 待人工确认: C_4 designator="Q1" value="∅110" type=BJT_NPN
+* 待人工确认: C_5 designator="Q2" value="∅121" type=BJT_NPN
+* 待人工确认: C_11 designator="D2" value="∅152" type=D
+* 待人工确认: C_17 designator="D1" value="∅180" type=D
+
+.end

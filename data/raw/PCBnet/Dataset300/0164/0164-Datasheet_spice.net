@@ -1,0 +1,52 @@
+* SPICE netlist generated from 0164-Datasheet_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XIC1 NET_E_6 NET_E_7 0 NET_E_10 NET_E_3 NET_E_3 NET_E_4 IC1
+XIC2 NET_E_2 0 NET_E_4 IC2
+XU1 0 NET_E_2 U1
+Q1 NET_E_11 0 NET_E_9 QMOD
+R1 NET_E_7 NET_E_4 1k
+R2 NET_E_3 NET_E_7 1k
+R4 NET_E_9 NET_E_4 1k
+C1 NET_E_5 NET_E_2 01u
+MQ2 0 NET_E_8 MMOD
+C6 0 NET_E_4 1n
+C3 0 NET_E_3 1n
+C2 NET_E_5 NET_E_2 01uf
+C4 0 NET_E_6 1n
+R6 NET_E_5 NET_E_2 1k
+R3 NET_E_10 NET_E_11 3.2k
+R5 NET_E_9 NET_E_8 1k
+XC5 NET_E_2 0 C5
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = 0 : P_1(C_1) P_2(C_11) P_3(C_12) P_4(C_2) P_5(C_24) P_6(C_25) P_7(C_28) P_8(C_3) P_9(C_30) P_10(C_38) P_11(C_4)
+* E_2 = NET_E_2（原 netlabel "∅148" 为参数值形态或无效，已回退自动命名） : P_14(C_11) P_15(C_2) P_16(C_27) P_17(C_3) P_18(C_35) P_19(C_38)
+* E_3 = NET_E_3（原 netlabel "∅149" 为参数值形态或无效，已回退自动命名） : P_20(C_1) P_21(C_1) P_22(C_25) P_23(C_6)
+* E_4 = NET_E_4（原 netlabel "∅150" 为参数值形态或无效，已回退自动命名） : P_24(C_1) P_25(C_10) P_26(C_2) P_27(C_24) P_28(C_5)
+* E_5 = NET_E_5（原 netlabel "∅151" 为参数值形态或无效，已回退自动命名） : P_2(C_11) P_29(C_27) P_30(C_35)
+* E_6 = NET_E_6（原 netlabel "∅152" 为参数值形态或无效，已回退自动命名） : P_31(C_1) P_32(C_30)
+* E_7 = NET_E_7（原 netlabel "∅153" 为参数值形态或无效，已回退自动命名） : P_33(C_1) P_34(C_5) P_35(C_6)
+* E_8 = NET_E_8（原 netlabel "∅154" 为参数值形态或无效，已回退自动命名） : P_36(C_12) P_37(C_37)
+* E_9 = NET_E_9（原 netlabel "∅155" 为参数值形态或无效，已回退自动命名） : P_38(C_10) P_39(C_37) P_40(C_4)
+* E_10 = NET_E_10（原 netlabel "∅156" 为参数值形态或无效，已回退自动命名） : P_12(C_1) P_13(C_36)
+* E_11 = NET_E_11（原 netlabel "∅157" 为参数值形态或无效，已回退自动命名） : P_41(C_36) P_42(C_4)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="IC1" value="∅47" type=Box
+* 待人工确认: C_2 designator="IC2" value="∅49" type=Box
+* 待人工确认: C_3 designator="U1" value="∅52" type=Box
+* 待人工确认: C_4 designator="Q1" value="∅60" type=BJT_NPN
+* 待人工确认: C_5 designator="R1" value="∅67" type=R
+* 待人工确认: C_6 designator="R2" value="∅74" type=R
+* 待人工确认: C_12 designator="Q2" value="∅91" type=MOSFET_NPN
+* 待人工确认: C_24 designator="C6" value="∅98" type=C
+* 待人工确认: C_25 designator="C3" value="∅104" type=C
+* 待人工确认: C_30 designator="C4" value="∅120" type=C
+* 待人工确认: C_35 designator="R6" value="∅127" type=R
+* 待人工确认: C_37 designator="R5" value="∅139" type=R
+* 待人工确认: C_38 designator="C5" value="∅145" type=Crystal_2Pin
+
+.end

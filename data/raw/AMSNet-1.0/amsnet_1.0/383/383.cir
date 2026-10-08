@@ -1,0 +1,11 @@
+*SPICE Netlist for circuit 383
+C1 0 2 1nF
+C2 0 4 1nF
+I1 4 0 DC 1mA
+M1 2 3 4 4 NMOS W=1u L=1u
+R1 4 2 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

@@ -1,0 +1,30 @@
+* SPICE netlist generated from 0002-Datasheet_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+X1 0 0 XN R9 X1
+XIC2 P7 P7 P7 _1V8 XN R9 0 0 IC2
+C86 XN 0 27p
+C74 R9 0 27p
+C83 0 P7 100n
+C87 0 _1V8 100n
+C82 0 P7 1n
+C81 0 P7 100n
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = P7 : P_1(C_16) P_2(C_19) P_3(C_2) P_4(C_2) P_5(C_2) P_6(C_23)
+* E_2 = _1V8 : P_7(C_18) P_8(C_2)
+* E_3 = XN : P_9(C_1) P_10(C_2) P_11(C_4)
+* E_4 = 0 : P_12(C_1) P_13(C_1) P_14(C_27) P_15(C_4) P_16(C_5)
+* E_5 = R9 : P_17(C_1) P_18(C_2) P_19(C_5)
+* E_6 = 0 : P_20(C_16) P_21(C_19) P_22(C_23) P_23(C_26)
+* E_7 = 0 : P_24(C_17) P_25(C_2) P_26(C_2)
+* E_8 = 0 : P_27(C_18) P_28(C_25)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="X1" value="∅67" type=Crystal_4Pin
+* 待人工确认: C_2 designator="IC2" value="∅78" type=Box
+* 待人工确认: C_19 designator="C82" value="∅108" type=C
+
+.end

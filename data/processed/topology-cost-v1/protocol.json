@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-08",
+  "source": "radial-evidence-v1 tiny/train/validation only; no pressure",
+  "definition": "flip one CROSS/JOIN with all other GT instructions fixed, count upper-triangle FP+FN",
+  "weight": "1+min(FP+FN,128)/32; normalize by train-set mean, CE baseline weight1",
+  "scope": "single-flip sensitivity not additive multi-error loss; GT never used at inference",
+  "models": "fresh same SpatialEvidenceNet CE vs topology-weighted CE, same shuffle, tiny400 then8epochs batch512 micro128",
+  "selection": "minimum worst clean/fixed-blurred dev mean single-flip error cost, then accuracy; no pressure selection",
+  "gate": "new primary coverage>=.90 F1>=.98 exact-net>=.95; risk-vs-CE full pair-F1 gain>=.002, no increased FP, rotation accept<=.05"
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": {
+    "scope": "finite grid, image-only geometry guard and registration, real accuracy unverified",
+    "training": "scale .55:1, widths1..7, blur.2:.8, brightness.5:1, noise2:5",
+    "development": "same style, disjoint programs",
+    "pressure": "scale .55:.85, widths1..7, unseen blur.9:1.2, noise5",
+    "unsupported": "256 new shear .12:.2 pages, not training",
+    "models": "fresh contrast-only and contrast+signed Sobel heads; same budget and bank",
+    "gate": "pressure full F1>=.95 and exact net partition>=.90; geometry shear acceptance<=.05",
+    "training_budget": "each tiny400 final gate then8epochs4096 images batch16",
+    "selection": "each model dev F1 then exact-program, no pressure selection",
+    "GT_used_for_geometry": false,
+    "RC0_changed": false
+  },
+  "cohorts": {
+    "tiny": {
+      "pages": 4,
+      "ready": 4,
+      "sha256": "ea7fe5129edad4161f56d831253a373ef889a28bf6afd7b6eb987a533d46867d"
+    },
+    "train": {
+      "pages": 4096,
+      "ready": 4001,
+      "sha256": "7ea6db9b7be6f898fff80f0575bb1c65c7792cbcfd84e88f9b6ba760c5a81ad2"
+    },
+    "validation": {
+      "pages": 256,
+      "ready": 249,
+      "sha256": "47b15855d720a8bf028e566de60ca53406d320b56b008687e8d4a10f04bb85f3"
+    },
+    "stress": {
+      "pages": 256,
+      "ready": 222,
+      "sha256": "bd2bb4a4b3eeca7dbc75a2499e7e7de59a5dd9059da50296ea30b0e03d37e327"
+    },
+    "shear": {
+      "pages": 256,
+      "ready": 0,
+      "sha256": "9abaf786229659d9be89ec5437de98d8d65da1c8c4c822e4ae6eef5a8db37a48"
+    }
+  },
+  "past_programs_excluded": true
+}

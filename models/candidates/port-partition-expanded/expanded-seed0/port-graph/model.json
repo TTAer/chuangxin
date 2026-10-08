@@ -1,0 +1,44 @@
+{
+  "variant": "port-graph",
+  "best_epoch": {
+    "epoch": 19,
+    "loss": 0.20814072577503778,
+    "seconds": 78.255817199999,
+    "all_pairs": {
+      "f1": 0.9285714285714286,
+      "tp": 338,
+      "fp": 26,
+      "fn": 26,
+      "relations": 636
+    },
+    "cross_axis": {
+      "f1": 0.8589743589743589,
+      "tp": 134,
+      "fp": 26,
+      "fn": 18,
+      "relations": 424
+    },
+    "partial_partition_accuracy": 0.8872180451127819,
+    "transitivity_violation_samples": 0,
+    "samples": 133
+  },
+  "seed": 20261006,
+  "epochs_planned": 24,
+  "parameters": 34353,
+  "device": "cpu",
+  "message_passing": true,
+  "structured_partition": true,
+  "training_samples": 3732,
+  "development_samples": 133,
+  "data_sha256": "6c5300ec0a552020ada7083714a8f587452df05a6d7c2339e65cc3665c3414d3",
+  "selection": "development cross-axis F1, first maximum; no threshold scan",
+  "architecture": "shared canonical arm encoder + two message passing rounds + 15-partition energy MAP",
+  "limitations": [
+    "weak wire-group labels",
+    "original validation fixed, training expanded with pixel-only candidates",
+    "no independent design-family test",
+    "no competition or end-to-end score"
+  ],
+  "runtime_modified": false,
+  "Freeze_A_used": false
+}

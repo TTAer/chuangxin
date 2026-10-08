@@ -1,0 +1,12 @@
+*SPICE Netlist for circuit 331
+I1 VDD 5 DC 1mA
+V1 2 0 5V
+M2 5 5 0 0 NMOS W=1u L=1u
+M3 1 5 0 0 NMOS W=1u L=1u
+M1 2 1 5 5 NMOS W=1u L=1u
+R1 1 2 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

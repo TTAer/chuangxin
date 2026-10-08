@@ -1,0 +1,207 @@
+{
+  "architecture": "DirectionalFieldNet: gated horizontal/vertical depthwise strip context + multi-scale decoder + partial-supervised dense fields",
+  "size": 192,
+  "wire_threshold": 0.7,
+  "heads": [
+    "horizontal_wire",
+    "vertical_wire",
+    "pin_tip",
+    "junction",
+    "ink"
+  ],
+  "strip_context": true,
+  "centerline_loss": true,
+  "train_tiles": 1854,
+  "validation_tiles": 434,
+  "parameters": 72948,
+  "metrics": {
+    "pcbnet/0/0.3": {
+      "pixel_f1": 0.700290505923947,
+      "precision": 0.5665733662456078,
+      "recall": 0.9166229453084012,
+      "matched": 359901,
+      "predicted": 635224,
+      "golden": 392638
+    },
+    "pcbnet/1/0.3": {
+      "pixel_f1": 0.5989769438745703,
+      "precision": 0.4513614095797777,
+      "recall": 0.8900699554828745,
+      "matched": 176346,
+      "predicted": 390698,
+      "golden": 198126
+    },
+    "pcbnet/4/0.3": {
+      "pixel_f1": 0.8874014547526081,
+      "precision": 0.8238610012625874,
+      "recall": 0.9615621374118796,
+      "matched": 1126246,
+      "predicted": 1367034,
+      "golden": 1171267
+    },
+    "pcbnet/0/0.5": {
+      "pixel_f1": 0.7223602218351034,
+      "precision": 0.6124928892819105,
+      "recall": 0.8802586606492494,
+      "matched": 345623,
+      "predicted": 564289,
+      "golden": 392638
+    },
+    "pcbnet/1/0.5": {
+      "pixel_f1": 0.6293183630694198,
+      "precision": 0.4954570105302233,
+      "recall": 0.8622896540585284,
+      "matched": 170842,
+      "predicted": 344817,
+      "golden": 198126
+    },
+    "pcbnet/4/0.5": {
+      "pixel_f1": 0.9182805668878284,
+      "precision": 0.9331245053261719,
+      "recall": 0.9039015015363704,
+      "matched": 1058710,
+      "predicted": 1134586,
+      "golden": 1171267
+    },
+    "pcbnet/0/0.7": {
+      "pixel_f1": 0.7345754303256222,
+      "precision": 0.6658750502093264,
+      "recall": 0.8190827174140047,
+      "matched": 321603,
+      "predicted": 482978,
+      "golden": 392638
+    },
+    "pcbnet/1/0.7": {
+      "pixel_f1": 0.6566165917330813,
+      "precision": 0.5481584630932141,
+      "recall": 0.8185800954947862,
+      "matched": 162182,
+      "predicted": 295867,
+      "golden": 198126
+    },
+    "pcbnet/4/0.7": {
+      "pixel_f1": 0.8936945684037567,
+      "precision": 0.9858487991406912,
+      "recall": 0.8172961416995441,
+      "matched": 957272,
+      "predicted": 971013,
+      "golden": 1171267
+    },
+    "synthetic/0/0.3": {
+      "pixel_f1": 0.9821271821271821,
+      "precision": 0.9758923945620167,
+      "recall": 0.9884421476349579,
+      "matched": 148807,
+      "predicted": 152483,
+      "golden": 150547
+    },
+    "synthetic/1/0.3": {
+      "pixel_f1": 0.948437945114424,
+      "precision": 0.9174525413349663,
+      "recall": 0.9815894647186005,
+      "matched": 29964,
+      "predicted": 32660,
+      "golden": 30526
+    },
+    "synthetic/4/0.3": {
+      "pixel_f1": 0.9409551958084235,
+      "precision": 0.9004093507899456,
+      "recall": 0.985324823409202,
+      "matched": 133076,
+      "predicted": 147795,
+      "golden": 135058
+    },
+    "synthetic/0/0.5": {
+      "pixel_f1": 0.9817602644328488,
+      "precision": 0.9849766325459494,
+      "recall": 0.9785648335735684,
+      "matched": 147320,
+      "predicted": 149567,
+      "golden": 150547
+    },
+    "synthetic/1/0.5": {
+      "pixel_f1": 0.9601852301614288,
+      "precision": 0.9492876580758765,
+      "recall": 0.9713359103714866,
+      "matched": 29651,
+      "predicted": 31235,
+      "golden": 30526
+    },
+    "synthetic/4/0.5": {
+      "pixel_f1": 0.9644328907138532,
+      "precision": 0.9619606052123695,
+      "recall": 0.9669179167468791,
+      "matched": 130590,
+      "predicted": 135754,
+      "golden": 135058
+    },
+    "synthetic/0/0.7": {
+      "pixel_f1": 0.9751204853815567,
+      "precision": 0.9904358668694592,
+      "recall": 0.9602715431061396,
+      "matched": 144566,
+      "predicted": 145962,
+      "golden": 150547
+    },
+    "synthetic/1/0.7": {
+      "pixel_f1": 0.9585487077534791,
+      "precision": 0.9696654823355902,
+      "recall": 0.9476839415580162,
+      "matched": 28929,
+      "predicted": 29834,
+      "golden": 30526
+    },
+    "synthetic/4/0.7": {
+      "pixel_f1": 0.9612167010151896,
+      "precision": 0.9918637072509885,
+      "recall": 0.9324068178116068,
+      "matched": 125929,
+      "predicted": 126962,
+      "golden": 135058
+    }
+  },
+  "best_epoch": {
+    "epoch": 6,
+    "loss": 0.2963582866921507,
+    "seconds": 118.33206450002035,
+    "pcb_directional_pixel_f1": 0.6955960110293518,
+    "threshold": 0.7
+  },
+  "data_preparation": [
+    {
+      "source": "pcbnet",
+      "tiles": 1776,
+      "pages": {
+        "train": 241,
+        "validation": 55
+      },
+      "split_tiles": {
+        "train": 1446,
+        "validation": 330
+      },
+      "size": 192,
+      "skipped": {},
+      "supervision": "PCB vectors/annotated pin tips/weak junctions; CGHD ink-only; original synthetic full fields",
+      "gt10_used_for_training": false
+    },
+    {
+      "source": "synthetic",
+      "tiles": 512,
+      "pages": {
+        "train": 102,
+        "validation": 26
+      },
+      "split_tiles": {
+        "validation": 104,
+        "train": 408
+      },
+      "size": 192,
+      "skipped": {},
+      "supervision": "PCB vectors/annotated pin tips/weak junctions; CGHD ink-only; original synthetic full fields",
+      "gt10_used_for_training": false
+    }
+  ],
+  "evaluation": "PCB held-out-page tile pixel metrics; validation selects checkpoint and threshold; not end-to-end accuracy",
+  "keypoint_evaluation": "tip/junction heads trained, but pixel metrics do not establish keypoint detection quality",
+  "CGHD_supervision": "ink head only; no wire or electrical-junction labels from binary strokes"
+}

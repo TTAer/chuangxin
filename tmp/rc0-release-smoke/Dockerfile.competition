@@ -1,0 +1,31 @@
+FROM edarace-agent-base:ubuntu24
+WORKDIR /submission
+RUN apt-get update && apt-get install -y --no-install-recommends libglib2.0-0 libgl1 && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/graphschematic --system-site-packages
+COPY requirements-inference.txt /submission/
+COPY vendor/linux-wheels /opt/graphschematic-wheelhouse/
+COPY scripts/verify_wheelhouse.py /submission/scripts/verify_wheelhouse.py
+RUN if [ -f /opt/graphschematic-wheelhouse/manifest.json ]; then \
+      /opt/graphschematic/bin/python /submission/scripts/verify_wheelhouse.py /opt/graphschematic-wheelhouse && \
+      /opt/graphschematic/bin/pip install --no-index --find-links /opt/graphschematic-wheelhouse -r requirements-inference.txt; \
+    else /opt/graphschematic/bin/pip install --no-cache-dir -r requirements-inference.txt; fi
+ENV PATH="/opt/graphschematic/bin:${PATH}"
+COPY pcbparse /submission/pcbparse
+COPY models/detector/pcb-yolo11n.onnx models/detector/pcb-yolo11n.json /submission/models/detector/
+COPY models/pins/pin-heatmap.onnx models/pins/pin-heatmap.json /submission/models/pins/
+COPY models/topology/topology-perception.onnx models/topology/topology-perception.json /submission/models/topology/
+COPY models/semantics/component-library.json /submission/models/semantics/
+COPY models/candidates/official-pins/pin-heatmap.onnx models/candidates/official-pins/pin-heatmap.json /submission/models/candidates/official-pins/
+COPY models/candidates/association-balanced /submission/models/candidates/association-balanced
+COPY models/candidates/association-mlp-balanced /submission/models/candidates/association-mlp-balanced
+COPY models/candidates/side-strip-base/side-strip.onnx models/candidates/side-strip-base/side-strip.json /submission/models/candidates/side-strip-base/
+COPY models/candidates/side-strip-mixed/side-strip.onnx models/candidates/side-strip-mixed/side-strip.json /submission/models/candidates/side-strip-mixed/
+COPY models/candidates/side-strip-local/side-strip.onnx models/candidates/side-strip-local/side-strip.json /submission/models/candidates/side-strip-local/
+COPY models/candidates/side-strip-oracle-paired/side-strip.onnx models/candidates/side-strip-oracle-paired/side-strip.json /submission/models/candidates/side-strip-oracle-paired/
+COPY models/candidates/side-strip-detector-paired/side-strip.onnx models/candidates/side-strip-detector-paired/side-strip.json /submission/models/candidates/side-strip-detector-paired/
+COPY models/symbols/templates.json models/symbols/templates.npz /submission/models/symbols/
+COPY models/pipeline.json /submission/models/pipeline.json
+COPY agent_system /submission/agent_system
+COPY scripts/request_graph_corrections.py /submission/scripts/request_graph_corrections.py
+RUN chmod +x /submission/agent_system
+ENTRYPOINT ["/submission/agent_system"]

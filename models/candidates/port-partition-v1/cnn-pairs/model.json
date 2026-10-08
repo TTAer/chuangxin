@@ -1,0 +1,43 @@
+{
+  "variant": "cnn-pairs",
+  "best_epoch": {
+    "epoch": 1,
+    "loss": 0.6352818012237549,
+    "seconds": 0.6636565999942832,
+    "all_pairs": {
+      "f1": 0.7349926793557833,
+      "tp": 251,
+      "fp": 68,
+      "fn": 113,
+      "relations": 636
+    },
+    "cross_axis": {
+      "f1": 0.30115830115830117,
+      "tp": 39,
+      "fp": 68,
+      "fn": 113,
+      "relations": 424
+    },
+    "partial_partition_accuracy": 0.0,
+    "transitivity_violation_samples": 133,
+    "samples": 133
+  },
+  "seed": 20261006,
+  "epochs_planned": 16,
+  "parameters": 13374,
+  "device": "cpu",
+  "training_samples": 953,
+  "development_samples": 133,
+  "data_sha256": "6325719b635c1f726a9a9c681c08bec6229e3ae723dc5d7ca5acb85348f32f78",
+  "selection": "development cross-axis F1, first maximum; no threshold scan",
+  "architecture": "whole patch CNN + six unconstrained pair logits",
+  "limitations": [
+    "weak wire-group labels",
+    "candidate-conditioned local task",
+    "same source cohort as old topology model",
+    "no independent design-family test",
+    "no competition or end-to-end score"
+  ],
+  "runtime_modified": false,
+  "Freeze_A_used": false
+}

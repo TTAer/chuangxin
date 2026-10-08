@@ -1,0 +1,89 @@
+* SPICE netlist generated from 0126-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_1 NET_E_4 U1
+XU1 NRST NET_E_42 NET_E_43 0 NET_E_18 NET_E_20 NET_E_44 I2C_SDA I2C_SCL LED_RUN NC_P_88 NC_P_87 NC_P_86 SWIM NTC_LOCAL NTC_REMOTE BUZZER_CTL NC_P_84 NC_P_83 NC_P_85 U1
+XU2 NET_E_36 SWIM 0 NRST U2
+XU3 NET_E_33 0 U3
+R1 NET_E_13 NRST 10k
+XU4 I2C_SCL I2C_SDA U4
+XU5 NTC_REMOTE 0 U5
+R5 NTC_REMOTE NET_E_41 10k
+C2 0 NET_E_18 1u
+C1 0 NET_E_20 100n
+D1 NET_E_1 NET_E_4 DMOD
+R7 I2C_SCL NET_E_28 10k
+R4 BUZZER_CTL NET_E_10 10k
+R6 I2C_SDA NET_E_27 10k
+R9 LED_RUN NET_E_31 1k
+C3 0 NTC_REMOTE 100n
+C5 0 NET_E_33 1u
+Q1 NET_E_10 0 NET_E_4 QMOD
+R8 0 NET_E_30 1k
+R3 NTC_LOCAL NET_E_2 10k
+DLED1 NET_E_30 NET_E_25 DMOD
+C4 0 NTC_LOCAL 100n
+DLED2 NET_E_31 NET_E_26 DMOD
+R2 0 NTC_LOCAL 1k
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅339" 为参数值形态或无效，已回退自动命名） : P_1(C_1) P_2(C_15) P_3(C_8)
+* E_2 = NET_E_2（原 netlabel "∅340" 为参数值形态或无效，已回退自动命名） : P_22(C_32) P_23(C_33)
+* E_4 = NET_E_4（原 netlabel "∅341" 为参数值形态或无效，已回退自动命名） : P_59(C_1) P_60(C_15) P_61(C_30)
+* E_5 = NTC_LOCAL : P_63(C_32) P_64(C_36) P_65(C_42)
+* E_6 = NTC_REMOTE : P_66(C_10) P_67(C_24) P_68(C_9)
+* E_7 = 0 : P_69(C_24) P_70(C_28) P_71(C_9)
+* E_8 = 0 : P_72(C_36) P_73(C_40) P_74(C_42)
+* E_9 = BUZZER_CTL : P_75(C_20)
+* E_10 = NET_E_10（原 netlabel "∅344" 为参数值形态或无效，已回退自动命名） : P_4(C_20) P_5(C_30)
+* E_11 = 0 : P_6(C_16) P_7(C_30)
+* E_13 = NET_E_13（原 netlabel "∅346" 为参数值形态或无效，已回退自动命名） : P_9(C_22) P_10(C_6)
+* E_14 = NRST : P_11(C_2) P_12(C_6)
+* E_15 = BUZZER_CTL : P_13(C_2)
+* E_16 = 0 : P_14(C_13) P_15(C_14) P_16(C_2) P_17(C_3)
+* E_17 = NTC_REMOTE : P_18(C_2)
+* E_18 = NET_E_18（原 netlabel "∅348" 为参数值形态或无效，已回退自动命名） : P_19(C_13) P_20(C_2)
+* E_19 = NTC_LOCAL : P_21(C_2)
+* E_20 = NET_E_20（原 netlabel "∅349" 为参数值形态或无效，已回退自动命名） : P_24(C_14) P_25(C_2) P_79(C_25)
+* E_21 = SWIM : P_26(C_2)
+* E_22 = I2C_SDA : P_27(C_2)
+* E_23 = I2C_SCL : P_28(C_2)
+* E_24 = LED_RUN : P_29(C_2)
+* E_25 = NET_E_25（原 netlabel "∅350" 为参数值形态或无效，已回退自动命名） : P_40(C_35) P_31(C_37)
+* E_26 = NET_E_26（原 netlabel "∅351" 为参数值形态或无效，已回退自动命名） : P_32(C_39) P_42(C_41)
+* E_27 = NET_E_27（原 netlabel "∅352" 为参数值形态或无效，已回退自动命名） : P_34(C_12) P_35(C_21)
+* E_28 = NET_E_28（原 netlabel "∅353" 为参数值形态或无效，已回退自动命名） : P_36(C_11) P_37(C_18)
+* E_29 = NRST : P_38(C_4)
+* E_30 = NET_E_30（原 netlabel "∅354" 为参数值形态或无效，已回退自动命名） : P_39(C_31) P_30(C_35)
+* E_31 = NET_E_31（原 netlabel "∅355" 为参数值形态或无效，已回退自动命名） : P_41(C_23) P_33(C_41)
+* E_32 = 0 : P_43(C_29) P_44(C_4)
+* E_33 = NET_E_33（原 netlabel "∅357" 为参数值形态或无效，已回退自动命名） : P_45(C_27) P_46(C_5) P_78(C_26)
+* E_34 = SWIM : P_47(C_4)
+* E_35 = I2C_SDA : P_48(C_21) P_49(C_7)
+* E_36 = NET_E_36（原 netlabel "∅358" 为参数值形态或无效，已回退自动命名） : P_50(C_34) P_51(C_4)
+* E_37 = I2C_SCL : P_52(C_18) P_53(C_7)
+* E_38 = 0 : P_54(C_17) P_55(C_26) P_56(C_5)
+* E_39 = 0 : P_57(C_31) P_58(C_38)
+* E_40 = LED_RUN : P_62(C_23)
+* E_41 = NET_E_41（原 netlabel "∅361" 为参数值形态或无效，已回退自动命名） : P_76(C_10) P_77(C_19)
+* E_42 = NET_E_42（原 netlabel "∅362" 为参数值形态或无效，已回退自动命名） : P_80(C_2)
+* E_43 = NET_E_43（原 netlabel "∅363" 为参数值形态或无效，已回退自动命名） : P_81(C_2)
+* E_44 = NET_E_44（原 netlabel "∅364" 为参数值形态或无效，已回退自动命名） : P_82(C_2)
+
+* ---- 待确认项 ----
+* 未映射类型 Buzzer（C_1 U1），按 X 子电路输出
+* 待人工确认: C_1 designator="∅144" value="∅143" type=Buzzer
+* 待人工确认: C_2 designator="U1" value="∅147" type=Box
+* 待人工确认: C_4 designator="U2" value="∅156" type=Box
+* 待人工确认: C_5 designator="U3" value="∅160" type=Box
+* 待人工确认: C_7 designator="U4" value="∅169" type=Box
+* 待人工确认: C_9 designator="U5" value="∅177" type=Box
+* 待人工确认: C_15 designator="D1" value="∅207" type=D
+* 待人工确认: C_30 designator="Q1" value="∅278" type=BJT_NPN
+* 待人工确认: C_35 designator="LED1" value="∅303" type=LED
+* 待人工确认: C_41 designator="LED2" value="∅331" type=LED
+* 待人工确认: C_42 designator="R2" value="∅337" type=R
+
+.end

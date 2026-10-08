@@ -1,0 +1,72 @@
+{
+  "size": 96,
+  "margin": 0.15,
+  "threshold": 0.35,
+  "architecture": "coordinate-conditioned dual tip/base heatmaps with skip connections",
+  "evaluation": "oracle union body/endpoint boxes on 40 held-out official training pages; 5px location tolerance; threshold/checkpoint selected on validation; not end-to-end pin-number F1",
+  "train_crops": 7071,
+  "validation_crops": 1906,
+  "metrics": {
+    "epoch": 6,
+    "loss": 0.20785651181463724,
+    "seconds": 89.29196510001202,
+    "threshold": 0.35,
+    "precision": 0.8916164891153312,
+    "recall": 0.8612975391498882,
+    "f1": 0.8761948111060537,
+    "matched": 3850,
+    "predicted": 4318,
+    "golden": 4470
+  },
+  "threshold_metrics": {
+    "0.15": {
+      "precision": 0.7187052932761088,
+      "recall": 0.8991051454138702,
+      "f1": 0.7988471476843569,
+      "matched": 4019,
+      "predicted": 5592,
+      "golden": 4470
+    },
+    "0.25": {
+      "precision": 0.8326651192234649,
+      "recall": 0.8827740492170022,
+      "f1": 0.8569877293951569,
+      "matched": 3946,
+      "predicted": 4739,
+      "golden": 4470
+    },
+    "0.35": {
+      "precision": 0.8916164891153312,
+      "recall": 0.8612975391498882,
+      "f1": 0.8761948111060537,
+      "matched": 3850,
+      "predicted": 4318,
+      "golden": 4470
+    },
+    "0.5": {
+      "precision": 0.9330729166666667,
+      "recall": 0.801565995525727,
+      "f1": 0.8623345367027677,
+      "matched": 3583,
+      "predicted": 3840,
+      "golden": 4470
+    }
+  },
+  "supervision": "official 200 training dataset; 160 training pages; no updated GT used for training",
+  "data_preparation": {
+    "crops": 8977,
+    "split_counts": {
+      "train": 7071,
+      "validation": 1906
+    },
+    "pages": {
+      "train": 160,
+      "validation": 40
+    },
+    "skipped": {
+      "no_valid_points": 114
+    },
+    "updated_gt_used_for_training": false,
+    "evaluation_caveat": "oracle union body/endpoint boxes; not end-to-end pin F1; page split retained from existing detector"
+  }
+}

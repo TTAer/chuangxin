@@ -1,0 +1,12 @@
+*SPICE Netlist for circuit 559
+C1 0 3 1nF
+C2 3 5 1nF
+V1 5 0 5V
+M2 6 3 0 0 NMOS W=1u L=1u
+M1 2 1 6 6 NMOS W=1u L=1u
+R1 2 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

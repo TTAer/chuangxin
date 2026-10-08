@@ -1,0 +1,45 @@
+{
+  "variant": "partition-only",
+  "best_epoch": {
+    "epoch": 24,
+    "loss": 0.9883443752924601,
+    "seconds": 24.821102700021584,
+    "all_pairs": {
+      "f1": 0.8005148005148005,
+      "tp": 311,
+      "fp": 102,
+      "fn": 53,
+      "relations": 636
+    },
+    "cross_axis": {
+      "f1": 0.6344086021505376,
+      "tp": 118,
+      "fp": 102,
+      "fn": 34,
+      "relations": 424
+    },
+    "partial_partition_accuracy": 0.6090225563909775,
+    "transitivity_violation_samples": 0,
+    "samples": 133
+  },
+  "seed": 20261007,
+  "epochs_planned": 24,
+  "parameters": 34353,
+  "device": "cpu",
+  "message_passing": false,
+  "structured_partition": true,
+  "training_samples": 953,
+  "development_samples": 133,
+  "data_sha256": "6325719b635c1f726a9a9c681c08bec6229e3ae723dc5d7ca5acb85348f32f78",
+  "selection": "development cross-axis F1, first maximum; no threshold scan",
+  "architecture": "shared canonical arm encoder + two message passing rounds + 15-partition energy MAP",
+  "limitations": [
+    "weak wire-group labels",
+    "candidate-conditioned local task",
+    "same source cohort as old topology model",
+    "no independent design-family test",
+    "no competition or end-to-end score"
+  ],
+  "runtime_modified": false,
+  "Freeze_A_used": false
+}

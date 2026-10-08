@@ -1,0 +1,53 @@
+* SPICE netlist generated from 0079-Datasheet_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NC_P_1 NET_E_10 0 Battery NET_E_3 NET_E_4 NC_P_19 NET_E_6 NET_E_7 MCU_I_O MCU_I_O U1
+C1 0 NET_E_10 1_μ
+R1 0 NET_E_6 1k
+R2 0 NET_E_3 1k
+C2 0 NET_E_7 1_μ
+C3 0 NET_E_13 10_μ
+C4 0 NET_E_4 10_μ
+R3 NET_E_3 NET_E_4 1k
+C5 0 Battery 1n
+XU24 NET_E_13 U24
+R4 0 NET_E_7 1k
+L1 NET_E_28 NET_E_13 1u
+L2 NET_E_4 NET_E_28 1u
+
+* ---- 网络对照（edge -> 节点） ----
+* E_2 = Battery : P_10(C_1) P_11(C_23)
+* E_3 = NET_E_3（原 netlabel "∅175" 为参数值形态或无效，已回退自动命名） : P_12(C_1) P_13(C_13) P_14(C_22)
+* E_4 = NET_E_4（原 netlabel "∅176" 为参数值形态或无效，已回退自动命名） : P_15(C_1) P_16(C_21) P_17(C_22) P_18(C_28)
+* E_6 = NET_E_6（原 netlabel "∅177" 为参数值形态或无效，已回退自动命名） : P_20(C_1) P_21(C_11)
+* E_7 = NET_E_7（原 netlabel "∅178" 为参数值形态或无效，已回退自动命名） : P_22(C_1) P_23(C_15) P_24(C_26)
+* E_8 = MCU_I_O : P_25(C_1)
+* E_9 = MCU_I_O : P_26(C_1)
+* E_10 = NET_E_10（原 netlabel "∅179" 为参数值形态或无效，已回退自动命名） : P_2(C_1) P_3(C_5)
+* E_11 = 0 : P_4(C_23) P_5(C_8)
+* E_13 = NET_E_13（原 netlabel "∅181" 为参数值形态或无效，已回退自动命名） : P_6(C_17) P_7(C_24) P_8(C_27)
+* E_14 = 0 : P_9(C_1) P_49(C_12)
+* E_17 = 0 : P_29(C_5) P_30(C_25)
+* E_19 = 0 : P_32(C_11) P_33(C_2)
+* E_21 = 0 : P_35(C_13) P_36(C_4)
+* E_23 = 0 : P_38(C_15) P_39(C_14)
+* E_24 = 0 : P_40(C_17) P_41(C_20)
+* E_26 = 0 : P_43(C_21) P_44(C_19)
+* E_27 = 0 : P_45(C_26) P_46(C_9)
+* E_28 = NET_E_28（原 netlabel "∅190" 为参数值形态或无效，已回退自动命名） : P_47(C_27) P_48(C_28)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅50" type=Box
+* 待人工确认: C_11 designator="R1" value="∅82" type=R
+* 待人工确认: C_13 designator="R2" value="∅94" type=R
+* 待人工确认: C_22 designator="R3" value="∅134" type=R
+* 待人工确认: C_23 designator="C5" value="∅141" type=C
+* 未映射类型 ANT（C_24 U24），按 X 子电路输出
+* 待人工确认: C_24 designator="∅147" value="∅146" type=ANT
+* 待人工确认: C_26 designator="R4" value="∅158" type=R
+* 待人工确认: C_27 designator="L1" value="∅165" type=L
+* 待人工确认: C_28 designator="L2" value="∅172" type=L
+
+.end

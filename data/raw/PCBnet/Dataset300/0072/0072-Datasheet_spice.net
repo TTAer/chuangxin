@@ -1,0 +1,53 @@
+* SPICE netlist generated from 0072-Datasheet_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_10 FB NET_E_6 0 NET_E_8 U1
+D1 NET_E_5 NET_E_11 DMOD
+D2 NET_E_4 NET_E_12 DMOD
+XU4 0 NET_E_12 U4
+D3 NET_E_5 0 DMOD
+R2 0 FB 1k
+R1 FB VOUT 100k
+C1 NET_E_18 NET_E_17 1n
+R3 NET_E_19 NET_E_5 1k
+XU2 VOUT NET_E_10 0 NET_E_8 U2
+C2 0 NET_E_6 1μ
+C3 0 NET_E_4 680μ
+R4 NET_E_6 VOUT 1k
+R5 NET_E_11 NET_E_4 1k
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = VOUT : P_1(C_20) P_2(C_25) P_3(C_28)
+* E_2 = FB : P_6(C_1) P_7(C_18) P_8(C_20)
+* E_3 = 0 : P_9(C_21) P_10(C_27) P_11(C_4)
+* E_4 = NET_E_4（原 netlabel "∅133" 为参数值形态或无效，已回退自动命名） : P_12(C_27) P_13(C_29) P_14(C_3)
+* E_5 = NET_E_5（原 netlabel "∅134" 为参数值形态或无效，已回退自动命名） : P_27(C_2) P_16(C_24) P_17(C_6)
+* E_6 = NET_E_6（原 netlabel "∅135" 为参数值形态或无效，已回退自动命名） : P_18(C_1) P_19(C_26) P_20(C_28)
+* E_7 = 0 : P_21(C_1) P_22(C_23) P_23(C_25)
+* E_8 = NET_E_8（原 netlabel "∅137" 为参数值形态或无效，已回退自动命名） : P_24(C_1) P_25(C_25)
+* E_10 = NET_E_10（原 netlabel "∅138" 为参数值形态或无效，已回退自动命名） : P_4(C_1) P_5(C_25)
+* E_11 = NET_E_11（原 netlabel "∅139" 为参数值形态或无效，已回退自动命名） : P_15(C_2) P_28(C_29)
+* E_12 = NET_E_12（原 netlabel "∅140" 为参数值形态或无效，已回退自动命名） : P_29(C_3) P_30(C_4)
+* E_14 = 0 : P_32(C_14) P_33(C_6)
+* E_15 = 0 : P_34(C_15) P_35(C_26)
+* E_16 = 0 : P_36(C_18) P_37(C_9)
+* E_17 = NET_E_17（原 netlabel "∅144" 为参数值形态或无效，已回退自动命名） : P_38(C_22)
+* E_18 = NET_E_18（原 netlabel "∅145" 为参数值形态或无效，已回退自动命名） : P_39(C_22)
+* E_19 = NET_E_19（原 netlabel "∅146" 为参数值形态或无效，已回退自动命名） : P_40(C_24)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅19" type=Box
+* 待人工确认: C_2 designator="D1" value="∅25" type=LED
+* 待人工确认: C_3 designator="D2" value="∅32" type=D
+* 未映射类型 Transfomer（C_4 U4），按 X 子电路输出
+* 待人工确认: C_4 designator="∅40" value="∅39" type=Transfomer
+* 待人工确认: C_6 designator="D3" value="∅46" type=D
+* 待人工确认: C_18 designator="R2" value="∅68" type=R
+* 待人工确认: C_22 designator="C1" value="∅85" type=C
+* 待人工确认: C_24 designator="R3" value="∅97" type=R
+* 待人工确认: C_25 designator="U2" value="∅105" type=Box
+* 待人工确认: C_28 designator="R4" value="∅123" type=R
+
+.end

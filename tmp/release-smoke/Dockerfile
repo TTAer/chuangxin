@@ -1,0 +1,13 @@
+FROM python:3.12-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends libglib2.0-0 libgl1 && rm -rf /var/lib/apt/lists/*
+COPY requirements-inference.txt /app/
+RUN pip install --no-cache-dir -r requirements-inference.txt
+COPY pcbparse /app/pcbparse
+COPY models/detector /app/models/detector
+COPY models/pins /app/models/pins
+COPY models/pipeline.json /app/models/pipeline.json
+COPY models/symbols/templates.json /app/models/symbols/templates.json
+COPY models/symbols/templates.npz /app/models/symbols/templates.npz
+COPY run.py /app/
+ENTRYPOINT ["python", "run.py"]

@@ -1,0 +1,54 @@
+* SPICE netlist generated from 0094-Altium Designer_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 0 0 VCC 0 RES NET_E_22 0 DC 0 NET_E_18 NET_E_22 LEDK NET_E_6 CS U1
+XU2 0 VCC_IN_3 NET_E_20 U2
+XU3 0 VCC_IN_3 NET_E_20 U3
+XU4 0 VCC_N RES BLK NET_E_29 SDA SCL DC U4
+C2 0 NET_E_22 1u
+R1 NET_E_11 LEDK 1k
+C1 0 NET_E_20 1u
+QU4 BLK 0 NET_E_11 QMOD
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = 0 : P_1(C_15) P_2(C_16)
+* E_2 = 0 : P_21(C_12) P_22(C_6)
+* E_3 = RES : P_35(C_4)
+* E_4 = 0 : P_36(C_13) P_37(C_21)
+* E_5 = DC : P_38(C_4)
+* E_6 = NET_E_6（原 netlabel "∅135" 为参数值形态或无效，已回退自动命名） : P_39(C_1)
+* E_7 = BLK : P_40(C_21)
+* E_8 = CS : P_41(C_1)
+* E_9 = 0 : P_42(C_1) P_43(C_5)
+* E_10 = 0 : P_3(C_3) P_4(C_9)
+* E_11 = NET_E_11（原 netlabel "∅138" 为参数值形态或无效，已回退自动命名） : P_5(C_14) P_6(C_21)
+* E_12 = VCC_N : P_7(C_4)
+* E_13 = SDA : P_8(C_4)
+* E_14 = 0 : P_9(C_10) P_10(C_2)
+* E_15 = DC : P_11(C_1)
+* E_16 = 0 : P_12(C_1) P_13(C_1) P_14(C_8)
+* E_17 = 0 : P_15(C_1) P_16(C_1) P_17(C_7)
+* E_18 = NET_E_18（原 netlabel "∅142" 为参数值形态或无效，已回退自动命名） : P_18(C_1)
+* E_19 = VCC_IN_3 : P_19(C_2) P_20(C_3)
+* E_20 = NET_E_20（原 netlabel "∅143" 为参数值形态或无效，已回退自动命名） : P_23(C_16) P_24(C_2) P_25(C_3)
+* E_21 = BLK : P_26(C_4)
+* E_22 = NET_E_22（原 netlabel "∅144" 为参数值形态或无效，已回退自动命名） : P_27(C_1) P_28(C_1) P_44(C_12)
+* E_23 = LEDK : P_29(C_1)
+* E_24 = VCC : P_30(C_1)
+* E_25 = 0 : P_31(C_4)
+* E_26 = RES : P_32(C_1)
+* E_27 = SCL : P_33(C_4)
+* E_28 = LEDK : P_34(C_14)
+* E_29 = NET_E_29（原 netlabel "∅145" 为参数值形态或无效，已回退自动命名） : P_45(C_4)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅48" type=Box
+* 待人工确认: C_2 designator="U2" value="∅50" type=Box
+* 待人工确认: C_3 designator="U3" value="∅54" type=Box
+* 待人工确认: C_4 designator="U4" value="∅67" type=Box
+* 待人工确认: C_14 designator="R1" value="∅112" type=R
+* 待人工确认: C_21 designator="U4" value="∅130" type=BJT_NPN
+
+.end

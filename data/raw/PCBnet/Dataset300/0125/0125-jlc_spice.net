@@ -1,0 +1,49 @@
+* SPICE netlist generated from 0125-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 0 LCD_RST LCD_SCLK LCD_DC NET_E_13 NET_E_15 NET_E_16 NET_E_16 NET_E_16 0 LCD_MOSO NET_E_16 LCD_CS LCD_MOS16 U1
+MQ1 NET_E_23 0 NET_E_16 MMOD
+XSW1 ENCODER_DT ENCODER_SW 0 0 ENCODER_CLK 0 0 SW1
+R13 0 NET_E_23 47k
+R11 NET_E_25 ENCODER_CLK 10k
+R1 ENCODER_DT NET_E_4 10k
+C13 0 ENCODER_CLK 100n
+C14 ENCODER_DT 0 100n
+R2 NET_E_14 NET_E_15 470
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = 0 : P_1(C_1) P_2(C_6)
+* E_2 = LCD_RST : P_25(C_1)
+* E_3 = LCD_SCLK : P_39(C_1)
+* E_4 = NET_E_4（原 netlabel "∅234" 为参数值形态或无效，已回退自动命名） : P_40(C_22) P_41(C_8)
+* E_5 = LCD_DC : P_42(C_1)
+* E_6 = LCD_CS : P_43(C_1)
+* E_7 = LCD_MOS16 : P_44(C_1)
+* E_8 = 0 : P_45(C_11) P_46(C_17)
+* E_9 = 0 : P_47(C_18) P_48(C_3)
+* E_10 = 0 : P_3(C_1) P_4(C_9)
+* E_11 = LCD_MOSO : P_5(C_1)
+* E_12 = ENCODER_DT : P_6(C_11) P_7(C_3) P_8(C_8)
+* E_13 = NET_E_13（原 netlabel "∅238" 为参数值形态或无效，已回退自动命名） : P_9(C_1) P_10(C_20)
+* E_14 = NET_E_14（原 netlabel "∅239" 为参数值形态或无效，已回退自动命名） : P_11(C_12) P_12(C_19)
+* E_15 = NET_E_15（原 netlabel "∅240" 为参数值形态或无效，已回退自动命名） : P_13(C_1) P_14(C_12)
+* E_16 = NET_E_16（原 netlabel "∅241" 为参数值形态或无效，已回退自动命名） : P_15(C_1) P_16(C_1) P_17(C_1) P_18(C_1) P_19(C_2)
+* E_17 = ENCODER_SW : P_20(C_3)
+* E_18 = 0 : P_21(C_16) P_22(C_3)
+* E_19 = 0 : P_23(C_13) P_24(C_3)
+* E_20 = ENCODER_CLK : P_26(C_3) P_27(C_7) P_49(C_10)
+* E_21 = 0 : P_28(C_14) P_29(C_3)
+* E_22 = 0 : P_30(C_10) P_31(C_15)
+* E_23 = NET_E_23（原 netlabel "∅246" 为参数值形态或无效，已回退自动命名） : P_32(C_2) P_33(C_4)
+* E_24 = 0 : P_34(C_2) P_35(C_4) P_36(C_5)
+* E_25 = NET_E_25（原 netlabel "∅248" 为参数值形态或无效，已回退自动命名） : P_37(C_21) P_38(C_7)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅120" type=Box
+* 待人工确认: C_2 designator="Q1" value="∅128" type=MOSFET_NPN
+* 未映射类型 Switch（C_3 SW1），按 X 子电路输出
+* 待人工确认: C_3 designator="SW1" value="∅145" type=Switch
+
+.end

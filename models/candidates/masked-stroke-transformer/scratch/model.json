@@ -1,0 +1,33 @@
+{
+  "architecture": "MaskedStrokeTransformer: 36 patch tokens, 2 transformer blocks, direct 15-way legal partition head",
+  "variant": "scratch",
+  "parameters": 86927,
+  "device": "cuda",
+  "best": {
+    "epoch": 11,
+    "loss": 0.15668830101609102,
+    "all_pairs": {
+      "f1": 0.9121338912133892,
+      "tp": 327,
+      "fp": 26,
+      "fn": 37,
+      "relations": 636
+    },
+    "cross_axis": {
+      "f1": 0.8053691275167785,
+      "tp": 120,
+      "fp": 26,
+      "fn": 32,
+      "relations": 424
+    },
+    "partial_partition_accuracy": 0.849624060150376,
+    "transitivity_violation_samples": 0,
+    "samples": 133
+  },
+  "pretrain_data_sha256": "9e7940085caf12ea1ea2a5410ccc789956183251a2c95d85970cb61125b77e95",
+  "fine_tune_data_sha256": "6c5300ec0a552020ada7083714a8f587452df05a6d7c2339e65cc3665c3414d3",
+  "seed": 20261006,
+  "selection": "original133 development cross-axis F1; no independent validation",
+  "runtime_changed": false,
+  "weight_scope": "local research only; source licenses and attribution in masked-stroke preparation; no contest promotion"
+}

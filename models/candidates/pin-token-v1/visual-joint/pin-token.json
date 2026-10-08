@@ -1,0 +1,48 @@
+{
+  "variant": "visual-joint",
+  "architecture": "shared token image encoder + text syntax embedding + joint role/endpoint affinity heads + null endpoint",
+  "parameters": 10280,
+  "device": "cuda",
+  "epoch": 14,
+  "seed": 20261005,
+  "metrics": {
+    "role_macro_f1_present_classes": 0.6538124461741042,
+    "role_f1": {
+      "designator": 0.9090909090909091,
+      "pin_number": 0.8646288209606987,
+      "pin_name": 0.8415300546448088,
+      "component_model": 0.0
+    },
+    "association_accuracy": 0.8953687821612349,
+    "pin_token_association_accuracy": 0.8784530386740331,
+    "null_accuracy": 0.9230769230769231,
+    "tokens": 583,
+    "pin_tokens": 362,
+    "null_tokens": 221
+  },
+  "training_tokens": 1669,
+  "validation_tokens": 583,
+  "training_data_sha256": "5163b3cacc231f190d593adb7dcde8c47749c8894d003c70f1e7d5846ca3eb44",
+  "input_ocr": "actual RapidOCR top1; no OCR replacement",
+  "candidate_endpoints": 8,
+  "selection": "mean of validation role macro F1 and association accuracy",
+  "limitations": [
+    "weak explicit CVJson reference labels, not manually reviewed token roles",
+    "oracle bodies and endpoints; not end-to-end recovery rate or competition PinF1",
+    "top8 candidate failures and unmatched OCR excluded; conditional accuracy only",
+    "no other-class supervision; cannot claim six-role discrimination"
+  ],
+  "rc0_runtime_modified": false,
+  "freeze_a_used": false,
+  "freeze_b_used": false,
+  "onnx_sha256": "ac44cc62a3365e50e0cd7acc4d85a12f33c12f44bba2e500a06aa2b5f3cc753c",
+  "onnx_inputs": [
+    "pairs",
+    "patch",
+    "text",
+    "valid"
+  ],
+  "cpu_export_max_absolute_error": 4.291534423828125e-06,
+  "prediction_argmax_matches": true,
+  "runtime_enabled": false
+}

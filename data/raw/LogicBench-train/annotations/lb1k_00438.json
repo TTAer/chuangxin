@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {
+      "id": "gate_2",
+      "type": "XNOR"
+    },
+    {
+      "id": "gate_1",
+      "type": "AND"
+    },
+    {
+      "id": "gate_0",
+      "type": "NAND"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_2",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_0"
+    }
+  ],
+  "image_path": "images/lb1k_00438.jpg"
+}

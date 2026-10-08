@@ -1,0 +1,10 @@
+*SPICE Netlist for circuit 161
+R2 0 2 1k
+V1 2 0 5V
+M1 3 1 2 2 NMOS W=1u L=1u
+R1 3 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

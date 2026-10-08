@@ -1,0 +1,43 @@
+{
+  "variant": "arm-pairs",
+  "best_epoch": {
+    "epoch": 24,
+    "loss": 0.3786906878153483,
+    "seconds": 16.307154199981596,
+    "all_pairs": {
+      "f1": 0.7287899860917941,
+      "tp": 262,
+      "fp": 93,
+      "fn": 102,
+      "relations": 636
+    },
+    "cross_axis": {
+      "f1": 0.39344262295081966,
+      "tp": 60,
+      "fp": 93,
+      "fn": 92,
+      "relations": 424
+    },
+    "partial_partition_accuracy": 0.42857142857142855,
+    "transitivity_violation_samples": 33,
+    "samples": 133
+  },
+  "seed": 20261008,
+  "epochs_planned": 24,
+  "parameters": 34353,
+  "device": "cpu",
+  "training_samples": 953,
+  "development_samples": 133,
+  "data_sha256": "6325719b635c1f726a9a9c681c08bec6229e3ae723dc5d7ca5acb85348f32f78",
+  "selection": "development cross-axis F1, first maximum; no threshold scan",
+  "architecture": "shared canonical arm encoder + independent pair heads",
+  "limitations": [
+    "weak wire-group labels",
+    "candidate-conditioned local task",
+    "same source cohort as old topology model",
+    "no independent design-family test",
+    "no competition or end-to-end score"
+  ],
+  "runtime_modified": false,
+  "Freeze_A_used": false
+}

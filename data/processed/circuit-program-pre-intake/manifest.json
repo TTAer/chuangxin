@@ -1,0 +1,44 @@
+{
+  "program_layouts": {
+    "tiny": 4,
+    "train": 8192,
+    "validation": 256,
+    "stress": 256
+  },
+  "program_supervision": "own exact rendering/execution compiler only",
+  "sha256": {
+    "tiny": "3e5ac154d1288b309bd9473d21a86a11542287162f04ab188d001dfd338d652f",
+    "train": "77e114ea3c85b95624a7b25be05270e3de7f911801ed1f936842d28d650c3e88",
+    "validation": "7d3d1e7282ee2a3dca9c97933bd2613e30848044ad711d4cb32a6a92bf51730b",
+    "stress": "4b393f4272e149f96fc0cd9a79549ee76d6a93afad4f827cd9a83f5d970f812d"
+  },
+  "image_pretrain_sources": [
+    "aitee",
+    "cghd",
+    "open-schematics",
+    "own-synthetic",
+    "pcbnet",
+    "ci2n-train"
+  ],
+  "image_patch_counts": {
+    "pcbnet": 3780,
+    "aitee": 10571,
+    "cghd": 79,
+    "open-schematics": 272,
+    "own-synthetic": 1632
+  },
+  "previous_unique_pages": {
+    "pcbnet": 237,
+    "aitee": 662,
+    "cghd": 17,
+    "open-schematics": 17
+  },
+  "new_CI2N_unique_images": 0,
+  "CI2N_records": [],
+  "excluded_new_pixel_duplicates": [],
+  "external_net_labels_used": false,
+  "Freeze_A_used": false,
+  "GT10_used": false,
+  "limitations": "grid-based grammar; only vertical R/C intervals; random programs not independent design families; image patches are not electrical supervision",
+  "prior_bank_manifest_sha256": "168b187691f1b1506ae98398f93e1ae1818b8517413122f1af25c9d5df4bcbe2"
+}

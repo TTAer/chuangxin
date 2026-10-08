@@ -1,0 +1,36 @@
+* SPICE netlist generated from 0038-Altium Designer_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU5 NET_E_5 NET_E_1 0 NET_E_14 X NET_E_10 NET_E_13 U5
+R1 NET_E_13 NET_E_8 22R
+R29 NET_E_8 NET_E_6 1k
+R2 NET_E_14 NET_E_11 22R
+R30 NET_E_11 NET_E_6 10K
+X1 NET_E_1 NET_E_5 X1
+C21 0 NET_E_1 1n
+C22 0 NET_E_5 1n
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅119" 为参数值形态或无效，已回退自动命名） : P_1(C_1) P_2(C_17) P_4(C_19)
+* E_3 = 0 : P_14(C_1) P_15(C_18)
+* E_4 = X : P_16(C_1)
+* E_5 = NET_E_5（原 netlabel "∅121" 为参数值形态或无效，已回退自动命名） : P_17(C_1) P_18(C_17) P_19(C_20)
+* E_6 = NET_E_6（原 netlabel "∅122" 为参数值形态或无效，已回退自动命名） : P_20(C_13) P_21(C_21) P_22(C_9)
+* E_7 = 0 : P_23(C_15) P_24(C_20)
+* E_8 = NET_E_8（原 netlabel "∅124" 为参数值形态或无效，已回退自动命名） : P_25(C_16) P_26(C_8) P_27(C_9)
+* E_9 = 0 : P_28(C_14) P_29(C_19)
+* E_10 = NET_E_10（原 netlabel "∅126" 为参数值形态或无效，已回退自动命名） : P_5(C_1) P_6(C_22)
+* E_11 = NET_E_11（原 netlabel "∅127" 为参数值形态或无效，已回退自动命名） : P_7(C_10) P_8(C_11) P_9(C_13)
+* E_13 = NET_E_13（原 netlabel "∅128" 为参数值形态或无效，已回退自动命名） : P_10(C_1) P_11(C_8)
+* E_14 = NET_E_14（原 netlabel "∅129" 为参数值形态或无效，已回退自动命名） : P_12(C_1) P_13(C_11)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U5" value="∅46" type=Box
+* 待人工确认: C_9 designator="R29" value="∅57" type=R
+* 待人工确认: C_17 designator="X1" value="∅93" type=Crystal_2Pin
+* 待人工确认: C_19 designator="C21" value="∅103" type=C
+* 待人工确认: C_20 designator="C22" value="∅109" type=C
+
+.end

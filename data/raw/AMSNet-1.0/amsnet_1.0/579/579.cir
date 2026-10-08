@@ -1,0 +1,11 @@
+*SPICE Netlist for circuit 579
+I1 0 1 DC 1mA
+R2 1 0 1k
+R3 0 2 1k
+M1 2 1 0 0 NMOS W=1u L=1u
+R1 2 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

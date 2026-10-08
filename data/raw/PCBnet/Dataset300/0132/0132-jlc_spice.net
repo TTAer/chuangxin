@@ -1,0 +1,89 @@
+* SPICE netlist generated from 0132-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU1 NET_E_183 0 U1
+XU2 NET_E_1 NET_E_4 NET_E_14 NET_E_21 U2
+XU3 NET_E_19 NET_E_23 NET_E_17 NET_E_18 NET_E_15 NET_E_16 NET_E_20 NET_E_22 U3
+XSW3 0 SW3
+XSW4 0 SW4
+XU11 NET_E_186 U11
+XU9 NET_E_187 U9
+XU12 NET_E_188 U12
+XU10 NET_E_189 U10
+XSW1  SW1
+XSW2 0 SW2
+R8 NET_E_12 NET_E_2 10k
+R2 NET_E_6 NET_E_2 10k
+R4 NET_E_8 NET_E_2 10k
+R5 NET_E_9 NET_E_2 10k
+R7 NET_E_11 NET_E_2 10k
+R1 NET_E_5 NET_E_2 10k
+R3 NET_E_7 NET_E_2 10k
+R6 NET_E_10 NET_E_2 10k
+D1 NET_E_22 NET_E_5 DMOD
+D2 NET_E_18 NET_E_10 DMOD
+D3 NET_E_15 NET_E_6 DMOD
+D4 NET_E_19 NET_E_11 DMOD
+D5 NET_E_17 NET_E_9 DMOD
+D6 NET_E_16 NET_E_8 DMOD
+D7 NET_E_23 NET_E_7 DMOD
+D8 NET_E_20 NET_E_12 DMOD
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅271" 为参数值形态或无效，已回退自动命名） : P_1(C_2)
+* E_2 = NET_E_2（原 netlabel "∅272" 为参数值形态或无效，已回退自动命名） : P_25(C_12) P_26(C_13) P_27(C_14) P_28(C_15) P_29(C_16) P_30(C_17) P_31(C_18) P_32(C_19) P_54(C_31)
+* E_3 = 0 : P_40(C_11) P_41(C_4) P_42(C_5) P_52(C_29)
+* E_4 = NET_E_4（原 netlabel "∅274" 为参数值形态或无效，已回退自动命名） : P_43(C_2)
+* E_5 = NET_E_5（原 netlabel "∅275" 为参数值形态或无效，已回退自动命名） : P_44(C_17) P_36(C_20)
+* E_6 = NET_E_6（原 netlabel "∅276" 为参数值形态或无效，已回退自动命名） : P_46(C_13) P_11(C_23)
+* E_7 = NET_E_7（原 netlabel "∅277" 为参数值形态或无效，已回退自动命名） : P_48(C_18) P_38(C_27)
+* E_8 = NET_E_8（原 netlabel "∅278" 为参数值形态或无效，已回退自动命名） : P_8(C_14) P_13(C_26)
+* E_9 = NET_E_9（原 netlabel "∅279" 为参数值形态或无效，已回退自动命名） : P_50(C_15) P_15(C_25)
+* E_10 = NET_E_10（原 netlabel "∅280" 为参数值形态或无效，已回退自动命名） : P_2(C_19) P_17(C_22)
+* E_11 = NET_E_11（原 netlabel "∅281" 为参数值形态或无效，已回退自动命名） : P_4(C_16) P_23(C_24)
+* E_12 = NET_E_12（原 netlabel "∅282" 为参数值形态或无效，已回退自动命名） : P_6(C_12) P_33(C_28)
+* E_14 = NET_E_14（原 netlabel "∅284" 为参数值形态或无效，已回退自动命名） : P_10(C_2)
+* E_15 = NET_E_15（原 netlabel "∅285" 为参数值形态或无效，已回退自动命名） : P_47(C_23) P_12(C_3)
+* E_16 = NET_E_16（原 netlabel "∅286" 为参数值形态或无效，已回退自动命名） : P_9(C_26) P_14(C_3)
+* E_17 = NET_E_17（原 netlabel "∅287" 为参数值形态或无效，已回退自动命名） : P_51(C_25) P_16(C_3)
+* E_18 = NET_E_18（原 netlabel "∅288" 为参数值形态或无效，已回退自动命名） : P_3(C_22) P_18(C_3)
+* E_19 = NET_E_19（原 netlabel "∅289" 为参数值形态或无效，已回退自动命名） : P_5(C_24) P_24(C_3)
+* E_20 = NET_E_20（原 netlabel "∅290" 为参数值形态或无效，已回退自动命名） : P_7(C_28) P_34(C_3)
+* E_21 = NET_E_21（原 netlabel "∅291" 为参数值形态或无效，已回退自动命名） : P_35(C_2)
+* E_22 = NET_E_22（原 netlabel "∅292" 为参数值形态或无效，已回退自动命名） : P_45(C_20) P_37(C_3)
+* E_23 = NET_E_23（原 netlabel "∅293" 为参数值形态或无效，已回退自动命名） : P_49(C_27) P_39(C_3)
+* E_183 = NET_E_183（原 netlabel "∅294" 为参数值形态或无效，已回退自动命名） : P_19(C_1) P_20(C_30)
+* E_184 = 0 : P_21(C_1) P_22(C_21)
+* E_186 = NET_E_186（原 netlabel "∅296" 为参数值形态或无效，已回退自动命名） : P_55(C_6)
+* E_187 = NET_E_187（原 netlabel "∅297" 为参数值形态或无效，已回退自动命名） : P_56(C_7)
+* E_188 = NET_E_188（原 netlabel "∅298" 为参数值形态或无效，已回退自动命名） : P_57(C_8)
+* E_189 = NET_E_189（原 netlabel "∅299" 为参数值形态或无效，已回退自动命名） : P_58(C_9)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U1" value="∅118" type=Box
+* 待人工确认: C_2 designator="U2" value="∅124" type=Box
+* 待人工确认: C_3 designator="U3" value="∅134" type=Box
+* 未映射类型 Switch（C_4 SW3），按 X 子电路输出
+* 待人工确认: C_4 designator="SW3" value="∅138" type=Switch
+* 未映射类型 Switch（C_5 SW4），按 X 子电路输出
+* 待人工确认: C_5 designator="SW4" value="∅142" type=Switch
+* 待人工确认: C_6 designator="U11" value="∅145" type=Box
+* 待人工确认: C_7 designator="U9" value="∅147" type=Box
+* 待人工确认: C_8 designator="U12" value="∅149" type=Box
+* 待人工确认: C_9 designator="U10" value="∅151" type=Box
+* 未映射类型 Switch（C_10 SW1），按 X 子电路输出
+* 待人工确认: C_10 designator="SW1" value="∅152" type=Switch
+* 未映射类型 Switch（C_11 SW2），按 X 子电路输出
+* 待人工确认: C_11 designator="SW2" value="∅157" type=Switch
+* 待人工确认: C_20 designator="D1" value="∅203" type=LED
+* 待人工确认: C_22 designator="D2" value="∅214" type=LED
+* 待人工确认: C_23 designator="D3" value="∅221" type=LED
+* 待人工确认: C_24 designator="D4" value="∅228" type=LED
+* 待人工确认: C_25 designator="D5" value="∅235" type=LED
+* 待人工确认: C_26 designator="D6" value="∅242" type=LED
+* 待人工确认: C_27 designator="D7" value="∅249" type=LED
+* 待人工确认: C_28 designator="D8" value="∅256" type=LED
+
+.end

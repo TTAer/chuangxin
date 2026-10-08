@@ -1,0 +1,256 @@
+* SPICE netlist generated from 0106-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU2 P08 P10 NET_E_36 NET_E_21 P17 NET_E_47 NET_E_57 0 P40 U2_P30_RXD_19 NET_E_155 P34 做低功耗实验时_当MCU主时钟停振_ P51 P35 P38 P37 P41 P42 P43 NET_E_68 NET_E_63 NET_E_58 NET_E_48 NET_E_53 NET_E_29 P45 P46 P00 P02 P03 P04 P11 P47 P01 P14 P52 P15 P16 P13 NET_E_41 P54 VREF P07 NET_E_77 100n22uF P33 P50 U2
+XUSB1 NET_E_60 0 NET_E_157 NET_E_73 NET_E_156 NET_E_60 NET_E_55 NET_E_43 NET_E_32 0 VBUS NET_E_55 VBUS NET_E_88 USB1
+XU1 NET_E_5 NET_E_19 NET_E_158 NET_E_27 NET_E_31 NET_E_31 U1_P33 NET_E_23 NET_E_15 NET_E_20 U1_P32 U1_P31_D_ 0 U1_P30_D_ NET_E_159 NET_E_160 U1
+XU3 0 NET_E_138 P04 P05 P06 P07 U3
+R18 NET_E_124 NET_E_111 100K
+XU6 0 NET_E_122 NET_E_118 U6
+C5 0 P54 1n
+C6 0 VREF 100n
+XU4 NET_E_4 0 NET_E_3 NET_E_5 U4
+C16 0 NTC 10n
+R15 VREF NET_E_113 1K
+R9 U1_P32 NET_E_153 330R
+R7 U1_P33 NET_E_83 330R
+XSW5 NET_E_103 NET_E_103 NET_E_104 0 NET_E_107 NET_E_107 SW5
+R12 NET_E_23 NET_E_105 1K
+XU33 NET_E_130 0 U33
+C10 0 NET_E_113 22u
+C4 0 VREF 1n
+MQ1 NET_E_105 NET_E_102 NET_E_101 MMOD
+C14 0 VREF 22u
+R1 NET_E_43 NET_E_44 5.1K
+R5 0 NET_E_56 3.3k
+R19 NET_E_130 NET_E_144 10R
+R6 NET_E_80 NET_E_81 3.3K
+RF1 VBUS NET_E_31 1k
+D2 NET_E_31 0 DMOD
+R10 NET_E_116 NET_E_117 4.7K
+R4 NET_E_73 0 5.1K
+R8 NET_E_93 U1_P32 1k
+R11 NET_E_23 NET_E_102 20K
+R52 NET_E_107 NET_E_101 1K
+C8 NET_E_105 NET_E_102 0.47u
+C17 0 NET_E_110 22u
+D6 NET_E_101 0 DMOD
+R2 NET_E_60 NET_E_61 1k
+Q2 NET_E_117 NET_E_144 NET_E_110 QMOD
+C3 0 NET_E_31 22u
+C2 0 NET_E_31 1n
+D3 NET_E_56 NET_E_31 DMOD
+D4 NET_E_101 NET_E_104 DMOD
+R3 NET_E_55 NET_E_66 22R
+D5 U1_P33 NET_E_81 DMOD
+D7 NET_E_130 0 DMOD
+R24 0 NET_E_124 100k
+XU72 NET_E_103 0 U72
+D21 NET_E_15 NET_E_16 DMOD
+C1 0 NET_E_27 100n
+X1 P17 NET_E_115 32.788kHz
+D1 NET_E_19 NET_E_3 DMOD
+XSW4 NET_E_120 0 SW4
+C12 NET_E_128 NET_E_115 15p
+C11 0 P17 15p
+XSW3 0 NET_E_153 SW3
+C13 0 NET_E_118 100n
+R17 P05 VREF 10K
+R13 0 P05 1k
+R16 NET_E_120 P54 330R
+C15 0 P05 100n
+D8 VREF 0 DMOD
+XSW1 NET_E_83 0 SW1
+R21 P04 NET_E_122 1k
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = P08 : P_3(C_1)
+* E_2 = P52 : P_111(C_1)
+* E_3 = NET_E_3（原 netlabel "∅838" 为参数值形态或无效，已回退自动命名） : P_126(C_18) P_127(C_76)
+* E_4 = NET_E_4（原 netlabel "∅839" 为参数值形态或无效，已回退自动命名） : P_147(C_18) P_148(C_98)
+* E_5 = NET_E_5（原 netlabel "∅840" 为参数值形态或无效，已回退自动命名） : P_161(C_18) P_162(C_3)
+* E_6 = 0 : P_182(C_18) P_183(C_55)
+* E_7 = P07 : P_200(C_1)
+* E_8 = P04 : P_214(C_1)
+* E_9 = P10 : P_233(C_1)
+* E_10 = P03 : P_4(C_1)
+* E_11 = P11 : P_31(C_1)
+* E_12 = P02 : P_53(C_1)
+* E_13 = P47 : P_74(C_1)
+* E_14 = P01 : P_98(C_1)
+* E_15 = NET_E_15（原 netlabel "∅842" 为参数值形态或无效，已回退自动命名） : P_104(C_3) P_105(C_73)
+* E_16 = NET_E_16（原 netlabel "∅843" 为参数值形态或无效，已回退自动命名） : P_106(C_73)
+* E_17 = P14 : P_107(C_1)
+* E_18 = P00 : P_108(C_1)
+* E_19 = NET_E_19（原 netlabel "∅844" 为参数值形态或无效，已回退自动命名） : P_109(C_3) P_110(C_76)
+* E_20 = NET_E_20（原 netlabel "∅845" 为参数值形态或无效，已回退自动命名） : P_112(C_3)
+* E_21 = NET_E_21（原 netlabel "9" 为参数值形态或无效，已回退自动命名） : P_113(C_1)
+* E_22 = P46 : P_114(C_1)
+* E_23 = NET_E_23（原 netlabel "∅846" 为参数值形态或无效，已回退自动命名） : P_115(C_3) P_116(C_32) P_249(C_57)
+* E_24 = P15 : P_117(C_1)
+* E_25 = P45 : P_118(C_1)
+* E_26 = 0 : P_119(C_48) P_120(C_74)
+* E_27 = NET_E_27（原 netlabel "∅848" 为参数值形态或无效，已回退自动命名） : P_121(C_3) P_122(C_74)
+* E_28 = P16 : P_123(C_1)
+* E_29 = NET_E_29（原 netlabel "∅849" 为参数值形态或无效，已回退自动命名） : P_124(C_1) P_125(C_17)
+* E_31 = NET_E_31（原 netlabel "∅850" 为参数值形态或无效，已回退自动命名） : P_129(C_3) P_130(C_3) P_131(C_51) P_132(C_52) P_133(C_64) P_134(C_65) P_177(C_66) P_136(C_92)
+* E_32 = NET_E_32（原 netlabel "∅851" 为参数值形态或无效，已回退自动命名） : P_137(C_2)
+* E_33 = 0 : P_138(C_2)
+* E_34 = U1_P33 : P_139(C_3)
+* E_35 = P17 : P_140(C_1)
+* E_36 = NET_E_36（原 netlabel "∅852" 为参数值形态或无效，已回退自动命名） : P_141(C_1) P_142(C_13)
+* E_38 = VBUS : P_144(C_2) P_145(C_51)
+* E_39 = U1_P32 : P_146(C_3)
+* E_40 = P13 : P_149(C_1)
+* E_41 = NET_E_41（原 netlabel "∅853" 为参数值形态或无效，已回退自动命名） : P_150(C_1) P_151(C_15)
+* E_43 = NET_E_43（原 netlabel "∅854" 为参数值形态或无效，已回退自动命名） : P_153(C_2) P_154(C_45)
+* E_44 = NET_E_44（原 netlabel "∅855" 为参数值形态或无效，已回退自动命名） : P_155(C_45)
+* E_45 = U1_P31_D_ : P_156(C_3)
+* E_47 = NET_E_47（原 netlabel "13" 为参数值形态或无效，已回退自动命名） : P_157(C_1)
+* E_48 = NET_E_48（原 netlabel "∅856" 为参数值形态或无效，已回退自动命名） : P_158(C_1) P_159(C_10)
+* E_50 = 0 : P_163(C_3) P_164(C_31) P_165(C_64) P_166(C_65)
+* E_51 = U1_P30_D_ : P_167(C_3)
+* E_52 = P54 : P_168(C_1) P_169(C_11)
+* E_53 = NET_E_53（原 netlabel "∅858" 为参数值形态或无效，已回退自动命名） : P_170(C_1) P_171(C_14)
+* E_55 = NET_E_55（原 netlabel "∅859" 为参数值形态或无效，已回退自动命名） : P_173(C_2) P_174(C_2) P_175(C_68)
+* E_56 = NET_E_56（原 netlabel "∅860" 为参数值形态或无效，已回退自动命名） : P_176(C_46) P_135(C_66)
+* E_57 = NET_E_57（原 netlabel "15" 为参数值形态或无效，已回退自动命名） : P_178(C_1)
+* E_58 = NET_E_58（原 netlabel "∅861" 为参数值形态或无效，已回退自动命名） : P_179(C_1) P_180(C_22)
+* E_60 = NET_E_60（原 netlabel "∅862" 为参数值形态或无效，已回退自动命名） : P_184(C_2) P_185(C_2) P_186(C_62)
+* E_61 = NET_E_61（原 netlabel "∅863" 为参数值形态或无效，已回退自动命名） : P_187(C_62)
+* E_62 = VREF : P_188(C_1) P_189(C_16) P_190(C_26) P_191(C_40)
+* E_63 = NET_E_63（原 netlabel "∅864" 为参数值形态或无效，已回退自动命名） : P_192(C_1) P_193(C_21)
+* E_66 = NET_E_66（原 netlabel "∅866" 为参数值形态或无效，已回退自动命名） : P_195(C_68)
+* E_67 = 0 : P_196(C_1)
+* E_68 = NET_E_68（原 netlabel "∅867" 为参数值形态或无效，已回退自动命名） : P_197(C_1) P_198(C_25)
+* E_69 = COMO : P_199(C_25)
+* E_70 = 0 : P_201(C_42) P_202(C_46) P_203(C_52)
+* E_71 = P40 : P_204(C_1)
+* E_72 = P43 : P_205(C_1)
+* E_73 = NET_E_73（原 netlabel "∅869" 为参数值形态或无效，已回退自动命名） : P_206(C_2) P_207(C_54)
+* E_74 = 0 : P_208(C_54)
+* E_75 = U2_P30_RXD_19 : P_209(C_1)
+* E_76 = P42 : P_210(C_1)
+* E_77 = NET_E_77（原 netlabel "95" 为参数值形态或无效，已回退自动命名） : P_211(C_1)
+* E_78 = P41 : P_212(C_1)
+* E_79 = VBUS : P_213(C_2)
+* E_80 = NET_E_80（原 netlabel "∅870" 为参数值形态或无效，已回退自动命名） : P_215(C_50) P_216(C_90)
+* E_81 = NET_E_81（原 netlabel "∅871" 为参数值形态或无效，已回退自动命名） : P_217(C_50) P_218(C_69)
+* E_82 = U1_P33 : P_219(C_27) P_220(C_69)
+* E_83 = NET_E_83（原 netlabel "∅872" 为参数值形态或无效，已回退自动命名） : P_221(C_100) P_222(C_27)
+* E_84 = 0 : P_223(C_100) P_224(C_49)
+* E_85 = 0 : P_225(C_11) P_226(C_16) P_227(C_40) P_228(C_8)
+* E_86 = 100n22uF : P_229(C_1)
+* E_87 = P37 : P_230(C_1)
+* E_88 = NET_E_88（原 netlabel "∅875" 为参数值形态或无效，已回退自动命名） : P_231(C_2)
+* E_89 = 0 : P_232(C_2)
+* E_90 = P38 : P_234(C_1)
+* E_91 = P33 : P_235(C_1)
+* E_92 = P35 : P_236(C_1)
+* E_93 = NET_E_93（原 netlabel "∅876" 为参数值形态或无效，已回退自动命名） : P_237(C_56) P_238(C_93)
+* E_94 = U1_P32 : P_239(C_24) P_240(C_56)
+* E_96 = 0 : P_242(C_34) P_243(C_85)
+* E_97 = P34 : P_244(C_1)
+* E_98 = P51 : P_245(C_1)
+* E_99 = P50 : P_246(C_1)
+* E_100 = 做低功耗实验时_当MCU主时钟停振_ : P_5(C_1)
+* E_101 = NET_E_101（原 netlabel "∅878" 为参数值形态或无效，已回退自动命名） : P_6(C_41) P_7(C_58) P_8(C_61) P_9(C_67) P_10(C_89)
+* E_102 = NET_E_102（原 netlabel "∅879" 为参数值形态或无效，已回退自动命名） : P_11(C_41) P_12(C_57) P_13(C_59) P_14(C_84)
+* E_103 = NET_E_103（原 netlabel "∅880" 为参数值形态或无效，已回退自动命名） : P_15(C_30) P_16(C_30) P_17(C_72)
+* E_104 = NET_E_104（原 netlabel "∅881" 为参数值形态或无效，已回退自动命名） : P_18(C_30) P_19(C_67)
+* E_105 = NET_E_105（原 netlabel "∅882" 为参数值形态或无效，已回退自动命名） : P_20(C_32) P_21(C_41) P_22(C_59)
+* E_106 = 0 : P_23(C_30) P_24(C_37) P_25(C_72)
+* E_107 = NET_E_107（原 netlabel "∅884" 为参数值形态或无效，已回退自动命名） : P_26(C_30) P_27(C_30) P_250(C_58)
+* E_108 = 0 : P_28(C_39) P_29(C_61)
+* E_109 = P54 : P_30(C_96)
+* E_110 = NET_E_110（原 netlabel "∅886" 为参数值形态或无效，已回退自动命名） : P_32(C_38) P_33(C_60) P_34(C_63)
+* E_111 = NET_E_111（原 netlabel "∅887" 为参数值形态或无效，已回退自动命名） : P_35(C_5) P_36(C_6)
+* E_112 = P17 : P_37(C_75) P_38(C_80)
+* E_113 = NET_E_113（原 netlabel "∅888" 为参数值形态或无效，已回退自动命名） : P_39(C_23) P_40(C_36) P_41(C_44)
+* E_114 = VREF : P_42(C_91)
+* E_115 = NET_E_115（原 netlabel "∅889" 为参数值形态或无效，已回退自动命名） : P_43(C_75) P_44(C_78)
+* E_116 = NET_E_116（原 netlabel "∅890" 为参数值形态或无效，已回退自动命名） : P_45(C_53)
+* E_117 = NET_E_117（原 netlabel "∅891" 为参数值形态或无效，已回退自动命名） : P_46(C_53) P_47(C_63)
+* E_118 = NET_E_118（原 netlabel "∅892" 为参数值形态或无效，已回退自动命名） : P_48(C_7) P_49(C_87) P_50(C_88)
+* E_119 = 0 : P_51(C_12) P_52(C_60)
+* E_120 = NET_E_120（原 netlabel "∅894" 为参数值形态或无效，已回退自动命名） : P_54(C_77) P_55(C_96)
+* E_121 = 0 : P_56(C_7) P_57(C_86)
+* E_122 = NET_E_122（原 netlabel "∅896" 为参数值形态或无效，已回退自动命名） : P_58(C_101) P_59(C_7)
+* E_124 = NET_E_124（原 netlabel "∅897" 为参数值形态或无效，已回退自动命名） : P_60(C_5) P_61(C_71)
+* E_125 = P05 : P_62(C_91) P_63(C_95) P_64(C_97)
+* E_126 = VREF : P_65(C_23) P_66(C_43) P_68(C_99)
+* E_127 = NTC : P_69(C_19)
+* E_128 = NET_E_128（原 netlabel "∅898" 为参数值形态或无效，已回退自动命名） : P_71(C_78) P_72(C_82)
+* E_129 = P04 : P_73(C_101)
+* E_130 = NET_E_130（原 netlabel "∅899" 为参数值形态或无效，已回退自动命名） : P_75(C_33) P_76(C_47) P_77(C_70)
+* E_132 = 0 : P_78(C_83) P_79(C_88)
+* E_133 = 0 : P_80(C_77) P_81(C_94)
+* E_134 = 0 : P_82(C_35) P_83(C_36) P_84(C_43) P_85(C_99)
+* E_135 = 0 : P_86(C_19) P_87(C_71) P_88(C_9)
+* E_136 = 0 : P_89(C_81) P_90(C_95) P_91(C_97)
+* E_137 = 0 : P_92(C_28) P_93(C_33) P_94(C_70)
+* E_138 = NET_E_138（原 netlabel "∅906" 为参数值形态或无效，已回退自动命名） : P_95(C_29) P_96(C_4)
+* E_139 = P04 : P_97(C_4)
+* E_140 = P05 : P_99(C_4)
+* E_141 = P06 : P_100(C_4)
+* E_142 = P07 : P_101(C_4)
+* E_143 = 0 : P_102(C_20) P_103(C_4)
+* E_144 = NET_E_144（原 netlabel "∅908" 为参数值形态或无效，已回退自动命名） : P_247(C_47) P_248(C_63)
+* E_145 = 0 : P_253(C_79) P_254(C_80)
+* E_146 = NET_E_146（原 netlabel "∅910" 为参数值形态或无效，已回退自动命名） : P_160(C_10)
+* E_147 = NET_E_147（原 netlabel "∅911" 为参数值形态或无效，已回退自动命名） : P_143(C_13)
+* E_148 = NET_E_148（原 netlabel "∅912" 为参数值形态或无效，已回退自动命名） : P_172(C_14)
+* E_149 = NET_E_149（原 netlabel "∅913" 为参数值形态或无效，已回退自动命名） : P_152(C_15)
+* E_150 = NET_E_150（原 netlabel "∅914" 为参数值形态或无效，已回退自动命名） : P_128(C_17)
+* E_151 = NET_E_151（原 netlabel "∅915" 为参数值形态或无效，已回退自动命名） : P_194(C_21)
+* E_152 = NET_E_152（原 netlabel "∅916" 为参数值形态或无效，已回退自动命名） : P_181(C_22)
+* E_153 = NET_E_153（原 netlabel "∅917" 为参数值形态或无效，已回退自动命名） : P_241(C_24) P_275(C_85)
+* E_155 = NET_E_155（原 netlabel "∅918" 为参数值形态或无效，已回退自动命名） : P_307(C_1)
+* E_156 = NET_E_156（原 netlabel "∅919" 为参数值形态或无效，已回退自动命名） : P_308(C_2)
+* E_157 = NET_E_157（原 netlabel "∅920" 为参数值形态或无效，已回退自动命名） : P_309(C_2)
+* E_158 = NET_E_158（原 netlabel "∅921" 为参数值形态或无效，已回退自动命名） : P_310(C_3)
+* E_159 = NET_E_159（原 netlabel "∅922" 为参数值形态或无效，已回退自动命名） : P_311(C_3)
+* E_160 = NET_E_160（原 netlabel "∅923" 为参数值形态或无效，已回退自动命名） : P_312(C_3)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U2" value="∅286" type=Box
+* 待人工确认: C_2 designator="USB1" value="∅288" type=Box
+* 待人工确认: C_3 designator="U1" value="∅292" type=Box
+* 待人工确认: C_4 designator="U3" value="∅299" type=Box
+* 待人工确认: C_7 designator="U6" value="∅314" type=Box
+* 待人工确认: C_11 designator="C5" value="∅336" type=C
+* 待人工确认: C_18 designator="U4" value="∅383" type=Box
+* 未映射类型 Switch（C_30 SW5），按 X 子电路输出
+* 待人工确认: C_30 designator="SW5" value="∅456" type=Switch
+* 未映射类型 Buzzer（C_33 U33），按 X 子电路输出
+* 待人工确认: C_33 designator="∅473" value="∅472" type=Buzzer
+* 待人工确认: C_40 designator="C4" value="∅508" type=C
+* 待人工确认: C_41 designator="Q1" value="∅516" type=MOSFET_NPN
+* 待人工确认: C_51 designator="F1" value="∅566" type=Fuse
+* 待人工确认: C_52 designator="D2" value="∅572" type=D
+* 待人工确认: C_56 designator="R8" value="∅595" type=R
+* 待人工确认: C_61 designator="D6" value="∅621" type=D
+* 待人工确认: C_62 designator="R2" value="∅627" type=R
+* 待人工确认: C_63 designator="Q2" value="∅635" type=BJT_NPN
+* 待人工确认: C_65 designator="C2" value="∅646" type=C
+* 待人工确认: C_66 designator="D3" value="∅652" type=LED
+* 待人工确认: C_67 designator="D4" value="∅659" type=D
+* 待人工确认: C_69 designator="D5" value="∅670" type=D
+* 待人工确认: C_70 designator="D7" value="∅677" type=D
+* 未映射类型 Battary（C_72 U72），按 X 子电路输出
+* 待人工确认: C_72 designator="∅689" value="∅688" type=Battary
+* 待人工确认: C_73 designator="D21" value="∅695" type=D
+* 待人工确认: C_76 designator="D1" value="∅711" type=D
+* 未映射类型 Switch（C_77 SW4），按 X 子电路输出
+* 待人工确认: C_77 designator="SW4" value="∅717" type=Switch
+* 未映射类型 Switch（C_85 SW3），按 X 子电路输出
+* 待人工确认: C_85 designator="SW3" value="∅756" type=Switch
+* 待人工确认: C_95 designator="R13" value="∅802" type=R
+* 待人工确认: C_99 designator="D8" value="∅823" type=D
+* 未映射类型 Switch（C_100 SW1），按 X 子电路输出
+* 待人工确认: C_100 designator="SW1" value="∅830" type=Switch
+* 待人工确认: C_101 designator="R21" value="∅836" type=R
+
+.end

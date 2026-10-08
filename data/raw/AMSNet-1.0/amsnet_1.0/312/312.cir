@@ -1,0 +1,15 @@
+*SPICE Netlist for circuit 312
+C1 6 3 1nF
+R4 7 6 1k
+I1 VDD 2 DC 1mA
+R1 0 3 1k
+R2 0 8 1k
+V1 7 0 5V
+M2 2 2 8 8 NMOS W=1u L=1u
+M1 4 2 3 3 NMOS W=1u L=1u
+R3 4 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

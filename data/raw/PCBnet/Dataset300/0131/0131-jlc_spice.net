@@ -1,0 +1,33 @@
+* SPICE netlist generated from 0131-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+R5 NET_E_5 NET_E_1 270k
+R42 NET_E_4 NET_E_1 4.7k
+XU5 NET_E_6 0 NET_E_2 NET_E_8 NET_E_5 U5
+R3 0 NET_E_9 10k
+C7 NET_E_5 NET_E_1 22p
+R4 NET_E_9 NET_E_5 49.9k
+C8 0 NET_E_1 22u
+C3 0 NET_E_8 22u
+C5 0 NET_E_1 22u
+L1 NET_E_2 NET_E_1 22uH
+DLED1 0 NET_E_4 DMOD
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅132" 为参数值形态或无效，已回退自动命名） : P_1(C_11) P_2(C_13) P_3(C_15) P_4(C_16) P_5(C_2) P_6(C_3) P_7(C_6) P_8(C_8)
+* E_2 = NET_E_2（原 netlabel "∅133" 为参数值形态或无效，已回退自动命名） : P_9(C_15) P_10(C_4)
+* E_3 = 0 : P_11(C_10) P_12(C_11) P_17(C_17) P_14(C_5) P_15(C_8) P_16(C_9)
+* E_4 = NET_E_4（原 netlabel "∅135" 为参数值形态或无效，已回退自动命名） : P_13(C_17) P_18(C_3)
+* E_5 = NET_E_5（原 netlabel "∅136" 为参数值形态或无效，已回退自动命名） : P_19(C_2) P_20(C_4) P_21(C_6) P_22(C_7)
+* E_6 = NET_E_6（原 netlabel "∅137" 为参数值形态或无效，已回退自动命名） : P_23(C_12) P_24(C_4)
+* E_7 = 0 : P_25(C_1) P_26(C_4)
+* E_8 = NET_E_8（原 netlabel "∅139" 为参数值形态或无效，已回退自动命名） : P_27(C_10) P_28(C_14) P_29(C_4)
+* E_9 = NET_E_9（原 netlabel "∅140" 为参数值形态或无效，已回退自动命名） : P_30(C_5) P_31(C_7)
+
+* ---- 待确认项 ----
+* 待人工确认: C_4 designator="U5" value="∅71" type=Box
+* 待人工确认: C_17 designator="LED1" value="∅130" type=LED
+
+.end

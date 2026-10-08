@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "OR"
+    },
+    {
+      "id": "gate_1",
+      "type": "OR"
+    },
+    {
+      "id": "gate_2",
+      "type": "AND"
+    },
+    {
+      "id": "gate_3",
+      "type": "OR"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_1",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_1",
+      "target": "gate_3"
+    },
+    {
+      "source": "gate_2",
+      "target": "gate_3"
+    }
+  ],
+  "image_path": "images/lb1k_00415.jpg"
+}

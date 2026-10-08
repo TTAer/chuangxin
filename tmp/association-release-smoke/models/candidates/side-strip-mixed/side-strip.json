@@ -1,0 +1,49 @@
+{
+  "architecture": "SideStripNet normal-bin compression + dilated axial response/normal-offset heads",
+  "parameters": 11738,
+  "threshold": 0.5,
+  "seed": 20261006,
+  "train_bands": 4886,
+  "validation_bands": 1326,
+  "synthetic_training": true,
+  "selection": "official held-out page oracle IC bands; not end-to-end score",
+  "coordinate_step_source_pixels": 1,
+  "metrics": {
+    "epoch": 5,
+    "loss": 0.15238290871767438,
+    "seconds": 18.909849699994083,
+    "threshold": 0.5,
+    "official": {
+      "precision": 0.8656316916488223,
+      "recall": 0.880718954248366,
+      "f1": 0.8731101511879049,
+      "matched": 1617,
+      "predicted": 1868,
+      "golden": 1836
+    },
+    "synthetic": {
+      "precision": 0.9598765432098766,
+      "recall": 0.9452887537993921,
+      "f1": 0.9525267993874426,
+      "matched": 1244,
+      "predicted": 1296,
+      "golden": 1316
+    }
+  },
+  "preparation": {
+    "bands": 6212,
+    "counts": {
+      "official:train": 3350,
+      "official:validation": 942,
+      "synthetic:validation": 384,
+      "synthetic:train": 1536
+    },
+    "synthetic_families": 240,
+    "gt10_training": false,
+    "frozen_amsnet_used": false,
+    "coordinate_step_source_pixels": 1,
+    "target_caveat": "oracle union boxes; real predicted-box end-to-end validation still required"
+  },
+  "license": "project code; synthetic corpus CC0; official source supervision retains original competition terms",
+  "onnx_sha256": "bdf29cdb819ed36108e7bb8209065e2b6e44d69e6d452ecefb2c19fb8121e020"
+}

@@ -1,0 +1,15 @@
+*SPICE Netlist for circuit 208
+I1 1 0 DC 1mA
+V2 2 0 5V
+V1 3 0 5V
+R3 4 1 1k
+R4 1 5 1k
+M1 6 3 5 5 NMOS W=1u L=1u
+R2 6 VDD 1k
+M2 7 2 4 4 NMOS W=1u L=1u
+R1 7 VDD 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

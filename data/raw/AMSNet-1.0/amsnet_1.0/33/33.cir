@@ -1,0 +1,10 @@
+*SPICE Netlist for circuit 33
+I1 VDD 2 DC 1mA
+M1 2 1 0 0 NMOS W=1u L=1u
+V1 1 0 5V
+R1 1 2 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+

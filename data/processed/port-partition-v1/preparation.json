@@ -1,0 +1,26 @@
+{
+  "schema": "port-partition-preparation-v1",
+  "samples": 1086,
+  "split_counts": {
+    "train": 953,
+    "validation": 133
+  },
+  "pages": {
+    "train": 138,
+    "validation": 24
+  },
+  "skipped": {
+    "fewer_than_three_known_pair_relations": 28
+  },
+  "known_relations": 5706,
+  "source": "Existing topology crossing candidate cohort; labels re-derived from physical wire group paths",
+  "supervision": "weak source annotations; ambiguous/absent ports unsupervised; no pin point targets",
+  "scope": "conditional local physical connectivity; does not learn flying-label electrical equivalence",
+  "split_policy": "existing exact-image hash split; structure-family independence NOT proven; validation is development",
+  "Freeze_A_used": false,
+  "GT10_used": false,
+  "source_sha256": {
+    "patches.npz": "e70d681d3124e97db366f6b00416dc6af2e02f851a89f61729afe0175006eccc",
+    "records.json": "87bd1cb059a98c91765a20ebfa3bd127135309d3932eb8a270e48cb8e573c83a"
+  }
+}

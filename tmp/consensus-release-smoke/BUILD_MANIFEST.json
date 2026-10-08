@@ -1,0 +1,347 @@
+{
+  "status": "development candidate; not final competition submission",
+  "official_evaluator_verified": false,
+  "docker_build_verified": false,
+  "limitations": [
+    "end-to-end accuracy remains low",
+    "official evaluator unavailable; base image supplied but Docker build unverified",
+    "decision_log detailed official schema unavailable",
+    "online LLM correction not evaluated",
+    "technical report intentionally deferred"
+  ],
+  "files": {
+    "run.py": {
+      "bytes": 172,
+      "sha256": "35a309c7bc7674cf3042e7919718b7ba67d639b1ff363c3026a80fc56ea1db0f"
+    },
+    "requirements-inference.txt": {
+      "bytes": 171,
+      "sha256": "0f44093ddca488b2134b4d1951da268c20daaf720e7c8ed4351476dbe829a237"
+    },
+    "README.md": {
+      "bytes": 5933,
+      "sha256": "9803753dd00b5109862e4c76a0ed919ef93533637250bac803d4c111dbba9ea9"
+    },
+    "Dockerfile": {
+      "bytes": 710,
+      "sha256": "101447ee3de3acac85c3edbe1dfef372d7f7b88a11137b9673a800575d7cc8de"
+    },
+    "pyproject.toml": {
+      "bytes": 332,
+      "sha256": "97318f98690468ae07b8c1d8883374313e0bf9114cd209ccbf13b1c66879ac91"
+    },
+    "agent_system": {
+      "bytes": 112,
+      "sha256": "0fc817b58b752d0c230100c87d61d9c70023de96987f35a07f6615b9aa111d2b"
+    },
+    "Dockerfile.competition": {
+      "bytes": 1330,
+      "sha256": "1d6fa53142fd45c098ba12101e5c9a715afe51c369eff516d7df08b858c33acb"
+    },
+    "models/semantics/component-library.json": {
+      "bytes": 616791,
+      "sha256": "7342e43bfeff144ab1b32d507a5753eb9f0b6f049becfa3303b4e8a6249d2aef"
+    },
+    "docs/OFFICIAL_MATERIALS.md": {
+      "bytes": 8499,
+      "sha256": "8a717b2e2073753de3b4c83734894539222e46638ff70328d6ba887699d505cf"
+    },
+    "models/candidates/official-pins/pin-heatmap.onnx": {
+      "bytes": 496397,
+      "sha256": "ee21f9643c59d640fe9de2b516a02a882ce05154e622842f87add97b2868435e"
+    },
+    "models/candidates/official-pins/pin-heatmap.json": {
+      "bytes": 2075,
+      "sha256": "81a4818c51cf67f05f011983f9a8e27a09a9fdbb6df7f3bd83ac54c49bf5ecc4"
+    },
+    "output/ablation/official-gt10.json": {
+      "bytes": 2869,
+      "sha256": "652acb57d960360b2cdd40f8e74e2912d86a5ad2ac312187796b688115b329cc"
+    },
+    "output/ablation/official-pins-55.json": {
+      "bytes": 642,
+      "sha256": "88ff6e07ebd4aa9118cde217cb5c560628ee229250411cd1aef90733401c754e"
+    },
+    "docs/PROJECT_PROGRESS_2026-10-04.md": {
+      "bytes": 7429,
+      "sha256": "4ad2dd25c2b3a0e75d9174fdcf4fbc125ac56cb817145a0864917fda8e1e3acd"
+    },
+    "docs/PROJECT_STATUS.md": {
+      "bytes": 5854,
+      "sha256": "60e399da1a8eea557cf98f2cc40d3ce2317b172ae6b185834248bee997c6e23c"
+    },
+    "output/ablation/pin-consensus.json": {
+      "bytes": 4560,
+      "sha256": "563cd003eadff186a871dcb2ab4e510c710a5bf92df8950b7992c174a1c4fac6"
+    },
+    "pcbparse/agent.py": {
+      "bytes": 6846,
+      "sha256": "29d4f48c83af70c45959fc7849c0b9bb958c71a3709a41cd5008746103f3c5b6"
+    },
+    "pcbparse/batch.py": {
+      "bytes": 3332,
+      "sha256": "d1a64178e1822ef8706e107a1900d6e231a67ea4ab0d42c7e98905b2d16f2c12"
+    },
+    "pcbparse/competition.py": {
+      "bytes": 4289,
+      "sha256": "0eba52e08f7581d3e637753ef921ca95207672f3c2e8bb0815a0b9316bf907a9"
+    },
+    "pcbparse/core.py": {
+      "bytes": 9834,
+      "sha256": "6a759d67e2b643eb15bf777d0524439fea724fc824df55bef2140e496f7ef203"
+    },
+    "pcbparse/corrections.py": {
+      "bytes": 6239,
+      "sha256": "4bad8ac650a9c652b530975ce846d2d40fa1fcf93602ca47a58de4d6953b8844"
+    },
+    "pcbparse/dataset.py": {
+      "bytes": 6459,
+      "sha256": "aaa92962b057c31a1ad9c06a19d2ad67d0523cf4cb8411fb1a72c809dac31649"
+    },
+    "pcbparse/detector.py": {
+      "bytes": 2345,
+      "sha256": "365e375966c7467fcc426b4ee871bf8efaa246821e2d01d4ba85c9815b488222"
+    },
+    "pcbparse/graphschematic.py": {
+      "bytes": 15621,
+      "sha256": "b76aaec4d2362280688dd5d4cc69b84ae02ca3c9d1b275cae5512992e4f2a4c4"
+    },
+    "pcbparse/pins.py": {
+      "bytes": 2636,
+      "sha256": "4e46637ce71722397532f994db167e2e457c02fea5b1e4c03f599fbadc8cfac8"
+    },
+    "pcbparse/pin_consensus.py": {
+      "bytes": 4068,
+      "sha256": "12fc5ca6b7ef550b04f963143228bac873f990d90a92dbf6923cc690042c2504"
+    },
+    "pcbparse/pin_model.py": {
+      "bytes": 1114,
+      "sha256": "d6e22fea88ad60975ed6eed4004bf287b7e3b6a06857650ba3ece49f3459b139"
+    },
+    "pcbparse/semantic_library.py": {
+      "bytes": 5260,
+      "sha256": "4a3655309d504749b013ed67a2f21449cd61bbb5fff384f181281c2eb5a1d8db"
+    },
+    "pcbparse/topology_model.py": {
+      "bytes": 737,
+      "sha256": "c0c01f4d51ae7c200f8eaea0f64e7138e02dd522ca91add06c7deb6b96bb64be"
+    },
+    "pcbparse/topology_perception.py": {
+      "bytes": 6320,
+      "sha256": "506c80f7ce7ed2a01fd714890a8339f328afeab47a7e3432461198a62ab4a187"
+    },
+    "pcbparse/vision.py": {
+      "bytes": 34076,
+      "sha256": "93855ed0e70dffea8e03e205f5a843e5c6e3e0263a6d78396f764f76ebab19a6"
+    },
+    "pcbparse/__init__.py": {
+      "bytes": 45,
+      "sha256": "a881406d541f9a59985aa21ab9fff6033277debba1edb87ba8d6341e200d366c"
+    },
+    "pcbparse/__main__.py": {
+      "bytes": 12230,
+      "sha256": "e673d1c17cf7e6394344b6363122db56eaa53dd1f241dfe6ceeaecb6a81f4bf7"
+    },
+    "scripts/ablate_topology.py": {
+      "bytes": 1994,
+      "sha256": "863e55811d72e308d087489467be8bc62a1c669834f7c93985633a1b766f4e6f"
+    },
+    "scripts/audit_official.py": {
+      "bytes": 3008,
+      "sha256": "199aadc7a1600a4d4e80a328c5b8407ce5b12a5bd74e868f57d969430c0da567"
+    },
+    "scripts/audit_sources.py": {
+      "bytes": 2432,
+      "sha256": "738fca76888c9275f8af5603d9dc05028a440cb4fb5f8e9ffb8eff5107e3d06d"
+    },
+    "scripts/benchmark.py": {
+      "bytes": 3661,
+      "sha256": "6e4e287953cfa77c4c7ee69f22da31512a65ab37fd1f7b6a2344826979a5a82e"
+    },
+    "scripts/benchmark_official.py": {
+      "bytes": 2291,
+      "sha256": "c637b5657063c4504961c77f97230b314ad10a26f66d0f8a07208193cd03e9c3"
+    },
+    "scripts/compare_graph_runs.py": {
+      "bytes": 1494,
+      "sha256": "8acefcf7f4a237edb9df16065dbdcc2037694f4252ca45e8b58c0f81940d1e78"
+    },
+    "scripts/compare_official_runs.py": {
+      "bytes": 1386,
+      "sha256": "7eada435439bb72d36f238e90cad4946604e770419a546c6b7fd3bf9a5b81ed7"
+    },
+    "scripts/compare_runs.py": {
+      "bytes": 2151,
+      "sha256": "e9fcd5bb3a07adbac0859653ea07b979630614184304eddc7fed1f7d93c346af"
+    },
+    "scripts/download_dataset.py": {
+      "bytes": 2012,
+      "sha256": "b9a63d6195986d5757a4a2a986fdc98dab194abbf5a25073c14fa7f2194c873f"
+    },
+    "scripts/download_extra_data.py": {
+      "bytes": 1743,
+      "sha256": "6f475f9e2b2503f76c6b5a893f673077e8d5cd96cc2d4ddd42972b9ccf25b4f6"
+    },
+    "scripts/download_omnisch.py": {
+      "bytes": 1842,
+      "sha256": "137a03c5ca4d0422d0d47cc49ba4f6731c641f18c30221c4b7c218653cf019c1"
+    },
+    "scripts/download_weights.py": {
+      "bytes": 567,
+      "sha256": "ba0f27c755b0ff15627737d3bc27cff47b5867f74b1755bed778610c535bd5b0"
+    },
+    "scripts/evaluate_pin_consensus.py": {
+      "bytes": 3000,
+      "sha256": "5b7fd4168a43ba3d9a331f88bb4a618d59e1a6f7ec45beefadef2abc9f4cc1b9"
+    },
+    "scripts/evaluate_topology_colors.py": {
+      "bytes": 2352,
+      "sha256": "9a488c181e739b5edf9e4d29c517258b71ec7291e537a02d9261aec8b1e47f6b"
+    },
+    "scripts/export_detector.py": {
+      "bytes": 1235,
+      "sha256": "f4b842bd3b23fd0e9f47a660991cbee9453838f639d6527957060ed9e66d5d54"
+    },
+    "scripts/fetch_public_resources.py": {
+      "bytes": 1255,
+      "sha256": "b8e57fcc0c6a6878de99b668d6b23542407d5e1a9415d0a8a7b40ab9690d74aa"
+    },
+    "scripts/package_development.py": {
+      "bytes": 2940,
+      "sha256": "9cbaaadf1b3bf06bd8a1fe1b9a6fb777fa7843fce6ecef30a3115787985b578d"
+    },
+    "scripts/prepare_aitee.py": {
+      "bytes": 3130,
+      "sha256": "4bda227190dd907ab57b40b781ac1a2690fee83ffb796d4ccf3af176ca18edd0"
+    },
+    "scripts/prepare_multisource.py": {
+      "bytes": 3118,
+      "sha256": "8ba989d3c598605e75f35673559de0210d49abdb679bcb57199e68be34b04122"
+    },
+    "scripts/prepare_official_pins.py": {
+      "bytes": 3014,
+      "sha256": "a8aa75aa1282e1c66cfcea1b44c4ee21f5c3ffb942faa1457f26f7672a9a7bcb"
+    },
+    "scripts/prepare_semantic_library.py": {
+      "bytes": 1452,
+      "sha256": "725f35b27b9f068ec9a08d8ec8c2b82b34cba2a0d9d36a271d86b99596dc314c"
+    },
+    "scripts/prepare_yolo.py": {
+      "bytes": 2595,
+      "sha256": "c56b22647a3a6c7f05236648afedbee3717892f80b973cbb05df68309b8f4585"
+    },
+    "scripts/request_graph_corrections.py": {
+      "bytes": 4824,
+      "sha256": "8e83490ca818764d11b4c172b3d9cda1b194ee7dc0e134f67de0bb6f2a0805bf"
+    },
+    "scripts/select_pipeline.py": {
+      "bytes": 1469,
+      "sha256": "bf5a2677a1a77ee569f6a9d9393b3be2543c4aebc1f99061d6cc6b0fc6ec7722"
+    },
+    "scripts/train_detector.py": {
+      "bytes": 2407,
+      "sha256": "2217208ec5e5290470deb4bacfd7b3df0b514b6d9b51cabbca428e4f12f259ad"
+    },
+    "scripts/train_pins.py": {
+      "bytes": 8632,
+      "sha256": "ad0abb0d7ed2e2b3f6d8464bdb121baa57be8ea9582e88e9752b3a7436f5b282"
+    },
+    "scripts/train_topology.py": {
+      "bytes": 9743,
+      "sha256": "8e0ae42a21c93b7a48729c26d749272f7b86455c53dd6ac9a035c59dbca11e76"
+    },
+    "scripts/validate_models.py": {
+      "bytes": 2303,
+      "sha256": "e071ef13cd49b01ff7430118cc19e99f64456b46ff6cb17341e38b0874380596"
+    },
+    "scripts/verify_pin_consensus_live.py": {
+      "bytes": 1335,
+      "sha256": "9798548527fefee674766c34b24542ee0b6444979146df5cdbce2aa21cc670a0"
+    },
+    "requirements-training.txt": {
+      "bytes": 177,
+      "sha256": "edca2a69f4ec7d3bb51b7c978ffd461c3dbc3f3cdb1a70a2d83c23f0e8dafa34"
+    },
+    "models/pipeline.json": {
+      "bytes": 1408,
+      "sha256": "57faccfc9b238e1bac750922424903d9987c046747810b7b38f1377ffbf42153"
+    },
+    "models/detector/pcb-yolo11n.onnx": {
+      "bytes": 10808154,
+      "sha256": "4080535f934ef2b8ea635ccf55097785429b635c628e4e55714f8e1e5976da78"
+    },
+    "models/detector/pcb-yolo11n.json": {
+      "bytes": 884,
+      "sha256": "5cea3400a7aa61dfc531c5d38d910cc78572b62e59127f54a64c578ee282feef"
+    },
+    "models/pins/pin-heatmap.onnx": {
+      "bytes": 496397,
+      "sha256": "2fd41a4af1e4cf324f0eec3b9b01ad4598ee7dc519afdc17151da5190f569f86"
+    },
+    "models/pins/pin-heatmap.json": {
+      "bytes": 1477,
+      "sha256": "dd5c176634cfae3d7408f5d810227703a5bb093e44f29c6592e164f4da55a543"
+    },
+    "models/symbols/templates.json": {
+      "bytes": 128945,
+      "sha256": "22a1afd91f094541edc9381cfc0cccf5fd3d493ce8d77d9a090e6f6f5616b9bb"
+    },
+    "models/symbols/templates.npz": {
+      "bytes": 85680,
+      "sha256": "8bd15aa92466ff0c92cdc4d1f11f6b74f41a4e655155d636e6a39bff780ccf03"
+    },
+    "models/topology/topology-perception.onnx": {
+      "bytes": 116237,
+      "sha256": "0319af39f68275a5e952a46e38d6814933dcc3875f7e0d04c2e62e9cea66f07b"
+    },
+    "models/topology/topology-perception.json": {
+      "bytes": 886,
+      "sha256": "96db2badd5712ef24911acce73b682ac80293b1abfc702366d1c593d29a8cfd0"
+    },
+    "tests/test_core.py": {
+      "bytes": 5252,
+      "sha256": "9544101b1d70c92506a7b71915bdd60a0db0fe8b690ec57406152f3dbf840465"
+    },
+    "tests/test_graphschematic.py": {
+      "bytes": 4847,
+      "sha256": "ae74ffe82479da8736f79d31e0ecc1b8ff661e56047a51cab8723bc08bbd7b96"
+    },
+    "tests/test_graph_replay.py": {
+      "bytes": 2482,
+      "sha256": "aadd1b19d15d3c7919e9b43cbd7c01ba54bd05f7d6c4e681eafa51581179ac2e"
+    },
+    "tests/test_official_semantics.py": {
+      "bytes": 6030,
+      "sha256": "14305cc05c201527a338515a2553c10cdf385dea5f394aebe0ee8ec3e7e5f4dd"
+    },
+    "tests/test_pins.py": {
+      "bytes": 1547,
+      "sha256": "5fc17f0fa4b4c703b162ec9826d36fdcd9b3019efb9185bf870952be3b35166d"
+    },
+    "tests/test_pin_consensus.py": {
+      "bytes": 2354,
+      "sha256": "a0836b2d3102ab42ef2296d13952ade4de6132abd361456d5fe0457fca0b5a1f"
+    },
+    "tests/test_topology_perception.py": {
+      "bytes": 3414,
+      "sha256": "1d8c4c692db177dd7a5669a3eca55f61b650a52ba846a87a4d421435a06bbd06"
+    },
+    "tests/test_vision.py": {
+      "bytes": 3107,
+      "sha256": "8da30fe9a5738e4b1498349507c58a2d6a1a374d399bcf57a4c0f6d96d03a641"
+    },
+    "docs/DATASETS_AND_MODELS.md": {
+      "bytes": 5863,
+      "sha256": "db7d2f1d31fbc27b45568ffc2af0ef996e6021578ae589d1505f1caaf1761742"
+    },
+    "docs/COMPETITION_RESEARCH.md": {
+      "bytes": 4207,
+      "sha256": "8398415176129730afd02d1dd1c77a8e0bb41fa0f27a187a767e071c91d5ccf6"
+    },
+    "docs/GRAPHSCHEMATIC.md": {
+      "bytes": 7461,
+      "sha256": "7e161d76704e4f490426af6b3bb8f8653d5480acb30bbcafb333b89a4fe7d5c4"
+    }
+  },
+  "default_model_policy": "retain original primary pin model; official-adapted auxiliary model enabled through topology-preserving consensus; semantic association remains optional"
+}

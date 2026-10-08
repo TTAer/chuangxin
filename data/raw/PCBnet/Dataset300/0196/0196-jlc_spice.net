@@ -1,0 +1,63 @@
+* SPICE netlist generated from 0196-jlc_ParseredJson.json
+* case: reconstructed_hybrid
+.title reconstructed_hybrid
+
+* ---- 元件 ----
+XU3 VCC 0 CLK DO CSN U3
+XU1 DO NET_E_2 NET_E_2 0 CSN CLK NET_E_26 NET_E_27 U1
+XU4 n A W U4
+XU2 n NET_E_1 A W U2
+XU6  U6
+XU7  U7
+XU8  U8
+XU9  U9
+DLED1 0 NET_E_19 DMOD
+XU13 0 NET_E_2 U13
+R1 NET_E_19 NET_E_22 10k
+c2 0 NET_E_2 1n
+c1 0 NET_E_2 100n
+
+* ---- 网络对照（edge -> 节点） ----
+* E_1 = NET_E_1（原 netlabel "∅170" 为参数值形态或无效，已回退自动命名） : P_1(C_4)
+* E_2 = NET_E_2（原 netlabel "∅171" 为参数值形态或无效，已回退自动命名） : P_13(C_13) P_14(C_2) P_15(C_2) P_27(C_15) P_29(C_16) P_36(C_18)
+* E_3 = CSN : P_16(C_2)
+* E_4 = CLK : P_17(C_2)
+* E_5 = VCC : P_18(C_1)
+* E_6 = n : P_19(C_4)
+* E_7 = n : P_20(C_3)
+* E_8 = DO : P_21(C_2)
+* E_9 = 0 : P_22(C_1)
+* E_10 = A : P_2(C_4)
+* E_11 = A : P_3(C_3)
+* E_12 = 0 : P_4(C_13) P_5(C_2) P_28(C_15) P_30(C_16) P_31(C_17)
+* E_13 = CSN : P_6(C_1)
+* E_14 = W : P_7(C_4)
+* E_15 = W : P_8(C_3)
+* E_16 = CLK : P_9(C_1)
+* E_17 = DO : P_10(C_1)
+* E_19 = NET_E_19（原 netlabel "∅173" 为参数值形态或无效，已回退自动命名） : P_23(C_10) P_12(C_14)
+* E_21 = 0 : P_11(C_10) P_24(C_11)
+* E_22 = NET_E_22（原 netlabel "∅175" 为参数值形态或无效，已回退自动命名） : P_25(C_14) P_26(C_12)
+* E_23 = 0 : P_32(C_5)
+* E_26 = NET_E_26（原 netlabel "∅177" 为参数值形态或无效，已回退自动命名） : P_37(C_2)
+* E_27 = NET_E_27（原 netlabel "∅178" 为参数值形态或无效，已回退自动命名） : P_38(C_2)
+
+* ---- 待确认项 ----
+* 待人工确认: C_1 designator="U3" value="∅92" type=Box
+* 待人工确认: C_2 designator="U1" value="∅97" type=Box
+* 待人工确认: C_3 designator="U4" value="∅101" type=Box
+* 待人工确认: C_4 designator="U2" value="∅107" type=Box
+* 未映射类型 M3螺丝（C_6 U6），按 X 子电路输出
+* 待人工确认: C_6 designator="∅113" value="∅112" type=M3螺丝
+* 未映射类型 M3螺丝（C_7 U7），按 X 子电路输出
+* 待人工确认: C_7 designator="∅116" value="∅115" type=M3螺丝
+* 未映射类型 M3螺丝（C_8 U8），按 X 子电路输出
+* 待人工确认: C_8 designator="∅119" value="∅118" type=M3螺丝
+* 未映射类型 M3螺丝（C_9 U9），按 X 子电路输出
+* 待人工确认: C_9 designator="∅122" value="∅121" type=M3螺丝
+* 待人工确认: C_10 designator="LED1" value="∅128" type=LED
+* 未映射类型 ESD（C_13 U13），按 X 子电路输出
+* 待人工确认: C_13 designator="∅143" value="∅142" type=ESD
+* 待人工确认: C_15 designator="c2" value="∅154" type=C
+
+.end

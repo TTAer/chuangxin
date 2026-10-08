@@ -1,0 +1,85 @@
+{
+  "components": {
+    "R1": {
+      "type": "resistor",
+      "Name": null,
+      "value": "10k",
+      "bbox": [
+        20,
+        40,
+        60,
+        60
+      ]
+    },
+    "R2": {
+      "type": "resistor",
+      "Name": null,
+      "value": "10k",
+      "bbox": [
+        140,
+        40,
+        180,
+        60
+      ]
+    }
+  },
+  "pins": {
+    "R1": {
+      "pin_1": {
+        "pinname": "1",
+        "point": {
+          "x": 20,
+          "y": 50
+        }
+      },
+      "pin_2": {
+        "pinname": "2",
+        "point": {
+          "x": 60,
+          "y": 50
+        }
+      }
+    },
+    "R2": {
+      "pin_1": {
+        "pinname": "1",
+        "point": {
+          "x": 140,
+          "y": 50
+        }
+      },
+      "pin_2": {
+        "pinname": "2",
+        "point": {
+          "x": 180,
+          "y": 50
+        }
+      }
+    }
+  },
+  "nets": {
+    "net_1": {
+      "hyperGraph": "(R1.1)",
+      "edges": {}
+    },
+    "net_2": {
+      "hyperGraph": "(R1.2,R2.1)",
+      "edges": {
+        "edge_1": [
+          {
+            "x": 60,
+            "y": 50
+          },
+          {
+            "x": 140,
+            "y": 50
+          }
+        ]
+      }
+    },
+    "net_3": {
+      "hyperGraph": "(R2.2)",
+      "edges": {}
+    }
+  }
+}

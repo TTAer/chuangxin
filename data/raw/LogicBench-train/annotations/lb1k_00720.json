@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "gate_0",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_1",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_2",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_3",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_4",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_5",
+      "type": "NAND"
+    },
+    {
+      "id": "gate_6",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_7",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_8",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_9",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_10",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_11",
+      "type": "NOT"
+    },
+    {
+      "id": "gate_12",
+      "type": "OR"
+    },
+    {
+      "id": "gate_13",
+      "type": "OR"
+    },
+    {
+      "id": "gate_14",
+      "type": "OR"
+    },
+    {
+      "id": "gate_15",
+      "type": "OR"
+    },
+    {
+      "id": "gate_16",
+      "type": "NAND"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate_0",
+      "target": "gate_12"
+    },
+    {
+      "source": "gate_6",
+      "target": "gate_1"
+    },
+    {
+      "source": "gate_7",
+      "target": "gate_12"
+    },
+    {
+      "source": "gate_1",
+      "target": "gate_8"
+    },
+    {
+      "source": "gate_12",
+      "target": "gate_2"
+    },
+    {
+      "source": "gate_12",
+      "target": "gate_3"
+    },
+    {
+      "source": "gate_12",
+      "target": "gate_4"
+    },
+    {
+      "source": "gate_8",
+      "target": "gate_13"
+    },
+    {
+      "source": "gate_5",
+      "target": "gate_13"
+    },
+    {
+      "source": "gate_9",
+      "target": "gate_16"
+    },
+    {
+      "source": "gate_10",
+      "target": "gate_16"
+    },
+    {
+      "source": "gate_13",
+      "target": "gate_14"
+    },
+    {
+      "source": "gate_11",
+      "target": "gate_15"
+    },
+    {
+      "source": "gate_15",
+      "target": "gate_14"
+    }
+  ],
+  "image_path": "images/lb1k_00720.jpg"
+}

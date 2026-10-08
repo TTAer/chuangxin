@@ -1,0 +1,11 @@
+*SPICE Netlist for circuit 344
+C1 3 4 1nF
+M3 4 1 5 5 NMOS W=1u L=1u
+M1 5 3 0 6 6 NMOS W=1u L=1u
+I1 VDD 3 DC 1mA
+M2 3 3 0 0 NMOS W=1u L=1u
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+
+.OP
+.END
+
